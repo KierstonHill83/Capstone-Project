@@ -5,7 +5,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var swig = require('swig');
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+
 
 // *** routes *** //
 var routes = require('./routes/index.js');
@@ -14,6 +17,7 @@ var userActivity = require('./routes/userActivity.js');
 var activityProperty = require('./routes/activityProperty.js');
 var friends = require('./routes/friends.js');
 var userChatRooms = require('./routes/userChatRooms.js');
+var authRoutes = require('./routes/auth.js');
 
 
 // *** express instance *** //
@@ -36,6 +40,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(flash);
+app.use(function(req, res, next) {
+  res.locals.sessionFlash = req.session.flash;
+  delete req.session.flash;
+  next();
+});
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // *** main routes *** //
@@ -44,6 +61,7 @@ app.use('/api/', userActivity);
 app.use('/api/', activityProperty);
 app.use('/api/', friends);
 app.use('/api/', userChatRooms);
+app.use('/auth/', authRoutes);
 app.use('/', routes);
 app.use('/', function(req, res){
   res.sendFile(path.join(__dirname, '../client/views', 'index.html'));
