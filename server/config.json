@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "",
+    "password": "",
+    "database": "activeMate",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory:"
+  },
+  "production": {
+    "host": "process.env.DATABASE_URL",
+    "dialect": "postgres",
+    "use_env_variable": "DATABASE_URL"
+  }
+}
