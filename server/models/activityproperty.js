@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 module.exports = function(sequelize, DataTypes) {
   var activityProperty = sequelize.define('activityProperty', {
     propertyName: {
@@ -13,10 +13,25 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: false
     }
+    // userInfoId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "userInfo",
+    //     key: "id"
+    //   }
+    // },
+    // userActivityId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "userActivity",
+    //     key: "id"
+    //   }
+    // }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        activityProperty.belongsTo(models.userInfo);
+        activityProperty.belongsTo(models.userActivity);
       }
     }
   });

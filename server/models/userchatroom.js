@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var userChatRoom = sequelize.define('userChatRoom', {
+  var userChatRooms = sequelize.define('userChatRooms', {
     name: {
       type: DataTypes.STRING,
       required: true,
@@ -11,12 +11,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       defaultValue: false
     }
+    // userInfoId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "userInfo",
+    //     key: "id"
+    //   }
+    // }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        userChatRooms.belongsTo(models.userInfo);
       }
     }
   });
-  return userChatRoom;
+  return userChatRooms;
 };

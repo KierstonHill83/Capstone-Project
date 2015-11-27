@@ -49,7 +49,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        userInfo.hasMany(models.userActivity);
+        userInfo.hasMany(models.activityProperty);
+        userInfo.hasMany(models.userChatRooms);
+        userInfo.hasMany(models.friends);
       }
     }
   });

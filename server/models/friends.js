@@ -7,10 +7,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: false
     }
+    // userInfoId: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "userInfo",
+    //     key: "id"
+    //   }
+    // }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        friends.belongsTo(models.userInfo);
       }
     }
   });
