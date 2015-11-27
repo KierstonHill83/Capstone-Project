@@ -1,1 +1,246 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Active Buddies</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/#/">Active Mates</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/signup">Sign Up</a></li>
+            <!-- Form to sign in -->
+            <li>
+              <a href="#">Sign In</a>
+              <!-- <form class="form-inline signin-form">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="username-signin" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password-signin" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default">Sign In</button>
+              </form> -->
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="container title-heading">
+      <h1>Chat Room</h1>
+      <br>
+      <form id="socketform">
+        <input type="text" name="name" place="Input your name" id="m"/>
+        <button class="btn">Set Name</button>
+      </form>
+    </div>
+    <div class="container">
+      <br>
+      <form id="privateForm">
+        <label>Name of Person (p)</label> <!-- my name here -->
+        <input type="text" name="name" place="Input name of Person" id="p"/>
+        <label>Name of Room (r)</label> <!-- invitee name here -->
+        <input type="text" name="room" place="Input name of Room" id="r"/>
+        <button class="btn">Create Private Chat</button>
+      </form>
+    </div>
+    <div class="container">
+      <br>
+      <form id="chatForm">
+        <input type="text" name="msg" place="Input your message" id="t"/>
+        <button class="btn">Send Message</button>
+      </form>
+      <div class="room">
+        <ul id="message"></ul>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- User Input -->
+          <h1 class="signup">User Info</h1>
+          <form class="signup-form" id="user-signup">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="first-name" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control" id="location" placeholder="City, State">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <input type="text" class="form-control" id="gender" placeholder="Gender">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" class="form-control" id="age" placeholder="Age">
+            </div>
+            <div class="form-group">
+              <label for="photo">Upload a Photo</label>
+              <input type="text" class="form-control" id="photo" placeholder="Photo">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="password">Confirm Password</label>
+              <input type="password" class="form-control" id="password2" placeholder="Confirm Password">
+            </div>
+            <button type="submit" id="user-submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        
+        <!-- Activity Input -->
+        <div class="col-md-6">
+          <h1 class="signup">Activity Info</h1>
+          <form class="signup-form" id="user-activity">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Choose an Activity</button>
+              <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu activity-option">
+                <li><a href="#">Running</a></li>
+                <li><a href="#">Biking</a></li>
+                <li><a href="#">Swimming</a></li>
+              </ul>
+            </div>
+            <div class="form-group">
+              <label for="pace" class="activity-name">Pace</label>
+              <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
+            </div>
+            <div class="form-group">
+              <label for="distance" class="activity-name">Distance</label>
+              <input type="text" class="form-control activity-value" id="distance" placeholder="Distance">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+
+          <!-- Who are you looking for -->
+          <h1 class="signup">What are you looking for in a Partner?</h1>
+          <form class="signup-form">
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control" id="location-partner" placeholder="City, State">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Male
+                </label>
+                <label>
+                  <input type="checkbox"> Female
+                </label>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Age</button>
+              <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria- haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Within 5 years</a></li>
+                <li><a href="#">Within 10 years</a></li>
+                <li><a href="#">More than 10 years</a></li>
+              </ul>
+            </div>
+          <!-- <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age-partner" placeholder="Age">
+          </div> -->
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Same Pace?
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="distance">Distance</label>
+            <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
+          </div>
+          <button type="button" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- <div ng-view></div> -->
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    // <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.js"></script>
+    // <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.js"></script> -->
+    <script type="text/javascript" src="/js/socket.io-client.js"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    <!-- <script type="text/javascript" src="/js/controllers/homeController.js"></script>
+    // <script type="text/javascript" src="/js/controllers/signUpController.js"></script>
+    // <script type="text/javascript" src="/js/controllers/userController.js"></script>
+    // <script type="text/javascript" src="/js/controllers/googleMapsController.js"></script>
+    // <script type="text/javascript" src="/js/controllers/chatRoomController.js"></script>
+
+    // <script type="text/javascript" src="/js/services/googleMapsService.js"></script>
+    // <script type="text/javascript" src="/js/services/chatRoomService.js"></script> -->
+
+
+  </body>
+</html>
