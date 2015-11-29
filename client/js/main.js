@@ -3,11 +3,29 @@ $(document).on('ready', function() {
   $('#all-info').hide();
 });
 
-$('#sign-up').on('click', function() {
+
+/////////////////////
+// navbar control //
+////////////////////
+
+$('#nav-home').on('click', function() {
+  $('.full-chat').hide();
+  $('#all-info').hide();
+  $('.home-page').show();
+});
+
+$('#nav-signup').on('click', function() {
+  $('.full-chat').hide();
   $('#all-info').show();
   $('.home-page').hide();
 });
 
+/// THIS WILL BE DIFFERENT...WILL HAVE LOGIN AND ON THAT SUBMIT, IT WILL DO THESE THINGS
+$('#nav-signin').on('click', function() {
+  $('.full-chat').hide();
+  $('#all-info').hide();
+  $('.home-page').hide();
+});
 
 
 ////////////////
@@ -90,7 +108,6 @@ $('#user-signup').submit(function() {
 // user activity form //
 ////////////////////////
 
-
 $('#user-activity').submit(function() {
   console.log($('.activity-option').val());
 console.log($('.activity-name').val());
@@ -106,3 +123,5 @@ console.log($('.activity-value').val());
     console.log('status ' + status);
   });
 });
+
+
