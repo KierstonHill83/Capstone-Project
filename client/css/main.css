@@ -1,8 +1,57 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.top-header {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  text-align: center;
+  background: url(/img/running.jpg) no-repeat center center;
+  background-size: cover;
+  height: 810px;
+}
+
+.title {
+  font-size: 7em;
+  font-family: 'Special Elite', cursive;
+  text-shadow: 4px 4px 7px black;
+  color: white;
+}
+
+.tagline {
+  font-size: 4em;
+  font-family: 'Special Elite', cursive;
+  text-shadow: 4px 4px 7px black;
+  color: white;
+}
+
+.info {
+  background-color: #336699;
+  color: white;
+}
+
+.info-header {
+  padding-bottom: 20px;
+}
+
+.info-img {
+  font-size: 60px;
+  color: black;
+  text-align: center;
+}
+
+.info-text {
+  padding-bottom: 40px;
 }

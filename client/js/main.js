@@ -1,4 +1,18 @@
-// // custom scripts
+$(document).on('ready', function() {
+  $('.full-chat').hide();
+  $('#all-info').hide();
+});
+
+$('#sign-up').on('click', function() {
+  $('#all-info').show();
+  $('.home-page').hide();
+});
+
+
+
+////////////////
+// Chat Room //
+///////////////
 
 var socket = io();
 
