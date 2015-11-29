@@ -122,6 +122,6 @@ a {
   margin-bottom: 20px;
 }
 
-#all-info {
+#all-info, .personal-page {
   padding-top: 50px;
 }

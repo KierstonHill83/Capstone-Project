@@ -1,6 +1,7 @@
 $(document).on('ready', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
+  $('.personal-page').hide();
 });
 
 
@@ -11,13 +12,15 @@ $(document).on('ready', function() {
 $('#nav-home').on('click', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
+  $('.personal-page').hide();
   $('.home-page').show();
 });
 
 $('#nav-signup').on('click', function() {
   $('.full-chat').hide();
-  $('#all-info').show();
   $('.home-page').hide();
+  $('.personal-page').hide();
+  $('#all-info').show();
 });
 
 /// THIS WILL BE DIFFERENT...WILL HAVE LOGIN AND ON THAT SUBMIT, IT WILL DO THESE THINGS
@@ -25,6 +28,7 @@ $('#nav-signin').on('click', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
   $('.home-page').hide();
+  $('.personal-page').show();
 });
 
 
