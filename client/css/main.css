@@ -125,3 +125,28 @@ a {
 #all-info, .personal-page {
   padding-top: 50px;
 }
+
+#map-div {
+  height: 500px;
+  width: 1000px;
+  border: 2px solid;
+}
+
+#place-input {
+  width: 70%;
+}
+
+.panel {
+  border: none;
+}
+
+.nav-sidebar {
+  background-color: gray;
+  min-height: 800px;
+  position: fixed;
+  min-width: 215px;
+}
+
+hr {
+  width: 1250px;
+}

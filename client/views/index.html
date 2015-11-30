@@ -26,7 +26,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
+          <!-- <ul class="nav navbar-nav">
             <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Link</a></li>
             <li class="dropdown">
@@ -41,21 +41,21 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
-          </ul>
+          </ul> -->
           <ul class="nav navbar-nav navbar-right">
             <li id="nav-signup"><a href="#/signup">Sign Up</a></li>
             <!-- Form to sign in -->
             <li>
-              <a id="nav-signin" href="#/signin">Sign In</a>
-              <!-- <form class="form-inline signin-form">
+              <!-- <a  href="#/signin">Sign In</a> -->
+              <form class="form-inline signin-form">
                 <div class="form-group">
                   <input type="text" class="form-control" id="username-signin" placeholder="Username">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" id="password-signin" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-default">Sign In</button>
-              </form> -->
+                <button type="submit" class="btn btn-default" id="nav-signin">Sign In</button>
+              </form>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -311,79 +311,136 @@
 
 <!-- PERSONAL PAGE -->
     <div class="personal-page">
-      <!-- Activity Input -->
-      <div class="col-md-6">
-        <h1 class="signup">Activity Info</h1>
-        <form class="signup-form" id="user-activity">
-          <div class="btn-group">
-            <button type="button" class="btn btn-default">Choose an Activity</button>
-            <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu activity-option">
-              <li><a href="#">Running</a></li>
-              <li><a href="#">Biking</a></li>
-              <li><a href="#">Swimming</a></li>
-            </ul>
-          </div>
-          <div class="form-group">
-            <label for="pace" class="activity-name">Pace</label>
-            <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
-          </div>
-          <div class="form-group">
-            <label for="distance" class="activity-name">Distance</label>
-            <input type="text" class="form-control activity-value" id="distance" placeholder="Distance">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+    <!-- Sidebar -->
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li id="overview" class="active"><a href="#">Overview</a></li>
+            <li><a href="#">Edit Profile</a></li>
+            <li id="activity-form"><a href="#">Edit Activity</a></li>
+            <li id="partner-form"><a href="#">Edit Looking For</a></li>
+            <li id="chat-room"><a href="#">Chat Room</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
 
-        <!-- Who are you looking for -->
-        <h1 class="signup">What are you looking for in a Partner?</h1>
-        <form class="signup-form">
-          <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" class="form-control" id="location-partner" placeholder="City, State">
+        <!-- Overview -->
+        <div class="overview">
+          <div class="col-md-6">
+            <h1>Overview</h1>
+            <p>There will be text about what is happening here and how to work this page.</p>
           </div>
-          <div class="form-group">
-            <label for="gender">Gender</label>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Male
-              </label>
-              <label>
-                <input type="checkbox"> Female
-              </label>
+          <br>
+          <hr>
+          <br>
+        </div>
+
+        <!-- Activity Input -->
+        <div class="activity-form">
+          <div class="col-md-6">
+            <h1 class="signup">Activity Info</h1>
+            <form class="signup-form" id="user-activity">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default">Choose an Activity</button>
+                <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu activity-option">
+                  <li><a href="#">Running</a></li>
+                  <li><a href="#">Biking</a></li>
+                  <li><a href="#">Swimming</a></li>
+                </ul>
+              </div>
+              <div class="form-group">
+                <label for="pace" class="activity-name">Pace</label>
+                <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
+              </div>
+              <div class="form-group">
+                <label for="distance" class="activity-name">Distance</label>
+                <input type="text" class="form-control activity-value" id="distance" placeholder="Distance">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <br>
+            <hr>
+            <br>
+          </div>
+        </div>
+
+        <!-- Partner Info -->
+        <div class="partner-form">
+          <div class="col-md-6">
+            <h1 class="signup">What are you looking for in a Partner?</h1>
+            <form class="signup-form">
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location-partner" placeholder="City, State">
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Male
+                  </label>
+                  <label>
+                    <input type="checkbox"> Female
+                  </label>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default">Age</button>
+                <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria- haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Within 5 years</a></li>
+                  <li><a href="#">Within 10 years</a></li>
+                  <li><a href="#">More than 10 years</a></li>
+                </ul>
+              </div>
+            <!-- <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" class="form-control" id="age-partner" placeholder="Age">
+            </div> -->
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Same Pace?
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="distance">Distance</label>
+                <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
+              </div>
+              <button type="button" class="btn btn-default">Submit</button>
+            </form>
+            <br>
+            <hr>
+            <br>
+          </div>
+        </div>
+
+
+        <!-- GOOGLE MAPS -->
+        <div class="col-md-8 col-md-offset-2">
+          <form class="form-inline">
+            <label for="exampleInputName2">Place Search</label>  
+            <input type="text" class="form-control" id="place-input" placeholder="Find a place...">
+            <button type="submit" class="btn btn-default" id="add-location">Find</button>
+          </form>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div id="map-div"></div>
+              </div>
             </div>
           </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-default">Age</button>
-            <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria- haspopup="true" aria-expanded="false">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Within 5 years</a></li>
-              <li><a href="#">Within 10 years</a></li>
-              <li><a href="#">More than 10 years</a></li>
-            </ul>
-          </div>
-        <!-- <div class="form-group">
-          <label for="age">Age</label>
-          <input type="text" class="form-control" id="age-partner" placeholder="Age">
-        </div> -->
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Same Pace?
-            </label>
-          </div>
-          <div class="form-group">
-            <label for="distance">Distance</label>
-            <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
-          </div>
-          <button type="button" class="btn btn-default">Submit</button>
-        </form>
-      </div>
+        </div>
+      </div> <!-- close row -->
 
 
       <!-- CHAT ROOM -->
@@ -422,6 +479,7 @@
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/socket.io-client.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <script type="text/javascript" src="/js/main.js"></script>
 

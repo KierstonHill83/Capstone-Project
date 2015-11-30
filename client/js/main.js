@@ -2,11 +2,62 @@ $(document).on('ready', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
   $('.personal-page').hide();
+
+
+  //////////////////
+  // Google Maps //
+  /////////////////
+
+  var map = new google.maps.Map(document.getElementById("map-div"),{
+    center: {lat:39.393981, lng:-106.016311},
+    zoom: 7
+  });
+
+  var placeInput = document.getElementById('place-input');
+
+  var autocomplete = new google.maps.places.Autocomplete(placeInput);
+  autocomplete.bindTo('bounds', map);
+
+  var place;
+
+  autocomplete.addListener('place_changed', function() {
+    place = autocomplete.getPlace();
+  });
+
+  $(document).on("click",'#add-location', function(e){
+    e.preventDefault();
+
+    if (! place.geometry) {
+      return;
+    }
+    else if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    }
+    else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+
+    var marker = new google.maps.Marker({
+      position: place.geometry.location,
+      map: map
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      content: "<div><h4>"+place.name+"</h4><p>"+place.formatted_address+"</p></div>"
+    });
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  });
+
+
 });
 
 
 /////////////////////
-// navbar control //
+// Navbar Control //
 ////////////////////
 
 $('#nav-home').on('click', function() {
@@ -28,7 +79,42 @@ $('#nav-signin').on('click', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
   $('.home-page').hide();
+  $('.activity-form').hide();
+  $('.partner-form').hide();
   $('.personal-page').show();
+});
+
+
+///////////////////////////////////
+// Personal Page Sidebar Control //
+///////////////////////////////////
+
+$('#activity-form').on('click', function() {
+  $('.partner-form').hide();
+  $('.overview').hide();
+  $('.full-chat').hide();
+  $('.activity-form').show();
+});
+
+$('#partner-form').on('click', function() {
+  $('.overview').hide();
+  $('.activity-form').hide();
+  $('.full-chat').hide();
+  $('.partner-form').show();
+});
+
+$('#overview').on('click', function() {
+  $('.partner-form').hide();
+  $('.activity-form').hide();
+  $('.full-chat').hide();
+  $('.overview').show();
+});
+
+$('#chat-room').on('click', function() {
+  $('.overview').hide();
+  $('.activity-form').hide();
+  $('.partner').hide();
+  $('.full-chat').show();
 });
 
 
@@ -127,5 +213,8 @@ console.log($('.activity-value').val());
     console.log('status ' + status);
   });
 });
+
+
+
 
 
