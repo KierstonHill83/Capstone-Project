@@ -9,7 +9,8 @@ var http = require('http');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
-// var swig = ('requireswig');
+var LocalStrategy = require('passport-local').Strategy;
+
 
 // *** routes *** //
 var routes = require('./routes/index.js');
@@ -18,18 +19,11 @@ var userActivity = require('./routes/userActivity.js');
 var activityProperty = require('./routes/activityProperty.js');
 var friends = require('./routes/friends.js');
 var userChatRooms = require('./routes/userChatRooms.js');
-// var authRoutes = require('./routes/auth.js');
+var authRoutes = require('./routes/auth.js');
 
-console.log(__dirname);
 
 // *** express instance *** //
 var app = express();
-
-
-// *** view engine *** //
-// var swig = new swig.Swig();
-// app.engine('html', swig.renderFile);
-// app.set('view engine', 'html');
 
 
 // *** static directory *** //
@@ -42,19 +36,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
-// app.use(session({
-//   secret: 'keyboard cat',
-//   resave: true,
-//   saveUninitialized: true
-// }));
-// app.use(flash);
-// app.use(function(req, res, next) {
-//   res.locals.sessionFlash = req.session.flash;
-//   delete req.session.flash;
-//   next();
-// });
+// app.use(flash());
+// app.use(session({ secret: 'so secret' }));
 // app.use(passport.initialize());
 // app.use(passport.session());
+// app.use(app.router);
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+// app.use(flash);
+app.use(function(req, res, next) {
+  res.locals.sessionFlash = req.session.flash;
+  delete req.session.flash;
+  next();
+});
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // *** main routes *** //
@@ -64,11 +63,18 @@ app.use('/api/', userActivity);
 app.use('/api/', activityProperty);
 app.use('/api/', friends);
 app.use('/api/', userChatRooms);
-// app.use('/auth/', authRoutes);
+app.use('/auth/', authRoutes);
 // app.use('/', function(req, res){
 //   res.sendFile(path.join(__dirname, '../client/views', 'index.html'));
 // console.log('after send to client');
 // });
+
+
+// *** passport config *** //
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

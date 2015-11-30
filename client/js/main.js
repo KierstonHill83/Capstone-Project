@@ -193,6 +193,23 @@ $('#user-signup').submit(function() {
 });
 
 
+///////////////////
+// User Sign-In //
+//////////////////
+
+$('#signin-form').submit(function() {
+  console.log('before client post');
+  $.post('/auth/login', {
+    email: $('#email-signin').val(),
+    password: $('#password-signin').val()
+  },
+  function(data, status) {
+    console.log('data from signin ' +data);
+  });
+  console.log($('#email-signin').val());
+});
+
+
 
 ////////////////////////
 // user activity form //
