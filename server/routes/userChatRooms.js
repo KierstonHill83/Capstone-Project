@@ -31,7 +31,8 @@ router.get('/userChatRoom/:id', function(req, res, next) {
 router.post('/userChatRooms', function(req, res, next) {
   models.userChatRooms.create({
     name: req.body.name,
-    conversation: req.body.conversation
+    conversation: req.body.conversation,
+    userInfoId: req.user.id
   }).then(function(userChatRooms) {
     res.json(userChatRooms);
   }).catch(function(err) {

@@ -230,6 +230,24 @@ $('#signin-form').submit(function(e) {
 });
 
 
+//////////////////
+// User Logout //
+/////////////////
+
+$('#logout').on('click', function() {
+  $.get('/auth/logout', {
+   ///what goes here!!!
+  }, function(data, status) {
+    console.log(status);
+  });
+  // $('#all-info').hide();
+  // $('.personal-page').hide();
+  // $('#nav-signup').hide();
+  // $('#signin-form').show();
+  // $('.home-page').show();
+});
+
+
 
 ////////////////////
 // User Activity //
@@ -237,9 +255,9 @@ $('#signin-form').submit(function(e) {
 
 $('#user-activity').submit(function(e) {
   e.preventDefault();
-  console.log($('.activity-option').val());
+  console.log($('#activity-option option:selected').text());
   $.post('/api/userActivities', {
-    userActivity: $('.activity-option').val()
+    userActivity: $('#activity-option option:selected').text()
   },
   function(data, status) {
     console.log('status ' + status);

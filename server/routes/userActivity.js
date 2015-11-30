@@ -31,7 +31,8 @@ router.get('/userActivity/:id', function(req, res, next) {
 // ADD new userActivity
 router.post('/userActivities', function(req, res, next) {
   models.userActivity.create({
-    userActivity: req.body.userActivity
+    userActivity: req.body.userActivity,
+    userInfoId: req.user.id
   }).then(function(userActivity) {
     res.json(userActivity);
   }).catch(function(err) {

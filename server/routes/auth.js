@@ -6,70 +6,46 @@ var local = require('../auth/local.js');
 
 
 router.post('/login', function(req, res, next) {
-  // console.log('login');
   passport.authenticate('local', function(err, user, info) {
-    // console.log('user ' +user);
-    // console.log('info ' +info);
-    // console.log('err ' +err);
     if (err) {
-      console.log('first if');
       return res.status(500).json({err: err});
     }
     if (!user) {
-      // console.log('second if');
       return res.status(401).json({err: info});
     }
     req.logIn(user, function(err) {
       if (err) {
-        console.log('third if');
         return res.status(500).json({err: 'Could not log in user'});
       }
-      // console.log('second success');
-      console.log(req.user)
+      console.log('req.user.id ' + req.user.id);
+      console.log('req.user ' +req.user.email);
       res.status(200).json({status: 'Login successful!'});
     });
   })(req, res, next);
+});
 
+
+router.get('/getuser', function(req, res, next) {
+  if (err) {
+    console.log(err);
+    return next(err);
+  }
+  if (!req.user) {
+    console.log('No one is logged in');
+  }
+  console.log(req.user.email, "req.user.email");
+  return res.status(200).json({ message: req.user.email });
+});
+
+
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
 });
 
 
 
 module.exports = router;
-
-
-
-// var AuthController = {
-
-//   login: passport.authenticate('local', {
-//     successRedirect: '/auth/login/success',
-//     failureRedirect: '/auth/login/failure'
-//   }),
-
-//   loginSuccess: function(req, res){
-//     console.log('success req ' +req);
-//     console.log('success res ' +res);
-//     res.json({
-//       success: true,
-//       user: req.session.passport.user
-//     });
-//   },
-
-//   loginFailure: function(req, res){
-//     console.log('failure req ' +req);
-//     console.log('failure res ' +res);
-//     res.json({
-//       success:false,
-//       message: 'Invalid email or password.'
-//     });
-//   },
-
-//   logout: function(req, res){
-//     console.log('logout req ' +req);
-//     console.log('logout res ' +res);
-//     req.logout();
-//     res.end();
-//   },
-// };
 
 
 

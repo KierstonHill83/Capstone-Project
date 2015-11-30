@@ -29,9 +29,12 @@ router.get('/activityProperty/:id', function(req, res, next) {
 
 // ADD new activityProperties
 router.post('/activityProperties', function(req, res, next) {
+  console.log(req.userActivity.id);
   models.activityProperty.create({
     propertyName: req.body.propertyName,
-    propertyValue: req.body.propertyValue
+    propertyValue: req.body.propertyValue,
+    userInfoId: req.user.id,
+    userActivityId: req.user.userActivity.id
   }).then(function(activityProperty) {
     res.json(activityProperty);
   }).catch(function(err) {
