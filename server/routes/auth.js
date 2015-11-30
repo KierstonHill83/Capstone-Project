@@ -2,23 +2,21 @@ var flash = require('connect-flash');
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var user = require('../auth/github.js');
+var local = require('../auth/local.js');
 
 
 router.post('/login', function(req, res, next) {
-  console.log('req %j', req);
-  console.log('res %j', res);
-  console.log('login');
+  // console.log('login');
   passport.authenticate('local', function(err, user, info) {
-    console.log('user ' +user);
-    console.log('info ' +info);
-    console.log('err ' +err);
+    // console.log('user ' +user);
+    // console.log('info ' +info);
+    // console.log('err ' +err);
     if (err) {
       console.log('first if');
       return res.status(500).json({err: err});
     }
     if (!user) {
-      console.log('second if');
+      // console.log('second if');
       return res.status(401).json({err: info});
     }
     req.logIn(user, function(err) {
@@ -26,7 +24,8 @@ router.post('/login', function(req, res, next) {
         console.log('third if');
         return res.status(500).json({err: 'Could not log in user'});
       }
-      console.log('second success');
+      // console.log('second success');
+      console.log(req.user)
       res.status(200).json({status: 'Login successful!'});
     });
   })(req, res, next);

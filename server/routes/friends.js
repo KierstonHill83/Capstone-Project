@@ -4,6 +4,7 @@ var models = require('../models/index');
 
 // GET all friends
 router.get('/friends', function(req, res, next) {
+  console.log(req.user)
   models.friends.findAll({
   }).then(function(friends) {
     res.json(friends);

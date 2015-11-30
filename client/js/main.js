@@ -2,6 +2,8 @@ $(document).on('ready', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
   $('.personal-page').hide();
+  $('.activity-form').hide();
+  $('.partner-form').hide();
 
 
   //////////////////
@@ -128,7 +130,8 @@ var socket = io();
 $('#chatForm').hide();
 
 // Grab the value of the initial user name.
-$('#socketform').submit(function() {
+$('#socketform').submit(function(e) {
+  e.preventDefault();
   socket.emit('setName',$('#m').val());
   console.log('name ' +$('#m').val());
   $('#m').val('');
@@ -137,7 +140,8 @@ $('#socketform').submit(function() {
 });
 
 // Grab the value of the person they want to invite.
-$('#privateForm').submit(function() {
+$('#privateForm').submit(function(e) {
+    e.preventDefault();
     socket.emit('createRoom', $('#p').val(), $('#r').val());
     console.log('name '+$('#p').val());
     console.log('room ' +$('#r').val());
@@ -149,7 +153,8 @@ $('#privateForm').submit(function() {
 });
 
 // Grab the value of the message that is being sent.
-$('#chatForm').submit(function() {
+$('#chatForm').submit(function(e) {
+  e.preventDefault();
     socket.emit('chat message', $('#t').val());
     $('#t').val('');
     return false;
@@ -176,20 +181,28 @@ socket.on('chat message', function(msg) {
 // user info form //
 ////////////////////
 
-$('#user-signup').submit(function() {
-  $.post('/api/users', {
-    name: $('#first-name').val(),
-    username: $('#username').val(),
-    email: $('#email').val(),
-    location: $('#location').val(),
-    gender: $('#gender').val(),
-    age: $('#age').val(),
-    password: $('#password').val()
-  },
-  function(data, status) {
-    console.log('data from callback: ' + data);
-    console.log('status from callback: ' + status);
-  });
+$('#user-signup').submit(function(e) {
+  e.preventDefault();
+  if ($('#password').val() === $('#password2').val()) {
+    $.post('/api/users', {
+      name: $('#first-name').val(),
+      username: $('#username').val(),
+      email: $('#email').val(),
+      location: $('#location').val(),
+      gender: $('#gender').val(),
+      age: $('#age').val(),
+      password: $('#password').val()
+    },
+    function(data, status) {
+      console.log('data from callback: ' + data);
+      console.log('status from callback: ' + status);
+    });
+  } else {
+    ////DON'T LET THE PAGE CHANGE VIEWS...NEED AUTHENTICATION REQUIREMENT BEFORE SHOWING NEXT VIEW
+    console.log('Password is not the same');
+  }
+  $('#all-info').hide();
+  $('.personal-page').show();
 });
 
 
@@ -197,7 +210,8 @@ $('#user-signup').submit(function() {
 // User Sign-In //
 //////////////////
 
-$('#signin-form').submit(function() {
+$('#signin-form').submit(function(e) {
+  e.preventDefault();
   console.log('before client post');
   $.post('/auth/login', {
     email: $('#email-signin').val(),
@@ -207,31 +221,48 @@ $('#signin-form').submit(function() {
     console.log('data from signin ' +data);
   });
   console.log($('#email-signin').val());
+  $('#signin-form').hide();
+  $('#all-info').hide();
+  $('#nav-signup').hide();
+  $('.personal-page').show();
+  $('#email-signin').val('');
+  $('#password-signin').val('');
 });
 
 
 
-////////////////////////
-// user activity form //
-////////////////////////
+////////////////////
+// User Activity //
+///////////////////
 
-$('#user-activity').submit(function() {
+$('#user-activity').submit(function(e) {
+  e.preventDefault();
   console.log($('.activity-option').val());
-console.log($('.activity-name').val());
-console.log($('.activity-value').val());
-
   $.post('/api/userActivities', {
-    userActivity: $('.activity-option').val(),
-    propertyName: $('#activity-name').val(),
-    propertyValue: $('#activity-value').val()
+    userActivity: $('.activity-option').val()
   },
   function(data, status) {
-    // console.log('data ' + data);
     console.log('status ' + status);
   });
 });
 
 
+////////////////////////
+// Activity Property //
+///////////////////////
+
+$('#user-activity').submit(function(e) {
+  e.preventDefault();
+  $.post('/api/activityProperties', {
+    propertyName: $('.activity-name').val(),
+    propertyValue: $('.activity-value').val()
+  },
+  function(data, status) {
+    console.log('status ' + status);
+  });
+  console.log($('.activity-name').val());
+  console.log($('.activity-value').val());
+});
 
 
 

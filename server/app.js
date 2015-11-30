@@ -36,17 +36,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
-// app.use(flash());
-// app.use(session({ secret: 'so secret' }));
-// app.use(passport.initialize());
-// app.use(passport.session());
-// app.use(app.router);
+app.use(flash());
 app.use(session({
   secret: 'keyboard cat',
   resave: true,
   saveUninitialized: true
 }));
-// app.use(flash);
 app.use(function(req, res, next) {
   res.locals.sessionFlash = req.session.flash;
   delete req.session.flash;
@@ -68,12 +63,6 @@ app.use('/auth/', authRoutes);
 //   res.sendFile(path.join(__dirname, '../client/views', 'index.html'));
 // console.log('after send to client');
 // });
-
-
-// *** passport config *** //
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
 
 
 // catch 404 and forward to error handler
