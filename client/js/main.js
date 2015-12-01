@@ -4,6 +4,7 @@ $(document).on('ready', function() {
   $('.personal-page').hide();
   $('.activity-form').hide();
   $('.partner-form').hide();
+  $('.signin-page').hide();
 
 
   //////////////////
@@ -66,6 +67,7 @@ $('#nav-home').on('click', function() {
   $('.full-chat').hide();
   $('#all-info').hide();
   $('.personal-page').hide();
+  $('.signin-page').hide();
   $('.home-page').show();
 });
 
@@ -73,17 +75,15 @@ $('#nav-signup').on('click', function() {
   $('.full-chat').hide();
   $('.home-page').hide();
   $('.personal-page').hide();
+  $('.signin-page').hide();
   $('#all-info').show();
 });
 
 /// THIS WILL BE DIFFERENT...WILL HAVE LOGIN AND ON THAT SUBMIT, IT WILL DO THESE THINGS
-$('#nav-signin').on('click', function() {
-  $('.full-chat').hide();
+$('#signin-page').on('click', function() {
   $('#all-info').hide();
   $('.home-page').hide();
-  $('.activity-form').hide();
-  $('.partner-form').hide();
-  $('.personal-page').show();
+  $('.signin-page').show();
 });
 
 
@@ -223,7 +223,8 @@ $('#signin-form').submit(function(e) {
   console.log($('#email-signin').val());
   $('#signin-form').hide();
   $('#all-info').hide();
-  $('#nav-signup').hide();
+  // $('#nav-signup').hide();
+  $('.signin-page').hide();
   $('.personal-page').show();
   $('#email-signin').val('');
   $('#password-signin').val('');
@@ -269,7 +270,7 @@ $('#user-activity').submit(function(e) {
 // Activity Property //
 ///////////////////////
 
-$('#user-activity').submit(function(e) {
+$('#activity-property').submit(function(e) {
   e.preventDefault();
   $.post('/api/activityProperties', {
     propertyName: $('.activity-name').val(),

@@ -2,6 +2,7 @@ var flash = require('connect-flash');
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+
 var local = require('../auth/local.js');
 
 
@@ -25,17 +26,17 @@ router.post('/login', function(req, res, next) {
 });
 
 
-router.get('/getuser', function(req, res, next) {
-  if (err) {
-    console.log(err);
-    return next(err);
-  }
-  if (!req.user) {
-    console.log('No one is logged in');
-  }
-  console.log(req.user.email, "req.user.email");
-  return res.status(200).json({ message: req.user.email });
-});
+// router.get('/getuser', function(req, res, next) {
+//   if (err) {
+//     console.log(err);
+//     return next(err);
+//   }
+//   if (!req.user) {
+//     console.log('No one is logged in');
+//   }
+//   console.log(req.user.email, "req.user.email");
+//   return res.status(200).json({ message: req.user.email });
+// });
 
 
 router.get('/logout', function(req, res){

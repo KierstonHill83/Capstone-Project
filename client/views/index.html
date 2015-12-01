@@ -30,8 +30,8 @@
             <li id="nav-signup"><a href="#">Sign Up</a></li>
             <!-- Form to sign in -->
             <li>
-              <!-- <a  href="#/signin">Sign In</a> -->
-              <form class="form-inline" id="signin-form">
+              <a id="signin-page" href="#/signin">Sign In</a>
+              <!-- <form class="form-inline" id="signin-form">
                 <div class="form-group">
                   <input type="email" class="form-control" id="email-signin" placeholder="Email">
                 </div>
@@ -39,13 +39,40 @@
                   <input type="password" class="form-control" id="password-signin" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-default" id="nav-signin">Sign In</button>
-              </form>
+              </form> -->
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 <!-- END NAV BAR -->
+
+
+<!-- SIGN IN PAGE -->
+    <div class="signin-page">
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="signin-box">
+            <h1>Sign In To My App</h1>
+            <!-- <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> -->
+            <hr>
+            <br>
+            <form id="signin-form">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control signin-input" id="email-signin" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control signin-input" id="password-signin" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-default" id="nav-signin">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END SIGN IN PAGE -->
 
 
 <!-- HOME PAGE -->
@@ -316,7 +343,7 @@
             <p>There will be text about what is happening here and how to work this page.</p>
           </div>
           <br>
-          <hr>
+          <hr class="long-hr">
           <br>
         </div> <!-- close overview -->
 
@@ -325,18 +352,14 @@
           <div class="col-md-6">
             <h1 class="signup">Activity Info</h1>
             <form class="signup-form" id="user-activity">
-              <!-- <div class="btn-group">
-                <button type="button" class="btn btn-default">Choose an Activity</button>
-                <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button> -->
-                <select id="activity-option">
-                  <option value="1">Running</option>
-                  <option value="2">Biking</option>
-                  <option calue="3">Swimming</option>
-                </select>
-              <!-- </div> -->
+              <select id="activity-option">
+                <option value="1">Running</option>
+                <option value="2">Biking</option>
+                <option calue="3">Swimming</option>
+              </select>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <form id="activity-property">
               <div class="form-group">
                 <label for="pace" class="activity-name">Pace</label>
                 <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
@@ -348,7 +371,7 @@
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <br>
-            <hr>
+            <hr class="long-hr">
             <br>
           </div>
         </div> <!-- close activity form -->
@@ -401,7 +424,7 @@
               <button type="button" class="btn btn-default">Submit</button>
             </form>
             <br>
-            <hr>
+            <hr class="long-hr">
             <br>
           </div>
         </div> <!-- close partner form -->

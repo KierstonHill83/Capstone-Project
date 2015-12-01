@@ -147,7 +147,31 @@ a {
   min-width: 215px;
 }
 
-hr {
+.long-hr {
   width: 1250px;
 }
 
+.signin-page {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  text-align: center;
+  background: url(/img/outdoor.jpeg) no-repeat center center;
+  background-size: cover;
+  min-height: 820px;
+  opacity: 0.9;
+}
+
+.signin-box {
+  border-radius: 15%;
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 50px;
+  min-height: 550px;
+}
+
+.signin-input {
+  height: 40px;
+  width: 307px;
+  margin-left: 92px;
+}
