@@ -6,6 +6,9 @@ module.exports = function(sequelize, DataTypes) {
       required: true,
       allowNull: false,
       defaultValue: false
+    },
+    userActivityId: {
+      type: DataTypes.INTEGER
     }
     // userInfoId: {
     //   type: DataTypes.INTEGER,

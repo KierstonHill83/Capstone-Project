@@ -35,8 +35,8 @@ $('#user-activity').submit(function(e) {
   e.preventDefault();
   console.log($('#activity-option option:selected').text());
   $.post('/api/userActivities', {
-    userActivity: $('#activity-option option:selected').text()
-    // userActivityId: $('#activity-option option:selected').val()
+    userActivity: $('#activity-option option:selected').text(),
+    userActivityId: $('#activity-option option:selected').val()
   },
   function(data, status) {
     console.log('status ' + status);

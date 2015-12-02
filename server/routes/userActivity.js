@@ -32,15 +32,16 @@ router.get('/userActivity/:id', function(req, res, next) {
 
 // ADD new userActivity
 router.post('/userActivities', function(req, res, next) {
-  var userId;
-  if(req.user) {
-    userId = req.user.id;
-  } else {
-    userId = 1;
-  }
+  // var userId;
+  // if(req.user) {
+  //   userId = req.user.id;
+  // } else {
+  //   userId = 1;
+  // }
   models.userActivity.create({
     userActivity: req.body.userActivity,
-    userInfoId: userId
+    userInfoId: req.user.id,
+    userActivityId: req.body.userActivityId
   }).then(function(userActivity) {
     res.json(userActivity);
   }).catch(function(err) {
