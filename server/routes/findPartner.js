@@ -9,7 +9,8 @@ var query = 'SELECT distinct f.username, f.age, f.gender, f.location, f.image, f
 router.get('/partners', function(req, res, next) {
   models.sequelize.query(query).spread(function(results, metadata) {
     console.log(results);
-  // Results will be an empty array and metadata will contain the number of affected rows.
+    console.log(results);
+    res.send(results);
   });
 });
 
