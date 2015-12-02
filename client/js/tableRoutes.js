@@ -50,11 +50,16 @@ $('#user-activity').submit(function(e) {
 
 $('#activity-property').submit(function(e) {
   e.preventDefault();
-  $.post('/api/activityProperties', {
+  $.post('/api/activityProperties', { properties: [{
     userActivityId: $('#activity-option option:selected').val(),
-    propertyName: $('.activity-name').val(),
+    propertyName: $('.activity-name').text(),
     propertyValue: $('.activity-value').val()
   },
+  {
+    userActivityId: $('#activity-option option:selected').val(),
+    propertyName: $('.activity-name2').text(),
+    propertyValue: $('.activity-value2').val()
+  }]},
   function(data, status) {
     console.log('status ' + status);
   });
