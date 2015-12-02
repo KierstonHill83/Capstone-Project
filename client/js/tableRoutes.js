@@ -93,17 +93,29 @@ $('#activity-property').submit(function(e) {
 // Find Partner Form //
 ///////////////////////
 
-$('#partner-form').submit(function(e) {
+$('.partner-form').submit(function(e) {
   e.preventDefault();
-  $.get('/api/partners', {
-    gender: $('#gender-partner').val(),
-    age: $('#age-option option:selected').val(),
-    location: $('#location-partner').val(),
-    activityName: $('.property-name').text(),
-    activityProperty: $('#pace-option option:selected').val()
+  var age = $('#age-option option:selected').val().toLowerCase();
+  var gender = $('#gender-partner').val().toLowerCase();
+  var location = $('#location-partner').val().toLowerCase();
+  var userActivity = $('#activity-option option:selected').text().toLowerCase();
+  var activityName = $('.property-name').text().toLowerCase();
+  var activityProperty = $('#pace-option option:selected').val().toLowerCase();
+
+  $.get('/api/partners/' +age+ '/' +gender+ '/' +location+ '/' +userActivity+ '/' +activityName+ '/' +activityProperty, {
+    gender: gender,
+    age: age,
+    location: location,
+    userActivity: userActivity,
+    activityName: activityName,
+    activityProperty: activityProperty
+  },
+  function(data, status) {
+    console.log('status ' + status);
   });
-  console.log($('#gender-partner').val());
-  console.log($('#age-option option:selected').val());
+ 
+  console.log($('#gender-partner').val().toLowerCase());
+  console.log('age', age);
   console.log($('#location-partner').val());
   console.log($('.property-name').text());
   console.log($('#pace-option option:selected').val());
