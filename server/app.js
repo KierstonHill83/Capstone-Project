@@ -19,6 +19,7 @@ var userActivity = require('./routes/userActivity.js');
 var activityProperty = require('./routes/activityProperty.js');
 var friends = require('./routes/friends.js');
 var userChatRooms = require('./routes/userChatRooms.js');
+var partners = require('./routes/findPartner.js');
 var authRoutes = require('./routes/auth.js');
 
 
@@ -58,6 +59,7 @@ app.use('/api/', userActivity);
 app.use('/api/', activityProperty);
 app.use('/api/', friends);
 app.use('/api/', userChatRooms);
+app.use('/api/', partners);
 app.use('/auth/', authRoutes);
 // app.use('/', function(req, res){
 //   res.sendFile(path.join(__dirname, '../client/views', 'index.html'));

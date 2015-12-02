@@ -9,6 +9,7 @@ router.get('/friends', function(req, res, next) {
   }).then(function(friends) {
     res.json(friends);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -23,6 +24,7 @@ router.get('/friend/:id', function(req, res, next) {
   }).then(function(friends) {
     res.json(friends);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -36,6 +38,7 @@ router.post('/friends', function(req, res, next) {
   }).then(function(friends) {
     res.json(friends);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -56,6 +59,7 @@ router.put('/friend/:id', function(req, res, next) {
       });
     }
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -70,6 +74,7 @@ router.delete('/friend/:id', function(req, res, next) {
   }).then(function(friends) {
     res.json(friends);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });

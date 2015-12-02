@@ -127,7 +127,15 @@ describe('userInfo routes', function() {
   it('should update SINGLE user', function(done) {
     chai.request(server)
       .put('/api/user/1')
-      .send({'name': 'Heather'})
+      .send({
+        'username': 'Kierston',
+        'password': 'test',
+        'name': 'Heather',
+        'email': 'sally@sally.com',
+        'age': 20,
+        'gender': 'female',
+        'location': 'boulder'
+      })
       .end(function(err, res) {
         res.should.have.status(200);
         res.should.be.json;

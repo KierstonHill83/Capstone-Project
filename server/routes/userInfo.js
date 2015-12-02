@@ -8,6 +8,7 @@ router.get('/users', function(req, res, next) {
   }).then(function(userInfos) {
     res.json(userInfos);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -22,6 +23,7 @@ router.get('/user/:id', function(req, res, next) {
   }).then(function(userInfo) {
     res.json(userInfo);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -41,6 +43,7 @@ router.post('/users', function(req, res, next) {
   }).then(function(userInfo) {
     res.json(userInfo);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -67,6 +70,7 @@ router.put('/user/:id', function(req, res, next) {
       });
     }
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -81,6 +85,7 @@ router.delete('/user/:id', function(req, res, next) {
   }).then(function(userInfo) {
     res.json(userInfo);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });

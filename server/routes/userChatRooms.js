@@ -8,6 +8,7 @@ router.get('/userChatRooms', function(req, res, next) {
   }).then(function(userChatRooms) {
     res.json(userChatRooms);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -22,6 +23,7 @@ router.get('/userChatRoom/:id', function(req, res, next) {
   }).then(function(userChatRooms) {
     res.json(userChatRooms);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -36,6 +38,7 @@ router.post('/userChatRooms', function(req, res, next) {
   }).then(function(userChatRooms) {
     res.json(userChatRooms);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -57,6 +60,7 @@ router.put('/userChatRoom/:id', function(req, res, next) {
       });
     }
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -71,6 +75,7 @@ router.delete('/userChatRoom/:id', function(req, res, next) {
   }).then(function(userChatRooms) {
     res.json(userChatRooms);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });

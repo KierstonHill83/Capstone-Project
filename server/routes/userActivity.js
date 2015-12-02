@@ -9,6 +9,7 @@ router.get('/userActivities', function(req, res, next) {
   }).then(function(userActivity) {
     res.json(userActivity);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -23,6 +24,7 @@ router.get('/userActivity/:id', function(req, res, next) {
   }).then(function(userActivity) {
     res.json(userActivity);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -30,12 +32,19 @@ router.get('/userActivity/:id', function(req, res, next) {
 
 // ADD new userActivity
 router.post('/userActivities', function(req, res, next) {
+  var userId;
+  if(req.user) {
+    userId = req.user.id;
+  } else {
+    userId = 1;
+  }
   models.userActivity.create({
     userActivity: req.body.userActivity,
-    userInfoId: req.user.id
+    userInfoId: userId
   }).then(function(userActivity) {
     res.json(userActivity);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -56,6 +65,7 @@ router.put('/userActivity/:id', function(req, res, next) {
       });
     }
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -70,6 +80,7 @@ router.delete('/userActivity/:id', function(req, res, next) {
   }).then(function(userActivity) {
     res.json(userActivity);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });

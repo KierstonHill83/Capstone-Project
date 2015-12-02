@@ -380,12 +380,16 @@
         <div class="partner-form">
           <div class="col-md-6">
             <h1 class="signup">What are you looking for in a Partner?</h1>
-            <form class="signup-form">
+            <form id="partner-form">
               <div class="form-group">
                 <label for="location">Location</label>
                 <input type="text" class="form-control" id="location-partner" placeholder="City, State">
               </div>
               <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" class="form-control" id="gender-partner" placeholder="Gender">
+              </div>
+              <!-- <div class="form-group">
                 <label for="gender">Gender</label>
                 <div class="checkbox">
                   <label>
@@ -395,33 +399,45 @@
                     <input type="checkbox"> Female
                   </label>
                 </div>
-              </div>
-              <div class="btn-group">
+              </div> -->
+              <p>Age</p>
+              <!-- <div class="btn-group">
                 <button type="button" class="btn btn-default">Age</button>
                 <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria- haspopup="true" aria-expanded="false">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu">
+                </button> -->
+                <select id="age-option">
+                  <option value="1">Within 5 years</option>
+                  <option value="2">Within 10 years</option>
+                  <option calue="3">More than 10 years</option>
+                </select>
+                <!-- <ul class="dropdown-menu">
                   <li><a href="#">Within 5 years</a></li>
                   <li><a href="#">Within 10 years</a></li>
                   <li><a href="#">More than 10 years</a></li>
                 </ul>
-              </div>
+              </div> -->
             <!-- <div class="form-group">
               <label for="age">Age</label>
               <input type="text" class="form-control" id="age-partner" placeholder="Age">
             </div> -->
-              <div class="checkbox">
+              <p class="property-name">Pace</p>
+              <select id="pace-option">
+                <option value="1">Within 1 minute</option>
+                <option value="2">Within 5 minutes</option>
+                <option calue="3">More than 5 minutes</option>
+              </select>
+              <!-- <div class="checkbox">
                 <label>
                   <input type="checkbox"> Same Pace?
                 </label>
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="distance">Distance</label>
                 <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
               </div>
-              <button type="button" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" id="partner-submit">Submit</button>
             </form>
             <br>
             <hr class="long-hr">
@@ -490,6 +506,10 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/auth.js"></script>
+    <script type="text/javascript" src="/js/chatRoom.js"></script>
+    <script type="text/javascript" src="/js/tableRoutes.js"></script>
+    <script type="text/javascript" src="/js/googleMaps.js"></script>
 
 
   </body>

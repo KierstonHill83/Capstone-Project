@@ -8,6 +8,7 @@ router.get('/activityProperties', function(req, res, next) {
   }).then(function(activityProperty) {
     res.json(activityProperty);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -22,6 +23,7 @@ router.get('/activityProperty/:id', function(req, res, next) {
   }).then(function(activityProperty) {
     res.json(activityProperty);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -29,14 +31,15 @@ router.get('/activityProperty/:id', function(req, res, next) {
 
 // ADD new activityProperties
 router.post('/activityProperties', function(req, res, next) {
-  console.log('req.userActivity ', req.userActivity.id);
   models.activityProperty.create({
     propertyName: req.body.propertyName,
     propertyValue: req.body.propertyValue,
-    userInfoId: req.user.id 
+    userInfoId: req.user.id,
+    userActivityId: req.body.userActivityId 
   }).then(function(activityProperty) {
     res.json(activityProperty);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -58,6 +61,7 @@ router.put('/activityProperty/:id', function(req, res, next) {
       });
     }
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
@@ -72,6 +76,7 @@ router.delete('/activityProperty/:id', function(req, res, next) {
   }).then(function(activityProperty) {
     res.json(activityProperty);
   }).catch(function(err) {
+    res.json(err);
     console.log(err);
   });
 });
