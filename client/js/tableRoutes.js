@@ -37,6 +37,17 @@ function signIn() {
 }
 
 
+/////////////////////
+// Edit User Info //
+////////////////////
+
+$('#edit-profile').on('click', function(id) {
+  $.get('/api/user/' + id, function(data) {
+    console.log(data);
+  })
+});
+
+
 ////////////////////
 // User Activity //
 ///////////////////

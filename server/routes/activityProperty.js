@@ -33,21 +33,22 @@ router.get('/activityProperty/:id', function(req, res, next) {
 router.post('/activityProperties', function(req, res, next) {
   console.log('req ',req.body);
   console.log('req.id ', req.user.id);
-  models.activityProperty.create({
+  var activityProperty1 = {
     propertyName: req.body['properties[0][propertyName]'],
     propertyValue: req.body['properties[0][propertyValue]'],
     userInfoId: req.user.id,
-    userActivityId: req.body['properties[0][userActivityId]'] 
-  }).catch(function(err) {
-    res.json(err);
-    console.log(err);
-  });
-  models.activityProperty.create({
+    userActivityId: req.body['properties[0][userActivityId]']
+  };
+  var activityProperty2 = {
     propertyName: req.body['properties[1][propertyName]'],
     propertyValue: req.body['properties[1][propertyValue]'],
     userInfoId: req.user.id,
     userActivityId: req.body['properties[1][userActivityId]']
-  }).then(function(activityProperty) {
+  };
+  models.activityProperty.bulkCreate([
+    activityProperty1,
+    activityProperty2
+  ]).then(function(activityProperty) {
     console.log('HERE');
     res.json(activityProperty);
   }).catch(function(err) {

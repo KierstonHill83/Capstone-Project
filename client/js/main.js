@@ -42,6 +42,20 @@ $('#signin-page').on('click', function() {
 // Personal Page Sidebar Control //
 ///////////////////////////////////
 
+$('#overview').on('click', function() {
+  $('.partner-form').hide();
+  $('.activity-form').hide();
+  $('.full-chat').hide();
+  $('.overview').show();
+});
+
+$('#edit-profile').on('click', function() {
+  $('.overview').hide();
+  $('.partner-form').hide();
+  $('.activity-form').hide();
+  $('.full-chat').hide();
+});
+
 $('#activity-form').on('click', function() {
   $('.partner-form').hide();
   $('.overview').hide();
@@ -54,13 +68,6 @@ $('#partner-form').on('click', function() {
   $('.activity-form').hide();
   $('.full-chat').hide();
   $('.partner-form').show();
-});
-
-$('#overview').on('click', function() {
-  $('.partner-form').hide();
-  $('.activity-form').hide();
-  $('.full-chat').hide();
-  $('.overview').show();
 });
 
 $('#chat-room').on('click', function() {

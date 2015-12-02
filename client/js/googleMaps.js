@@ -4,7 +4,8 @@ $(document).on('ready', function() {
   // Google Maps //
   /////////////////
 
-  var map = new google.maps.Map(document.getElementById("map-div"),{
+  // Setting the map to Colorado
+  var map = new google.maps.Map(document.getElementById('map-div'),{
     center: {lat:39.393981, lng:-106.016311},
     zoom: 7
   });
@@ -34,11 +35,13 @@ $(document).on('ready', function() {
       map.setZoom(17);
     }
 
+    // Add to map with info
     var marker = new google.maps.Marker({
       position: place.geometry.location,
       map: map
     });
 
+    // Gives the info for the marker that was placed
     var infowindow = new google.maps.InfoWindow({
       content: "<div><h4>"+place.name+"</h4><p>"+place.formatted_address+"</p></div>"
     });
