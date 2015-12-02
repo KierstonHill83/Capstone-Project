@@ -26,6 +26,17 @@ router.post('/login', function(req, res, next) {
 });
 
 
+router.get('/user_data', function(req, res, next) {
+  if (req.user === undefined) {
+    res.json({});
+  } else {
+    res.json({
+      id: req.user
+    });
+  }
+});
+
+
 // router.get('/getuser', function(req, res, next) {
 //   if (err) {
 //     console.log(err);

@@ -41,11 +41,22 @@ function signIn() {
 // Edit User Info //
 ////////////////////
 
-$('#edit-profile').on('click', function(id) {
-  $.get('/api/user/' + id, function(data) {
-    console.log(data);
-  })
+$('#edit-profile').on('click', function() {
+  var id;
+  $.getJSON('/auth/user_data', function(data) {
+    if (data.hasOwnProperty('id')) {
+      console.log('Id: ' + data.id.id);
+      id = data.id.id;
+      return id;
+    }
+  });
+  // var id = req.user.id;
+  // $.get('/api/user/' +id, function(data) {
+  //   console.log(data);
+  // });
 });
+
+
 
 
 ////////////////////
