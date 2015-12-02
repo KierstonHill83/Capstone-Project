@@ -6,8 +6,8 @@ $('#signin-form').submit(function(e) {
   e.preventDefault();
   console.log('before client post');
   $.post('/auth/login', {
-    email: $('#email-signin').val(),
-    password: $('#password-signin').val()
+    email: $('#email-signin').val().toLowerCase(),
+    password: $('#password-signin').val().toLowerCase()
   },
   function(data, status) {
     console.log('status auth ', status);
@@ -34,9 +34,10 @@ $('#logout').on('click', function() {
   }, function(data, status) {
     console.log(status);
   });
-  // $('#all-info').hide();
-  // $('.personal-page').hide();
-  // $('#nav-signup').hide();
-  // $('#signin-form').show();
-  // $('.home-page').show();
+  alert('Logout was successful');
+  $('#all-info').hide();
+  $('.personal-page').hide();
+  $('#nav-signup').show();
+  $('#signin-form').show();
+  $('.home-page').show();
 });

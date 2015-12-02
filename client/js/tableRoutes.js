@@ -6,13 +6,13 @@ $('#user-signup').submit(function(e) {
   e.preventDefault();
   if ($('#password').val() === $('#password2').val()) {
     $.post('/api/users', {
-      name: $('#first-name').val(),
-      username: $('#username').val(),
-      email: $('#email').val(),
-      location: $('#location').val(),
-      gender: $('#gender').val(),
-      age: $('#age').val(),
-      password: $('#password').val()
+      name: $('#first-name').val().toLowerCase(),
+      username: $('#username').val().toLowerCase(),
+      email: $('#email').val().toLowerCase(),
+      location: $('#location').val().toLowerCase(),
+      gender: $('#gender').val().toLowerCase(),
+      age: $('#age').val().toLowerCase(),
+      password: $('#password').val().toLowerCase()
     },
     function(data, status) {
       console.log('data from callback: ' + data);
@@ -22,9 +22,19 @@ $('#user-signup').submit(function(e) {
     ////DON'T LET THE PAGE CHANGE VIEWS...NEED AUTHENTICATION REQUIREMENT BEFORE SHOWING NEXT VIEW, DON'T ADD USER TO THE DATABASE
     console.log('Password is not the same');
   }
+  setTimeout(signIn, 2000);
   $('#all-info').hide();
   $('.personal-page').show();
 });
+
+function signIn() {
+  $.post('/auth/login', {
+    email: $('#email').val().toLowerCase(),
+    password: $('#password').val().toLowerCase() 
+  }, function(data, status) {
+    console.log('status ', status);
+  });
+}
 
 
 ////////////////////
@@ -35,8 +45,8 @@ $('#user-activity').submit(function(e) {
   e.preventDefault();
   console.log($('#activity-option option:selected').text());
   $.post('/api/userActivities', {
-    userActivity: $('#activity-option option:selected').text(),
-    userActivityId: $('#activity-option option:selected').val()
+    userActivity: $('#activity-option option:selected').text().toLowerCase(),
+    userActivityId: $('#activity-option option:selected').val().toLowerCase()
   },
   function(data, status) {
     console.log('status ' + status);
@@ -51,14 +61,14 @@ $('#user-activity').submit(function(e) {
 $('#activity-property').submit(function(e) {
   e.preventDefault();
   $.post('/api/activityProperties', { properties: [{
-    userActivityId: $('#activity-option option:selected').val(),
-    propertyName: $('.activity-name').text(),
-    propertyValue: $('.activity-value').val()
+    userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+    propertyName: $('.activity-name').text().toLowerCase(),
+    propertyValue: $('.activity-value').val().toLowerCase()
   },
   {
-    userActivityId: $('#activity-option option:selected').val(),
-    propertyName: $('.activity-name2').text(),
-    propertyValue: $('.activity-value2').val()
+    userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+    propertyName: $('.activity-name2').text().toLowerCase(),
+    propertyValue: $('.activity-value2').val().toLowerCase()
   }]},
   function(data, status) {
     console.log('status ' + status);

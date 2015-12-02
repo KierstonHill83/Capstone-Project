@@ -5,7 +5,9 @@ var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../server/app.js');
 var models = require('../server/models/index');
+// var passportStub = require('passport-stub');
 
+// passportStub.install(server);
 var should = chai.should();
 chai.use(chaiHttp);
 
@@ -13,27 +15,43 @@ describe('userActivity routes', function() {
 
   beforeEach(function(done) {
     models.userInfo.sync({
-      force:true
+      force: true
     }).then(function() {
-      models.userActivity.sync({
-        force: true
+      models.userInfo.create({
+        username: 'Kierston',
+        password: 'test',
+        name: 'Sally',
+        email: 'sally@sally.com',
+        age: 20,
+        gender: 'female',
+        location: 'boulder'
       }).then(function() {
-        models.userActivity.create({
-          userActivity: 'running'
+        models.userActivity.sync({
+          force: true
         }).then(function() {
-          done();
+          models.userActivity.create({
+            userActivity: 'running'
+          }).then(function() {
+            done();
+          });
         });
       });
     });
   });
 
+
   afterEach(function(done) {
-    models.userActivity.sync({
+    models.userInfo.sync({
       force: true
     }).then(function() {
-      done();
+      models.userActivity.sync({
+        force: true
+      }).then(function() {
+        done();
+      });
     });
   });
+
 
   it('should list ALL userActivities', function(done) {
     chai.request(server)
@@ -64,7 +82,7 @@ describe('userActivity routes', function() {
       });
   });
 
-  xit('should add a SINGLE userActivities', function(done) {
+  it.only('should add a SINGLE userActivities', function(done) {
     chai.request(server)
       .post('/api/userActivities')
       .send({
