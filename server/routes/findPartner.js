@@ -23,7 +23,8 @@ router.get('/partners/:age/:gender/:location/:userActivity/:activityName/:activi
     for (var i = 0; i < results.length - 1; i++) {
       if (results[i].id !== results[i + 1].id) {
         prop.push({propertyName: results[i].propertyName, propertyValue: results[i].propertyValue});
-        allProperties.push({age: results[i].age,
+        allProperties.push({id: results[i].id,
+                            age: results[i].age,
                             gender: results[i].gender,
                             image: results[i].image,
                             location: results[i].location,
@@ -37,7 +38,8 @@ router.get('/partners/:age/:gender/:location/:userActivity/:activityName/:activi
     }
     if (results.length > 0) {
       prop.push({propertyName: results[i].propertyName, propertyValue: results[i].propertyValue});
-      allProperties.push({age: results[i].age,
+      allProperties.push({id: results[i].id,
+                          age: results[i].age,
                           gender: results[i].gender,
                           image: results[i].image,
                           location: results[i].location,
@@ -49,16 +51,6 @@ router.get('/partners/:age/:gender/:location/:userActivity/:activityName/:activi
     res.send(allProperties);
   });
 });
-
-
-// age: 30
-// gender: "male"
-// image: null
-// location: "denver"
-// propertyName: "Pace"
-// propertyValue: "8"
-// userActivity: "running"
-// username: "dan"
 
 
 module.exports = router;

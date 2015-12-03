@@ -1,4 +1,5 @@
 var userId;
+var friendId;
 
 ////////////////////////////////
 // User Info Form - Register //
@@ -131,20 +132,19 @@ $('.partner-form').submit(function(e) {
     activityProperty: activityProperty
   },
   function(data, status) {
+    friendId = data.id;
+    showPartners1(data);
     console.log('status ' + status);
     console.log('data ', data);
-    showPartners1(data);
   });
- 
-  // console.log($('#gender-partner').val().toLowerCase());
-  // console.log('age', age);
-  // console.log($('#location-partner').val());
-  // console.log($('.property-name').text());
-  // console.log($('#pace-option option:selected').val());
   $('.partner-form').hide();
   $('.show-partners').show();
 });
 
+
+///////////////////////
+// Helper Functions //
+//////////////////////
 
 function showPartners1(data) {
   $('#p-img1').html(data[0].image);
