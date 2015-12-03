@@ -28,6 +28,10 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+////////////////
+// CHAT ROOM //
+///////////////
+
 // add socket stuff here!
 var io = require('socket.io')(server);
 console.log('before connection');
@@ -48,6 +52,7 @@ io.on('connection', function(socket) {
     socket.room = name;
     rooms.push(name);
     socket.join(name);
+    console.log('originalUser ', name);
     console.log('invitee ' +invitee);
 
       for (a in io.sockets.connected) {
@@ -70,6 +75,11 @@ io.on('connection', function(socket) {
     io.sockets.in(socket.room).emit('chat message', msg);
   });
 });
+
+////////////////////
+// END CHAT ROOM //
+///////////////////
+
 
 /**
  * Normalize a port into a number, string, or false.

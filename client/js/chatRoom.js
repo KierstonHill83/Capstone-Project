@@ -24,17 +24,27 @@ $('#chatForm').hide();
 // });
 
 // Grab the value of the person they want to invite.
-$('#privateForm').submit(function(e) {
-    e.preventDefault();
-    socket.emit('createRoom', $('#p').val(), $('#r').val());
-    console.log('name '+$('#p').val());
-    console.log('room ' +$('#r').val());
-    $('#p').val('');
-    $('#r').val('');
-    $('#chatForm').show();
-    $('#privateForm').hide();
-    return false;
+
+// $('#privateForm').submit(function(e) {
+//     e.preventDefault();
+//     socket.emit('createRoom', $('#p').val(), $('#r').val());
+//     console.log('name '+$('#p').val());
+//     console.log('room ' +$('#r').val());
+//     $('#p').val('');
+//     $('#r').val('');
+//     $('#chatForm').show();
+//     $('#privateForm').hide();
+//     return false;
+// });
+
+// DO THIS WHEN CONFIRM IS CLICKED ON THE PARTNER
+$('#confirm-chat').on('click', function(e) {
+  e.preventDefault();
+  socket.emit('createRoom', userId, friendId);
+  console.log('userId ', userId);
+  console.log('friendId ', friendId);
 });
+
 
 // Grab the value of the message that is being sent.
 $('#chatForm').submit(function(e) {
