@@ -18,20 +18,13 @@ router.get('/partners/:age/:gender/:location/:userActivity/:activityName/:activi
   models.sequelize.query(query, { type: models.sequelize.QueryTypes.SELECT}).then(function(results) {
     console.log('INSIDE THE QUERY');
     console.log('results', results);
+    res.send(results);
   });
 });
 
 
 module.exports = router;
 
-
-// models.sequelize.query(query).spread(function(results, metadata) {
-//     console.log('INSIDE THE QUERY');
-//     console.log('results ',results);
-//     console.log('metadata ', metadata);
-//     res.send(metadata);
-//   });
-// });
 
 
 // select distinct f.username,
