@@ -37,12 +37,18 @@ $('#chatForm').hide();
 //     return false;
 // });
 
-// DO THIS WHEN CONFIRM IS CLICKED ON THE PARTNER
-$('#confirm-chat').on('click', function(e) {
+// DO THIS WHEN CONFIRM IS CLICKED ON THE RECOMMENDED PARTNER...ADD TO FRIENDS TABLE WITH PENDING AS THE STATUS
+$('.confirm-chat').on('click', function(e) {
   e.preventDefault();
   socket.emit('createRoom', userId, friendId);
   console.log('userId ', userId);
   console.log('friendId ', friendId);
+});
+
+/// WHEN THE FRIEND CLICKS THE LINK THAT IS SENT WITH THEIR IMAGE, MAYBE ON A HOVER IT WILL GIVE THEIR INFO DETAILS...THEY WILL JOIN THE ROOM...CHANGE FRIEND STATUS TO FRIEND IN FRIENDS TABLE
+// Append the join me message link to the screen.
+socket.on('privateChat', function(msg) {
+    $('#message').append($('<li>').html(msg));
 });
 
 
@@ -54,10 +60,6 @@ $('#chatForm').submit(function(e) {
     return false;
 });
 
-// Append the join me message link to the screen.
-socket.on('privateChat', function(msg) {
-    $('#message').append($('<li>').html(msg));
-});
 
 // Console log the messsage
 socket.on('private', function(msg) {

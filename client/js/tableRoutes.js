@@ -132,8 +132,9 @@ $('.partner-form').submit(function(e) {
     activityProperty: activityProperty
   },
   function(data, status) {
-    friendId = data.id;
+    friendId = data[0].id;
     showPartners1(data);
+    console.log('friendId in partnerform ',friendId);
     console.log('status ' + status);
     console.log('data ', data);
   });
