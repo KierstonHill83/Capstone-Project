@@ -20,7 +20,7 @@ router.post('/login', function(req, res, next) {
       }
       console.log('req.user.id ' + req.user.id);
       console.log('req.user ' +req.user.email);
-      res.status(200).json({status: 'Login successful!'});
+      res.status(200).json({status: 'Login successful!', data: req.user});
     });
   })(req, res, next);
 });

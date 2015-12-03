@@ -1,3 +1,5 @@
+var userId;
+
 ////////////////////////////////
 // User Info Form - Register //
 ///////////////////////////////
@@ -15,8 +17,13 @@ $('#user-signup').submit(function(e) {
       password: $('#password').val().toLowerCase()
     },
     function(data, status) {
-      console.log('data from callback: ' + data);
-      console.log('status from callback: ' + status);
+      if (status === 'success') {
+        userId = data.id;
+        startSocket();
+        console.log('userId', userId);
+      } else {
+        userId = null;
+      }
     });
   } else {
     ////DON'T LET THE PAGE CHANGE VIEWS...NEED AUTHENTICATION REQUIREMENT BEFORE SHOWING NEXT VIEW, DON'T ADD USER TO THE DATABASE
@@ -42,28 +49,23 @@ function signIn() {
 ////////////////////
 
 $('#edit-profile').on('click', function() {
-   
-  function getId() {
-    $.getJSON('/auth/user_data', function(data) {
-      if (data.hasOwnProperty('id')) {
-        console.log('Id: ' + data.id.id);
-        id = data.id.id;
-        return id;
-      }
-    });
-  }
-
-  var id = getId();
-
-  setTimeout(getUser(id), 5000);
-
-});
-
-function getUser(id) {
-  $.get('/api/user/' +id, function(data) {
+  // function getId() {
+  //   $.getJSON('/auth/user_data', function(data) {
+  //     if (data.hasOwnProperty('id')) {
+  //       console.log('Id: ' + data.id.id);
+  //       id = data.id.id;
+  //       getUser(id);
+  //       return id;
+  //     }
+  //   });
+  // }
+  $.get('/api/user/' +userId, function(data) {
     console.log(data);
   });
-}
+});
+
+//RE-POPULATE THE FORM WITH DATA
+// RUN UPDATE ON SUBMIT
 
 
 ////////////////////
@@ -131,14 +133,30 @@ $('.partner-form').submit(function(e) {
   function(data, status) {
     console.log('status ' + status);
     console.log('data ', data);
+    showPartners1(data);
   });
  
-  console.log($('#gender-partner').val().toLowerCase());
-  console.log('age', age);
-  console.log($('#location-partner').val());
-  console.log($('.property-name').text());
-  console.log($('#pace-option option:selected').val());
+  // console.log($('#gender-partner').val().toLowerCase());
+  // console.log('age', age);
+  // console.log($('#location-partner').val());
+  // console.log($('.property-name').text());
+  // console.log($('#pace-option option:selected').val());
+  $('.partner-form').hide();
+  $('.show-partners').show();
 });
 
+
+function showPartners1(data) {
+  $('#p-img1').html(data[0].image);
+  $('#p-name1').html(data[0].username);
+  $('#p-age1').html(data[0].age);
+  $('#p-gender1').html(data[0].gender);
+  $('#p-location').html(data[0].location);
+  $('#p-activity1').html(data[0].userActivity);
+  $('#p-property-name1').html(data[0].prop[0].propertyName);
+  $('#p-property-value1').html(data[0].prop[0].propertyValue);
+  $('#p-property-name2').html(data[0].prop[1].propertyName);
+  $('#p-property-value2').html(data[0].prop[1].propertyValue);
+}
 
 

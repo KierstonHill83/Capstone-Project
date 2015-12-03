@@ -7,15 +7,21 @@ var socket = io();
 
 $('#chatForm').hide();
 
+
 // Grab the value of the initial user name.
-$('#socketform').submit(function(e) {
-  e.preventDefault();
-  socket.emit('setName',$('#m').val());
-  console.log('name ' +$('#m').val());
-  $('#m').val('');
-  $('#socketform').hide();
-  return false;
-});
+
+// $('#user-signup').submit(function(e) {
+//   e.preventDefault();
+  // socket.emit('setName',$('#m').val());
+  // console.log('name ' +$('#m').val());
+  function startSocket() {
+    console.log(userId);
+    socket.emit('setName', userId);
+    $('#m').val('');
+    $('#socketform').hide();
+    return false;
+  }
+// });
 
 // Grab the value of the person they want to invite.
 $('#privateForm').submit(function(e) {

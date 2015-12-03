@@ -36,9 +36,9 @@ var rooms = [];
 // Set the socket to the name that is entered. This is the username.
 io.on('connection', function(socket) {
   console.log('inside first connection');
-  socket.on('setName', function(name) {
-    socket.name = name;
-    console.log(socket.name);
+  socket.on('setName', function(id) {
+    socket.name = id;
+    console.log('socket.name ', socket.name);
   });
 
   // Create a room that is named the name of the user. Push that into the rooms array so it can be

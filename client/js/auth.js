@@ -10,8 +10,13 @@ $('#signin-form').submit(function(e) {
     password: $('#password-signin').val().toLowerCase()
   },
   function(data, status) {
+    if (status === 'success') {
+      userId = data.data.id;
+    } else {
+      userId = null;
+    }
     console.log('status auth ', status);
-    console.log('data from signin ' +data);
+    console.log('data from signin ', data.data);
   });
   console.log($('#email-signin').val());
   $('#signin-form').hide();

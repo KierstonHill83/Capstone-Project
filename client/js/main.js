@@ -6,6 +6,7 @@ $(document).on('ready', function() {
   $('.activity-form').hide();
   $('.partner-form').hide();
   $('.signin-page').hide();
+  $('.show-partners').hide();
 
 });
 
