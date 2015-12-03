@@ -130,6 +130,7 @@ $('.partner-form').submit(function(e) {
   },
   function(data, status) {
     console.log('status ' + status);
+    console.log('data ', data);
   });
  
   console.log($('#gender-partner').val().toLowerCase());

@@ -14,13 +14,51 @@ router.get('/partners/:age/:gender/:location/:userActivity/:activityName/:activi
   var userActivity = req.params.userActivity;
   var activityName = req.params.activityName;
   var activityProperty = req.params.activityProperty;
-  var query = 'SELECT distinct f.username, f.age, f.gender, f.location, f.image, fa."userActivity", p2."propertyName", p2."propertyValue" FROM "userInfos" u, "userInfos" f, "userActivities" ua, "userActivities" fa, "activityProperties" p1, "activityProperties" p2 WHERE u.id = '+id+' AND u.id != f.id AND f.age between u.age - '+age+' AND u.age + '+age+' AND f.gender = '+'\''+gender+'\''+' AND f.location = '+'\''+location+'\''+' AND u.id = ua."userInfoId" AND ua."userActivity" = '+'\''+userActivity+'\''+' AND ua."userActivity" = fa."userActivity" AND ua."userInfoId" = p1."userInfoId" AND ua."userActivityId" = p1."userActivityId" AND f.id = p2."userInfoId" AND p1."userActivityId" = p2."userActivityId" AND p1."propertyName" = p2."propertyName" ;';
+  var query = 'SELECT distinct f.id, f.username, f.age, f.gender, f.location, f.image, fa."userActivity", p2."propertyName", p2."propertyValue" FROM "userInfos" u, "userInfos" f, "userActivities" ua, "userActivities" fa, "activityProperties" p1, "activityProperties" p2 WHERE u.id = '+id+' AND u.id != f.id AND f.age between u.age - '+age+' AND u.age + '+age+' AND f.gender = '+'\''+gender+'\''+' AND f.location = '+'\''+location+'\''+' AND u.id = ua."userInfoId" AND ua."userActivity" = '+'\''+userActivity+'\''+' AND ua."userActivity" = fa."userActivity" AND ua."userInfoId" = p1."userInfoId" AND ua."userActivityId" = p1."userActivityId" AND f.id = p2."userInfoId" AND p1."userActivityId" = p2."userActivityId" AND p1."propertyName" = p2."propertyName" ORDER BY f.id ASC;';
   models.sequelize.query(query, { type: models.sequelize.QueryTypes.SELECT}).then(function(results) {
     console.log('INSIDE THE QUERY');
     console.log('results', results);
-    res.send(results);
+    var allProperties = [];
+    var prop = [];
+    for (var i = 0; i < results.length - 1; i++) {
+      if (results[i].id !== results[i + 1].id) {
+        prop.push({propertyName: results[i].propertyName, propertyValue: results[i].propertyValue});
+        allProperties.push({age: results[i].age,
+                            gender: results[i].gender,
+                            image: results[i].image,
+                            location: results[i].location,
+                            userActivity: results[i].userActivity,
+                            username: results[i].username, 
+                            prop: prop});
+        prop = [];
+      } else {
+        prop.push({propertyName: results[i].propertyName, propertyValue: results[i].propertyValue});
+      }
+    }
+    if (results.length > 0) {
+      prop.push({propertyName: results[i].propertyName, propertyValue: results[i].propertyValue});
+      allProperties.push({age: results[i].age,
+                          gender: results[i].gender,
+                          image: results[i].image,
+                          location: results[i].location,
+                          userActivity: results[i].userActivity,
+                          username: results[i].username, 
+                          prop: prop});
+    }
+    console.log('allProperties ', allProperties);
+    res.send(allProperties);
   });
 });
+
+
+// age: 30
+// gender: "male"
+// image: null
+// location: "denver"
+// propertyName: "Pace"
+// propertyValue: "8"
+// userActivity: "running"
+// username: "dan"
 
 
 module.exports = router;
