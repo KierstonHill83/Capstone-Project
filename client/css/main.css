@@ -1,6 +1,11 @@
+/*original yellow: FFBF53*/
+
 body {
-  font-family: 'Signika', sans-serif;
-  font-size: 20px;
+  /*font-family: 'Signika', sans-serif;*/
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  background-color: #F7F1F2;
 }
 
 a {
@@ -9,14 +14,18 @@ a {
 
 .navbar {
   margin-bottom: 0;
-  background-color: black;
+  background-color: white;
   padding-left: 15px;
   padding-right: 15px;
+  
+}
+
+.nav-text {
+  color: black;
 }
 
 .headers {
   text-align: center;
-  font-family: 'Special Elite', cursive;
   font-size: 60px;
   margin-top: 0;
   padding-top: 40px;
@@ -27,7 +36,7 @@ a {
   padding-top: 80px;
   padding-bottom: 50px;
   text-align: center;
-  background: url(/img/running.jpg) no-repeat center center;
+  background: url(/img/running2.jpeg) no-repeat center center;
   background-size: cover;
   height: 810px;
 }
@@ -40,30 +49,34 @@ a {
 
 .title {
   font-size: 7em;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
   text-shadow: 4px 4px 7px black;
   color: white;
 }
 
 .tagline {
   font-size: 4em;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
   text-shadow: 4px 4px 7px black;
   color: white;
 }
 
 .info {
-  background-color: #336699;
+  background-color: #093461;
   color: white;
 }
 
 .info-header {
   padding-bottom: 20px;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
 }
 
 .info-img {
   font-size: 60px;
-  color: black;
+  color: white;
   text-align: center;
 }
 
@@ -79,7 +92,6 @@ a {
 
 .testimonial-img {
   border-radius: 50%;
-  border: 5px solid;
   height: 275px;
   width: 275px;
 }
@@ -132,6 +144,10 @@ a {
   border: 2px solid;
 }
 
+.panel {
+  background-color: #F7F1F2;
+}
+
 #place-input {
   width: 70%;
 }
@@ -145,10 +161,14 @@ a {
 }
 
 .nav-sidebar {
-  background-color: gray;
+  background-color: #093461;
   min-height: 800px;
   position: fixed;
-  min-width: 215px;
+  min-width: 240px;
+}
+
+.sidebar-text {
+  color: white;
 }
 
 .long-hr {
@@ -159,10 +179,9 @@ a {
   padding-top: 80px;
   padding-bottom: 50px;
   text-align: center;
-  background: url(/img/outdoor.jpeg) no-repeat center center;
+  background-color: #093461;
   background-size: cover;
   min-height: 820px;
-  opacity: 0.9;
 }
 
 .signin-box {
@@ -179,6 +198,26 @@ a {
   width: 307px;
   margin-left: 92px;
 }
+
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  margin-left: 92px;
+}
+
+.left-addon .glyphicon { 
+  left:  0px;
+}
+
+.left-addon input { 
+  padding-left:  30px; 
+}
+
 
 /*.show-partners {
   text-align: left;

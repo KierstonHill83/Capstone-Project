@@ -4,8 +4,7 @@
 
 $('#signin-form').submit(function(e) {
   e.preventDefault();
-
-  console.log('before client post');
+  // console.log('before client post');
   $.post('/auth/login', {
     email: $('#email-signin').val().toLowerCase(),
     password: $('#password-signin').val().toLowerCase()
@@ -15,10 +14,11 @@ $('#signin-form').submit(function(e) {
       userId = data.data.id;
     } else {
       userId = null;
+      console.log('error', data.data);
     }
     startSocket(userId);
-    console.log('status auth ', status);
-    console.log('data from signin ', data.data);
+    // console.log('status auth ', status);
+    // console.log('data from signin ', data.data);
   });
   console.log($('#email-signin').val());
   $('#signin-form').hide();

@@ -7,6 +7,7 @@ $(document).on('ready', function() {
   $('.partner-form').hide();
   $('.signin-page').hide();
   $('.show-partners').hide();
+  $('#edit-info').hide();
 
 });
 
@@ -20,6 +21,7 @@ $('#nav-home').on('click', function() {
   $('#all-info').hide();
   $('.personal-page').hide();
   $('.signin-page').hide();
+  $('#edit-info').hide();
   $('.home-page').show();
 });
 
@@ -28,6 +30,7 @@ $('#nav-signup').on('click', function() {
   $('.home-page').hide();
   $('.personal-page').hide();
   $('.signin-page').hide();
+  $('#edit-info').hide();
   $('#all-info').show();
 });
 
@@ -47,6 +50,7 @@ $('#overview').on('click', function() {
   $('.partner-form').hide();
   $('.activity-form').hide();
   $('.full-chat').hide();
+  $('#edit-info').hide();
   $('.overview').show();
 });
 
@@ -55,12 +59,14 @@ $('#edit-profile').on('click', function() {
   $('.partner-form').hide();
   $('.activity-form').hide();
   $('.full-chat').hide();
+  $('#edit-info').show();
 });
 
 $('#activity-form').on('click', function() {
   $('.partner-form').hide();
   $('.overview').hide();
   $('.full-chat').hide();
+  $('#edit-info').hide();
   $('.activity-form').show();
 });
 
@@ -68,14 +74,16 @@ $('#partner-form').on('click', function() {
   $('.overview').hide();
   $('.activity-form').hide();
   $('.full-chat').hide();
+  $('#edit-info').hide();
   $('.partner-form').show();
 });
 
 $('#chat-room').on('click', function() {
   $('.overview').hide();
   $('.activity-form').hide();
-  $('.partner').hide();
+  $('.partner-form').hide();
   $('.show-partners').hide();
+  $('#edit-info').hide();
   $('.full-chat').show();
 });
 

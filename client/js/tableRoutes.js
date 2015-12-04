@@ -50,18 +50,8 @@ function signIn() {
 ////////////////////
 
 $('#edit-profile').on('click', function() {
-  // function getId() {
-  //   $.getJSON('/auth/user_data', function(data) {
-  //     if (data.hasOwnProperty('id')) {
-  //       console.log('Id: ' + data.id.id);
-  //       id = data.id.id;
-  //       getUser(id);
-  //       return id;
-  //     }
-  //   });
-  // }
   $.get('/api/user/' +userId, function(data) {
-    console.log(data);
+    console.log('data from edit ',data);
   });
 });
 

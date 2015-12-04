@@ -40,9 +40,6 @@ var socket = io();
 // DO THIS WHEN CONFIRM IS CLICKED ON THE RECOMMENDED PARTNER...ADD TO FRIENDS TABLE WITH PENDING AS THE STATUS
 $('.confirm-chat').on('click', function(e) {
   e.preventDefault();
-
-  // socket.emit('setName', userId);
-  // socket.emit('setName', friendId);
   socket.emit('createRoom', userId, friendId);
   console.log('userId ', userId);
   console.log('friendId ', friendId);
@@ -72,7 +69,7 @@ $('#chatForm').submit(function(e) {
 });
 
 socket.on('privateChat', function(msg) {
-    console.log('message', msg)
+    console.log('message', msg);
     $('#message').append($('<li id="chat-link">').html(msg));
     openChat();
 });

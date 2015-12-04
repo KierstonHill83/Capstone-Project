@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
@@ -21,25 +22,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="nav-home" href="/#/">Active Hound</a>
+          <a class="navbar-brand nav-text" id="nav-home" href="/#/">Active Hound</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li id="nav-signup"><a href="#">Sign Up</a></li>
+            <li id="nav-signup"><a href="#" class="nav-text">Sign Up</a></li>
             <!-- Form to sign in -->
             <li>
-              <a id="signin-page" href="#/signin">Sign In</a>
-              <!-- <form class="form-inline" id="signin-form">
-                <div class="form-group">
-                  <input type="email" class="form-control" id="email-signin" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="password-signin" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-default" id="nav-signin">Sign In</button>
-              </form> -->
+              <a id="signin-page" href="#/signin" class="nav-text">Sign In</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -58,13 +50,15 @@
             <hr>
             <br>
             <form id="signin-form">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control signin-input" id="email-signin" placeholder="Email">
+              <div class="form-group inner-addon left-addon">
+                <!-- <label for="email">Email</label> -->
+                <i class="glyphicon glyphicon-envelope"></i>
+                <input type="email" class="form-control signin-input" id="email-signin" placeholder="  Email">
               </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control signin-input" id="password-signin" placeholder="Password">
+              <div class="form-group inner-addon left-addon">
+                <!-- <label for="password">Password</label> -->
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                <input type="password" class="form-control signin-input" id="password-signin" placeholder="  Password">
               </div>
               <button type="submit" class="btn btn-default" id="nav-signin">Submit</button>
             </form>
@@ -78,7 +72,7 @@
 <!-- HOME PAGE -->
     <div class="home-page">
       <div class="top-header">
-        <h1 class="title">ACTIVE ALLIES</h1>
+        <h1 class="title">ACTIVE DUO</h1>
         <h1 class="tagline">YOU'LL NEVER HAVE TO DO IT ALONE</h1>
       </div>
     
@@ -326,15 +320,16 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li id="overview" class="active"><a href="#">Overview</a></li>
-            <li id="edit-profile"><a href="#">Edit Profile</a></li>
-            <li id="activity-form"><a href="#">Edit Activity</a></li>
-            <li id="partner-form"><a href="#">Edit Looking For</a></li>
-            <li id="chat-room"><a href="#">Chat Room</a></li>
-            <li><a href="#">Help</a></li>
-            <li id="logout"><a href="#">Logout</a></li>
+            <li id="overview" class="active"><a href="#" class="sidebar-text">Overview</a></li>
+            <li id="edit-profile"><a href="#" class="sidebar-text">Edit Profile</a></li>
+            <li id="activity-form"><a href="#" class="sidebar-text">Edit Activity</a></li>
+            <li id="partner-form"><a href="#" class="sidebar-text">Edit Looking For</a></li>
+            <li id="chat-room"><a href="#" class="sidebar-text">Chat Room</a></li>
+            <li><a href="#" class="sidebar-text">Help</a></li>
+            <li id="logout"><a href="#" class="sidebar-text">Logout</a></li>
           </ul>
         </div>
+
 
         <!-- Overview -->
         <div class="overview">
@@ -346,6 +341,60 @@
           <hr class="long-hr">
           <br>
         </div> <!-- close overview -->
+
+
+        <!-- Edit User Info -->
+        <div class="container" id="edit-info">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- User Input -->
+              <h1 class="signup">User Info</h1>
+              <form class="edit-info" id="edit-signup">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="edit-first" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" id="edit-last" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="edit-username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="edit-email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input type="text" class="form-control" id="edit-location" placeholder="City, State">
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <input type="text" class="form-control" id="edit-gender" placeholder="Gender">
+                </div>
+                <div class="form-group">
+                  <label for="age">Age</label>
+                  <input type="text" class="form-control" id="edit-age" placeholder="Age">
+                </div>
+                <div class="form-group">
+                  <label for="photo">Upload a Photo</label>
+                  <input type="text" class="form-control" id="edit-photo" placeholder="Photo">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="edit-password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="password">Confirm Password</label>
+                  <input type="password" class="form-control" id="edit-password2" placeholder="Confirm Password">
+                </div>
+                <button type="submit" id="edit-submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div> <!-- close edit user info -->
 
         <!-- Activity Input -->
         <div class="activity-form">
@@ -394,50 +443,18 @@
                 <label for="gender">Gender</label>
                 <input type="text" class="form-control" id="gender-partner" placeholder="Gender">
               </div>
-              <!-- <div class="form-group">
-                <label for="gender">Gender</label>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Male
-                  </label>
-                  <label>
-                    <input type="checkbox"> Female
-                  </label>
-                </div>
-              </div> -->
               <p>Age</p>
-              <!-- <div class="btn-group">
-                <button type="button" class="btn btn-default">Age</button>
-                <button type="button" class="btn btn-defulat dropdown-toggle" data-toggle="dropdown" aria- haspopup="true" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button> -->
-                <select id="age-option">
-                  <option value="5">Within 5 years</option>
-                  <option value="10">Within 10 years</option>
-                  <option calue="20">More than 10 years</option>
-                </select>
-                <!-- <ul class="dropdown-menu">
-                  <li><a href="#">Within 5 years</a></li>
-                  <li><a href="#">Within 10 years</a></li>
-                  <li><a href="#">More than 10 years</a></li>
-                </ul>
-              </div> -->
-            <!-- <div class="form-group">
-              <label for="age">Age</label>
-              <input type="text" class="form-control" id="age-partner" placeholder="Age">
-            </div> -->
+              <select id="age-option">
+                <option value="5">Within 5 years</option>
+                <option value="10">Within 10 years</option>
+                <option calue="20">More than 10 years</option>
+              </select>
               <p class="property-name">Pace</p>
               <select id="pace-option">
                 <option value="1">Within 1 minute</option>
                 <option value="2">Within 5 minutes</option>
                 <option calue="3">More than 5 minutes</option>
               </select>
-              <!-- <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Same Pace?
-                </label>
-              </div> -->
               <div class="form-group">
                 <label for="distance">Distance</label>
                 <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
@@ -506,21 +523,6 @@
       <div class="container title-heading full-chat col-md-6 col-md-offset-3">
         <h1>Chat Room</h1>
         <br>
-        <!-- <form id="socketform">
-          <input type="text" name="name" place="Input your name" id="m"/>
-          <button class="btn">Set Name</button>
-        </form>
-      </div>
-      <div class="container full-chat">
-        <br>
-        <form id="privateForm">
-          <label>Name of Person (p)</label> --> <!-- my name here -->
-          <!-- <input type="text" name="name" place="Input name of Person" id="p"/>
-          <label>Name of Room (r)</label>  --><!-- invitee name here -->
-          <!-- <input type="text" name="room" place="Input name of Room" id="r"/>
-          <button class="btn">Create Private Chat</button>
-        </form>
-      </div> -->
         <div class="container full-chat">
           <br>
           <form id="chatForm">
@@ -570,7 +572,6 @@
     <script type="text/javascript" src="/js/chatRoom.js"></script>
     <script type="text/javascript" src="/js/tableRoutes.js"></script>
     <script type="text/javascript" src="/js/googleMaps.js"></script>
-
 
   </body>
 </html>
