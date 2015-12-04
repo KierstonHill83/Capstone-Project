@@ -75,6 +75,7 @@ $('#chat-room').on('click', function() {
   $('.overview').hide();
   $('.activity-form').hide();
   $('.partner').hide();
+  $('.show-partners').hide();
   $('.full-chat').show();
 });
 

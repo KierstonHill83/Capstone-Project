@@ -31,8 +31,8 @@ router.get('/activityProperty/:id', function(req, res, next) {
 
 // ADD new activityProperties
 router.post('/activityProperties', function(req, res, next) {
-  console.log('req ',req.body);
-  console.log('req.id ', req.user.id);
+  // console.log('req ',req.body);
+  // console.log('req.id ', req.user.id);
   var activityProperty1 = {
     propertyName: req.body['properties[0][propertyName]'],
     propertyValue: req.body['properties[0][propertyValue]'],
@@ -49,7 +49,7 @@ router.post('/activityProperties', function(req, res, next) {
     activityProperty1,
     activityProperty2
   ]).then(function(activityProperty) {
-    console.log('HERE');
+    // console.log('HERE');
     res.json(activityProperty);
   }).catch(function(err) {
     res.json(err);

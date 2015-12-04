@@ -502,32 +502,11 @@
         </div>
 
 
-        <!-- GOOGLE MAPS -->
-        <div class="col-md-8 col-md-offset-2">
-          <form class="form-inline">
-            <label for="exampleInputName2">Place Search</label>  
-            <input type="text" class="form-control" id="place-input" placeholder="Find a place...">
-            <button type="submit" class="btn btn-default" id="add-location">Find</button>
-          </form>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <div id="map-div"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- close row -->
-
-
       <!-- CHAT ROOM -->
-      <div class="container title-heading full-chat">
+      <div class="container title-heading full-chat col-md-6 col-md-offset-3">
         <h1>Chat Room</h1>
         <br>
-        <form id="socketform">
+        <!-- <form id="socketform">
           <input type="text" name="name" place="Input your name" id="m"/>
           <button class="btn">Set Name</button>
         </form>
@@ -535,24 +514,49 @@
       <div class="container full-chat">
         <br>
         <form id="privateForm">
-          <label>Name of Person (p)</label> <!-- my name here -->
-          <input type="text" name="name" place="Input name of Person" id="p"/>
-          <label>Name of Room (r)</label> <!-- invitee name here -->
-          <input type="text" name="room" place="Input name of Room" id="r"/>
+          <label>Name of Person (p)</label> --> <!-- my name here -->
+          <!-- <input type="text" name="name" place="Input name of Person" id="p"/>
+          <label>Name of Room (r)</label>  --><!-- invitee name here -->
+          <!-- <input type="text" name="room" place="Input name of Room" id="r"/>
           <button class="btn">Create Private Chat</button>
         </form>
-      </div>
-      <div class="container full-chat">
-        <br>
-        <form id="chatForm">
-          <input type="text" name="msg" place="Input your message" id="t"/>
-          <button class="btn">Send Message</button>
-        </form>
-        <div class="room">
-          <ul id="message"></ul>
+      </div> -->
+        <div class="container full-chat">
+          <br>
+          <form id="chatForm">
+            <input type="text" name="msg" place="Input your message" id="t"/>
+            <button class="btn">Send Message</button>
+          </form>
+          <div class="room">
+            <ul id="message"></ul>
+          </div>
         </div>
-      </div>
-    </div> <!-- close personal-page -->
+        <br>
+        <br>
+      </div> <!-- close personal-page -->
+
+
+        <!-- GOOGLE MAPS -->
+        <div class="map">
+          <div class="col-md-8 col-md-offset-2">
+            <form class="form-inline">
+              <label for="exampleInputName2">Place Search</label>  
+              <input type="text" class="form-control" id="place-input" placeholder="Find a place...">
+              <button type="submit" class="btn btn-default" id="add-location">Find</button>
+            </form>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div id="map-div"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- close row -->
 <!-- END PERSONAL PAGE -->
 
 

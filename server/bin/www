@@ -32,17 +32,19 @@ server.on('listening', onListening);
 // START CHAT ROOM //
 /////////////////////
 
+// change all name to invitee and invitee to name...then room name will be the invitee name
+
 // add socket stuff here!
 var io = require('socket.io')(server);
-console.log('before connection');
+// console.log('before connection');
 var rooms = [];
 
 // Set the socket to the name that is entered. This is the userInfoId (unique to each user).
 io.on('connection', function(socket) {
-  console.log('inside first connection');
+  // console.log('inside first connection');
   socket.on('setName', function(id) {
     socket.name = id;
-    console.log('socket.name ', socket.name);
+    // console.log('socket.name ', socket.name);
   });
 
   // Create a room that is named the name of the user. Push that into the rooms array so it can be saved and accessed easily. Join that room. Loop through the sockets that are connected and if the name equals the name of the invitee, invite them to the private room.
@@ -50,26 +52,41 @@ io.on('connection', function(socket) {
     socket.room = name;
     rooms.push(name);
     socket.join(name);
-    console.log('originalUser ', name);
-    console.log('invitee ' +invitee);
+    // console.log('should be 41', name);
+    // console.log('originalUser ', name);
+    // console.log('invitee ' +invitee);
+    // console.log('connected sockets ',io.sockets.connected);
+    var userName = name;
+    var friendName = invitee;
+    for (a in io.sockets.connected) {
+      console.log(io.sockets.connected[a].name);
+      if (io.sockets.connected[a].name === friendName) {
+        console.log('found the other user ', io.sockets.connected[a].name);
+        // userName = io.sockets.connected[a].name;
+        // console.log('TRUE');
+        // console.log('userName ',userName);
+        // console.log('friendName ', friendName);
 
-      for (a in io.sockets.connected) {
-        if (io.sockets.connected[a].name === invitee) {
-          // In the second input, put the name of the person you want the link sent to. It will  send as long as they are connected.
-          io.sockets.connected[a].emit('privateChat', '<a onclick="socket.emit(\'joinRoom\', \''+name+'\')">Join '+ socket.name +'\'s private chat</a>' );
-          break;
-        }
+        // In the second input, put the name of the person you want the link sent to. It will  send as long as they are connected.
+        io.sockets.connected[a].emit('privateChat', '<a onclick="socket.emit(\'joinRoom\', \''+userName+'\')">Join '+ userName +'\'s private chat</a>' );
+        // console.log('GOT HERE');
+        return;
       }
+
+    }
+    //submit chat message to database, this will save who is writing message
   });
   // Join that private room.
   socket.on('joinRoom', function(name) {
     socket.room = name;
+    // console.log('should be 40 ',name);
     socket.join(name);
   });
   // Send the messages between the 2 users.
   socket.on('chat message', function(msg) {
     // console.log(socket.room);
     io.sockets.in(socket.room).emit('chat message', msg);
+    // check if 1 socket it room, save to database
   });
 });
 

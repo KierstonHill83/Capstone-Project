@@ -4,6 +4,7 @@
 
 $('#signin-form').submit(function(e) {
   e.preventDefault();
+
   console.log('before client post');
   $.post('/auth/login', {
     email: $('#email-signin').val().toLowerCase(),
@@ -15,6 +16,7 @@ $('#signin-form').submit(function(e) {
     } else {
       userId = null;
     }
+    startSocket(userId);
     console.log('status auth ', status);
     console.log('data from signin ', data.data);
   });

@@ -5,7 +5,7 @@
 var socket = io();
 
 
-$('#chatForm').hide();
+// $('#chatForm').hide();
 
 
 // Grab the value of the initial user name.
@@ -14,11 +14,11 @@ $('#chatForm').hide();
 //   e.preventDefault();
   // socket.emit('setName',$('#m').val());
   // console.log('name ' +$('#m').val());
-  function startSocket() {
+  function startSocket(userId) {
     console.log(userId);
     socket.emit('setName', userId);
-    $('#m').val('');
-    $('#socketform').hide();
+    // $('#m').val('');
+    // $('#socketform').hide();
     return false;
   }
 // });
@@ -40,16 +40,27 @@ $('#chatForm').hide();
 // DO THIS WHEN CONFIRM IS CLICKED ON THE RECOMMENDED PARTNER...ADD TO FRIENDS TABLE WITH PENDING AS THE STATUS
 $('.confirm-chat').on('click', function(e) {
   e.preventDefault();
+
+  // socket.emit('setName', userId);
+  // socket.emit('setName', friendId);
   socket.emit('createRoom', userId, friendId);
   console.log('userId ', userId);
   console.log('friendId ', friendId);
+  
+  ///SEND ALERT THAT A CHAT REQUEST AS BEEN SENT
 });
+
+function openChat() {
+  $('#chat-link').on('click', function() {
+    console.log('Private chat opened!');
+  });
+}
 
 /// WHEN THE FRIEND CLICKS THE LINK THAT IS SENT WITH THEIR IMAGE, MAYBE ON A HOVER IT WILL GIVE THEIR INFO DETAILS...THEY WILL JOIN THE ROOM...CHANGE FRIEND STATUS TO FRIEND IN FRIENDS TABLE
 // Append the join me message link to the screen.
-socket.on('privateChat', function(msg) {
-    $('#message').append($('<li>').html(msg));
-});
+// socket.on('privateChat', function(msg) {
+//   $('#message').append($('<li id="chat-invite">').html(msg));
+// });
 
 
 // Grab the value of the message that is being sent.
@@ -60,6 +71,11 @@ $('#chatForm').submit(function(e) {
     return false;
 });
 
+socket.on('privateChat', function(msg) {
+    console.log('message', msg)
+    $('#message').append($('<li id="chat-link">').html(msg));
+    openChat();
+});
 
 // Console log the messsage
 socket.on('private', function(msg) {

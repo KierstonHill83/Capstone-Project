@@ -9,12 +9,12 @@ passport.use(new LocalStrategy({
   passwordField: 'password'
   },
   function(email, password, done) {
-    console.log('inside passport.use');
+    // console.log('inside passport.use');
     models.userInfo.findOne({ 
       where: { email: email } 
     }).then(function (user, err) {
-      console.log('err from passport.use ', err);
-      console.log('user from passport.use ', user);
+      // console.log('err from passport.use ', err);
+      // console.log('user from passport.use ', user);
       console.log('inside next function');
       if (err) { 
         return done(err); 
