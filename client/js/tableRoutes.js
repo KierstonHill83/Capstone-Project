@@ -1,5 +1,6 @@
 var userId;
 var friendId;
+var username;
 
 ////////////////////////////////
 // User Info Form - Register //
@@ -19,8 +20,12 @@ $('#user-signup').submit(function(e) {
   function(data, status) {
     if (status === 'success') {
       userId = data.id;
+      username = data.username;
       startSocket();
-      console.log('userId', userId);
+      $('#nav-signup').hide();
+      $('#signin-page').hide();
+      $('#nav-welcome').show();
+      $('#welcome-name').html(username).show();
     } else {
       userId = null;
     }

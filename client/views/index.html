@@ -29,10 +29,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li id="nav-signup"><a href="#" class="nav-text">Sign Up</a></li>
-            <!-- Form to sign in -->
-            <li>
-              <a id="signin-page" href="#/signin" class="nav-text">Sign In</a>
-            </li>
+            <li><a id="signin-page" href="#/signin" class="nav-text">Sign In</a></li>
+            <li id="nav-welcome"><a href="#" class="nav-text">Welcome, </a></li>
+            <li><a href="#" class="nav-text" id="welcome-name"></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -340,11 +339,13 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
+            <li></li>
             <li id="overview" class="active"><a href="#" class="sidebar-text">Overview</a></li>
             <li id="edit-profile"><a href="#" class="sidebar-text">Edit Profile</a></li>
             <li id="activity-form"><a href="#" class="sidebar-text">Edit Activity</a></li>
             <li id="partner-form"><a href="#" class="sidebar-text">Edit Looking For</a></li>
             <li id="chat-room"><a href="#" class="sidebar-text">Chat Room</a></li>
+            <li id="trails"><a href="#" class="sidebar-text">Find a Trail</a></li>
             <li><a href="#" class="sidebar-text">Help</a></li>
             <li id="logout"><a href="#" class="sidebar-text">Logout</a></li>
           </ul>
@@ -354,7 +355,7 @@
         <!-- Overview -->
         <div class="overview">
           <div class="col-md-6">
-            <h1>Overview</h1>
+            <h1 class="personal-header">Overview</h1>
             <p>There will be text about what is happening here and how to work this page.</p>
           </div>
           <br>
@@ -368,7 +369,7 @@
           <div class="row">
             <div class="col-md-6">
               <!-- User Input -->
-              <h1 class="signup">User Info</h1>
+              <h1 class="signup personal-header">User Info</h1>
               <form class="edit-info" id="edit-signup">
                 <div class="form-group">
                   <label for="firstName">First Name</label>
@@ -419,7 +420,7 @@
         <!-- Activity Input -->
         <div class="activity-form">
           <div class="col-md-6">
-            <h1 class="signup">Activity Info</h1>
+            <h1 class="signup personal-header">Activity Info</h1>
             <form class="signup-form" id="user-activity">
               <select id="activity-option">
                 <option value="1">Running</option>
@@ -448,7 +449,7 @@
         <!-- Partner Info -->
         <div class="partner-form">
           <div class="col-md-6">
-            <h1 class="signup">What are you looking for in a Partner?</h1>
+            <h1 class="signup personal-header">What are you looking for in a Partner?</h1>
             <form id="partner-form">
               <select id="activity-option">
                 <option value="1">Running</option>
@@ -492,7 +493,7 @@
         <div class="show-partners">
           <div class="row">
             <div class="col-md-3 col-md-offset-3">
-              <h1>Recommended Partners</h1>
+              <h1 class="personal-header">Recommended Partners</h1>
               <h2 id="partner-error"></h2>
               <div class="all-partners">
                 <!-- id -->
@@ -544,7 +545,7 @@
         <div class="show-partners">
           <div class="row"> -->
             <div class="col-md-3">
-              <h1>Recommended Partners</h1>
+              <h1 class="personal-header">Recommended Partners</h1>
               <!-- <h2 id="partner-error"></h2> -->
               <div class="all-partners">
                 <!-- id -->
@@ -594,7 +595,7 @@
         </div> -->
 
         <div class="col-md-3">
-              <h1>Recommended Partners</h1>
+              <h1 class="personal-header">Recommended Partners</h1>
               <!-- <h2 id="partner-error"></h2> -->
               <div class="all-partners">
                 <!-- id -->
@@ -646,7 +647,7 @@
 
       <!-- CHAT ROOM -->
       <div class="container title-heading full-chat col-md-6 col-md-offset-3">
-        <h1 class="personal-titles">Chat Room</h1>
+        <h1 class="personal-titles personal-header">Chat Room</h1>
         <br>
         <div class="container full-chat">
           <br>
@@ -669,6 +670,7 @@
         <!-- GOOGLE MAPS -->
         <div class="map">
           <div class="col-md-8 col-md-offset-2">
+            <h1 class="personal-header">Find a Trail</h1>
             <form class="form-inline">
               <label for="exampleInputName2">Place Search</label>  
               <input type="text" class="form-control" id="place-input" placeholder="Find a place...">

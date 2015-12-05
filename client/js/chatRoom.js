@@ -52,7 +52,7 @@ $('.confirm-chat').on('click', function(e) {
     friendId = $('#p-id3').html();
     console.log(friendId);
   }
-  socket.emit('createRoom', userId, friendId);
+  socket.emit('createRoom', userId, friendId, username);
   console.log('userId ', userId);
   console.log('friendId ', friendId);
   

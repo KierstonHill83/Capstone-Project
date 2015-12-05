@@ -152,9 +152,9 @@ a {
   width: 70%;
 }
 
-.map {
-  margin-top: 150px;
-}
+/*.map {
+  padding-top: 50px;
+}*/
 
 .panel {
   border: none;
@@ -241,7 +241,7 @@ a {
   margin-left: 70px;
 }
 
-.personal-title {
+.personal-title, .personal-header {
   font-weight: 400;
 }
 
@@ -273,4 +273,8 @@ a {
   margin-right: -105px;
   margin-left: 95px;
   margin-top: 5px;
+}
+
+#welcome-name {
+  margin-left: -15px;
 }

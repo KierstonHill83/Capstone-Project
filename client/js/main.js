@@ -8,6 +8,9 @@ $(document).on('ready', function() {
   $('.signin-page').hide();
   $('.show-partners').hide();
   $('#edit-info').hide();
+  $('#nav-welcome').hide();
+  $('#welcome-name').hide();
+  $('.map').hide();
 
 });
 
@@ -22,6 +25,7 @@ $('#nav-home').on('click', function() {
   $('.personal-page').hide();
   $('.signin-page').hide();
   $('#edit-info').hide();
+  $('.map').hide();
   $('.home-page').show();
 });
 
@@ -31,6 +35,7 @@ $('#nav-signup').on('click', function() {
   $('.personal-page').hide();
   $('.signin-page').hide();
   $('#edit-info').hide();
+  $('.map').hide();
   $('#all-info').show();
 });
 
@@ -39,6 +44,20 @@ $('#signin-page').on('click', function() {
   $('#all-info').hide();
   $('.home-page').hide();
   $('.signin-page').show();
+});
+
+// $('#nav-signin').on('click', function() {
+//   $('#nav-signup').hide();
+//   $('#signin-page').hide();
+//   $('#nav-welcome').show();
+//   $('#welcome-name').html(username).show();
+// });
+
+$('#user-submit').on('click', function() {
+  $('#nav-signup').hide();
+  $('#signin-page').hide();
+  $('#nav-welcome').show();
+  $('#welcome-name').html(username).show();
 });
 
 
@@ -51,6 +70,7 @@ $('#overview').on('click', function() {
   $('.activity-form').hide();
   $('.full-chat').hide();
   $('#edit-info').hide();
+  $('.map').hide();
   $('.overview').show();
 });
 
@@ -59,6 +79,7 @@ $('#edit-profile').on('click', function() {
   $('.partner-form').hide();
   $('.activity-form').hide();
   $('.full-chat').hide();
+  $('.map').hide();
   $('#edit-info').show();
 });
 
@@ -67,6 +88,7 @@ $('#activity-form').on('click', function() {
   $('.overview').hide();
   $('.full-chat').hide();
   $('#edit-info').hide();
+  $('.map').hide();
   $('.activity-form').show();
 });
 
@@ -75,6 +97,7 @@ $('#partner-form').on('click', function() {
   $('.activity-form').hide();
   $('.full-chat').hide();
   $('#edit-info').hide();
+  $('.map').hide();
   $('.partner-form').show();
 });
 
@@ -84,7 +107,18 @@ $('#chat-room').on('click', function() {
   $('.partner-form').hide();
   $('.show-partners').hide();
   $('#edit-info').hide();
+  $('.map').hide();
   $('.full-chat').show();
+});
+
+$('#trails').on('click', function() {
+  $('.overview').hide();
+  $('.activity-form').hide();
+  $('.partner-form').hide();
+  $('.show-partners').hide();
+  $('#edit-info').hide();
+  $('.full-chat').hide();
+  $('.map').show();
 });
 
 
