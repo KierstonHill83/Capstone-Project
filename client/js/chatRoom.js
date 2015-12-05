@@ -40,6 +40,18 @@ var socket = io();
 // DO THIS WHEN CONFIRM IS CLICKED ON THE RECOMMENDED PARTNER...ADD TO FRIENDS TABLE WITH PENDING AS THE STATUS
 $('.confirm-chat').on('click', function(e) {
   e.preventDefault();
+  if (e.currentTarget.id === 'confirm1') {
+    friendId = $('#p-id1').text();
+    console.log(friendId);
+  }
+  else if(e.currentTarget.id === 'confirm2') {
+    friendId = $('#p-id2').text();
+    console.log(friendId);
+  }
+  else if(e.currentTarget.id === 'confirm3') {
+    friendId = $('#p-id3').html();
+    console.log(friendId);
+  }
   socket.emit('createRoom', userId, friendId);
   console.log('userId ', userId);
   console.log('friendId ', friendId);

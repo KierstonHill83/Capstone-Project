@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Active Hound</title>
+    <title>Active Allies</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand nav-text" id="nav-home" href="/#/">Active Hound</a>
+          <a class="navbar-brand nav-text" id="nav-home" href="/#/">Active Allies</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,8 +45,7 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
           <div class="signin-box">
-            <h1>Sign In To My App</h1>
-            <!-- <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> -->
+            <h1 class="personal-title">Sign In</h1>
             <hr>
             <br>
             <form id="signin-form">
@@ -60,7 +59,8 @@
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                 <input type="password" class="form-control signin-input" id="password-signin" placeholder="  Password">
               </div>
-              <button type="submit" class="btn btn-default" id="nav-signin">Submit</button>
+              <br>
+              <button type="submit" class="btn btn-default btn-lg" id="nav-signin">Submit</button>
             </form>
           </div>
         </div>
@@ -72,7 +72,7 @@
 <!-- HOME PAGE -->
     <div class="home-page">
       <div class="top-header">
-        <h1 class="title">ACTIVE DUO</h1>
+        <h1 class="title">ACTIVE ALLIES</h1>
         <h1 class="tagline">YOU'LL NEVER HAVE TO DO IT ALONE</h1>
       </div>
     
@@ -260,54 +260,74 @@
 
 
 <!-- SIGN UP PAGE -->
-    <div class="container" id="all-info">
+    <div id="all-info">
       <div class="row">
-        <div class="col-md-6">
-          <!-- User Input -->
-          <h1 class="signup">User Info</h1>
-          <form class="signup-form" id="user-signup">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" class="form-control" id="first-name" placeholder="First Name">
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" id="last-name" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="location">Location</label>
-              <input type="text" class="form-control" id="location" placeholder="City, State">
-            </div>
-            <div class="form-group">
-              <label for="gender">Gender</label>
-              <input type="text" class="form-control" id="gender" placeholder="Gender">
-            </div>
-            <div class="form-group">
-              <label for="age">Age</label>
-              <input type="text" class="form-control" id="age" placeholder="Age">
-            </div>
-            <div class="form-group">
-              <label for="photo">Upload a Photo</label>
-              <input type="text" class="form-control" id="photo" placeholder="Photo">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <label for="password">Confirm Password</label>
-              <input type="password" class="form-control" id="password2" placeholder="Confirm Password">
-            </div>
-            <button type="submit" id="user-submit" class="btn btn-default">Submit</button>
-          </form>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="signup-box">
+            <!-- User Input -->
+            <h1 class="signup personal-title">Sign Up</h1>
+            <hr>
+            <br>
+            <form class="form-horizontal signup-form" id="user-signup">
+              <div class="form-group">
+                <label for="firstName" class="col-md-3 signup-label">Full Name</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control signup-input" id="first-name" placeholder="Full Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-md-3 signup-label">Email</label>
+                <div class="col-md-3">
+                  <input type="email" class="form-control signup-input" id="email" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="location" class="col-md-3 signup-label">Location</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control signup-input" id="location" placeholder="City, State">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="gender" class="col-md-3 signup-label">Gender</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control signup-input" id="gender" placeholder="Gender">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="age" class="col-md-3 signup-label">Age</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control signup-input" id="age" placeholder="Age">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="photo" class="col-md-3 signup-label">Upload a Photo</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control signup-input" id="photo" placeholder="Photo">
+                </div>
+              </div>
+              <br>
+              <hr>
+              <br>
+              <div class="form-group">
+                <label for="username" class="col-md-3 signup-label">Username</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control signup-input" id="username" placeholder="Username">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password" class="col-md-3 signup-label">Password</label>
+                <div class="col-md-3">
+                  <input type="password" class="form-control signup-input" id="password" placeholder="Password">
+                </div>
+              </div>
+              <br>
+              <!-- <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" class="form-control signup-input" id="password2" placeholder="Confirm Password">
+              </div> -->
+              <button type="submit" id="user-submit" class="btn btn-default btn-lg">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -471,10 +491,13 @@
         <!-- SHOW PARTNERS -->
         <div class="show-partners">
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-3 col-md-offset-3">
               <h1>Recommended Partners</h1>
               <h2 id="partner-error"></h2>
               <div class="all-partners">
+                <!-- id -->
+                <div class="partner-id" id="p-id1">
+                </div>
                 <!-- image -->
                 <div class="partner-img" id="p-img1">
                 </div>
@@ -505,7 +528,109 @@
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value2">
                 </h2>
-                <button type="button" class="btn btn-default confirm-chat" aria-label="Left Align">
+                <button type="button" class="btn btn-default confirm-chat" id="confirm1" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          <!-- </div>
+          <br>
+          <br>
+        </div>
+
+        <div class="show-partners">
+          <div class="row"> -->
+            <div class="col-md-3">
+              <h1>Recommended Partners</h1>
+              <!-- <h2 id="partner-error"></h2> -->
+              <div class="all-partners">
+                <!-- id -->
+                <div class="partner-id" id="p-id2">
+                </div>
+                <!-- image -->
+                <div class="partner-img" id="p-img2">
+                </div>
+                <!-- name -->
+                <h2 class="partner-name" id="p-name2">
+                </h2>
+                <!-- age -->
+                <h2 class="partner-age" id="p-age2">
+                </h2>
+                <!-- gender -->
+                <h2 class="partner-gender" id="p-gender2">
+                </h2>
+                <!-- location -->
+                <h2 class="partner-location" id="p-location2">
+                </h2>
+                <!-- activity -->
+                <h2 class="partner-activity" id="p-activity2">
+                </h2>
+                <!-- property name -->
+                <h2 class="partner-property" id="p-property-name3">
+                </h2>
+                <!-- property value -->
+                <h2 class="partner-property" id="p-property-value3">
+                </h2>
+                <!-- property name -->
+                <h2 class="partner-property" id="p-property-name4">
+                </h2>
+                <!-- property value -->
+                <h2 class="partner-property" id="p-property-value4">
+                </h2>
+                <button type="button" class="btn btn-default confirm-chat" id="confirm2" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+          <!-- </div>
+          <br>
+          <br>
+        </div> -->
+
+        <div class="col-md-3">
+              <h1>Recommended Partners</h1>
+              <!-- <h2 id="partner-error"></h2> -->
+              <div class="all-partners">
+                <!-- id -->
+                <div class="partner-id" id="p-id3">
+                </div>
+                <!-- image -->
+                <div class="partner-img" id="p-img3">
+                </div>
+                <!-- name -->
+                <h2 class="partner-name" id="p-name3">
+                </h2>
+                <!-- age -->
+                <h2 class="partner-age" id="p-age3">
+                </h2>
+                <!-- gender -->
+                <h2 class="partner-gender" id="p-gender3">
+                </h2>
+                <!-- location -->
+                <h2 class="partner-location" id="p-location3">
+                </h2>
+                <!-- activity -->
+                <h2 class="partner-activity" id="p-activity3">
+                </h2>
+                <!-- property name -->
+                <h2 class="partner-property" id="p-property-name5">
+                </h2>
+                <!-- property value -->
+                <h2 class="partner-property" id="p-property-value5">
+                </h2>
+                <!-- property name -->
+                <h2 class="partner-property" id="p-property-name6">
+                </h2>
+                <!-- property value -->
+                <h2 class="partner-property" id="p-property-value6">
+                </h2>
+                <button type="button" class="btn btn-default confirm-chat" id="confirm3" aria-label="Left Align">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
                 <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -521,7 +646,7 @@
 
       <!-- CHAT ROOM -->
       <div class="container title-heading full-chat col-md-6 col-md-offset-3">
-        <h1>Chat Room</h1>
+        <h1 class="personal-titles">Chat Room</h1>
         <br>
         <div class="container full-chat">
           <br>
@@ -532,6 +657,9 @@
           <div class="room">
             <ul id="message"></ul>
           </div>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
         </div>
         <br>
         <br>

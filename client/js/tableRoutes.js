@@ -7,29 +7,24 @@ var friendId;
 
 $('#user-signup').submit(function(e) {
   e.preventDefault();
-  if ($('#password').val() === $('#password2').val()) {
-    $.post('/api/users', {
-      name: $('#first-name').val().toLowerCase(),
-      username: $('#username').val().toLowerCase(),
-      email: $('#email').val().toLowerCase(),
-      location: $('#location').val().toLowerCase(),
-      gender: $('#gender').val().toLowerCase(),
-      age: $('#age').val().toLowerCase(),
-      password: $('#password').val().toLowerCase()
-    },
-    function(data, status) {
-      if (status === 'success') {
-        userId = data.id;
-        startSocket();
-        console.log('userId', userId);
-      } else {
-        userId = null;
-      }
-    });
-  } else {
-    ////DON'T LET THE PAGE CHANGE VIEWS...NEED AUTHENTICATION REQUIREMENT BEFORE SHOWING NEXT VIEW, DON'T ADD USER TO THE DATABASE
-    console.log('Password is not the same');
-  }
+  $.post('/api/users', {
+    name: $('#first-name').val().toLowerCase(),
+    username: $('#username').val().toLowerCase(),
+    email: $('#email').val().toLowerCase(),
+    location: $('#location').val().toLowerCase(),
+    gender: $('#gender').val().toLowerCase(),
+    age: $('#age').val().toLowerCase(),
+    password: $('#password').val().toLowerCase()
+  },
+  function(data, status) {
+    if (status === 'success') {
+      userId = data.id;
+      startSocket();
+      console.log('userId', userId);
+    } else {
+      userId = null;
+    }
+  });
   setTimeout(signIn, 2000);
   $('#all-info').hide();
   $('.personal-page').show();
@@ -122,8 +117,11 @@ $('.partner-form').submit(function(e) {
     activityProperty: activityProperty
   },
   function(data, status) {
-    friendId = data[0].id;
+    // GRABBING ONLY THE ID FROM THE FIRST PERSON...MAKE THIS DYNAMIC TO WHOEVER IS CHOSEN
+    // friendId = data[0].id;
     showPartners1(data);
+    showPartners2(data);
+    showPartners3(data);
     console.log('status ' + status);
     console.log('data ', data);
   });
@@ -136,12 +134,18 @@ $('.partner-form').submit(function(e) {
 // Helper Functions //
 //////////////////////
 
+function getFriendId(data) {
+
+}
+
+
 function showPartners1(data) {
+  $('#p-id1').html(data[0].id).hide();
   $('#p-img1').html(data[0].image);
   $('#p-name1').html(data[0].username);
   $('#p-age1').html(data[0].age);
   $('#p-gender1').html(data[0].gender);
-  $('#p-location').html(data[0].location);
+  $('#p-location1').html(data[0].location);
   $('#p-activity1').html(data[0].userActivity);
   $('#p-property-name1').html(data[0].prop[0].propertyName);
   $('#p-property-value1').html(data[0].prop[0].propertyValue);
@@ -149,4 +153,33 @@ function showPartners1(data) {
   $('#p-property-value2').html(data[0].prop[1].propertyValue);
 }
 
+
+function showPartners2(data) {
+  $('#p-id2').html(data[1].id).hide();
+  $('#p-img2').html(data[1].image);
+  $('#p-name2').html(data[1].username);
+  $('#p-age2').html(data[1].age);
+  $('#p-gender2').html(data[1].gender);
+  $('#p-location2').html(data[1].location);
+  $('#p-activity2').html(data[1].userActivity);
+  $('#p-property-name3').html(data[1].prop[0].propertyName);
+  $('#p-property-value3').html(data[1].prop[0].propertyValue);
+  $('#p-property-name4').html(data[1].prop[1].propertyName);
+  $('#p-property-value4').html(data[1].prop[1].propertyValue);
+}
+
+
+function showPartners3(data) {
+  $('#p-id3').html(data[2].id).hide();
+  $('#p-img3').html(data[2].image);
+  $('#p-name3').html(data[2].username);
+  $('#p-age3').html(data[2].age);
+  $('#p-gender3').html(data[2].gender);
+  $('#p-location3').html(data[2].location);
+  $('#p-activity3').html(data[2].userActivity);
+  $('#p-property-name5').html(data[2].prop[0].propertyName);
+  $('#p-property-value5').html(data[2].prop[0].propertyValue);
+  $('#p-property-name6').html(data[2].prop[1].propertyName);
+  $('#p-property-value6').html(data[2].prop[1].propertyValue);
+}
 

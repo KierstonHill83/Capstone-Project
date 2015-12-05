@@ -57,11 +57,12 @@ io.on('connection', function(socket) {
     // console.log('invitee ' +invitee);
     // console.log('connected sockets ',io.sockets.connected);
     var userName = name;
-    var friendName = invitee;
+    // var friendName = invitee;
     for (a in io.sockets.connected) {
-      console.log(io.sockets.connected[a].name);
-      if (io.sockets.connected[a].name === friendName) {
-        console.log('found the other user ', io.sockets.connected[a].name);
+      // console.log('createRoom: io.sockets.connected[a].name=', io.sockets.connected[a].name);
+      // console.log('createRoom: friendName inside loop: ', invitee);
+      if (io.sockets.connected[a].name == invitee) {
+        // console.log('found the other user ', io.sockets.connected[a].name);
         // userName = io.sockets.connected[a].name;
         // console.log('TRUE');
         // console.log('userName ',userName);

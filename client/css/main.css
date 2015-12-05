@@ -134,7 +134,7 @@ a {
   margin-bottom: 20px;
 }
 
-#all-info, .personal-page, .show-partners {
+.personal-page, .show-partners {
   padding-top: 50px;
 }
 
@@ -182,6 +182,7 @@ a {
   background-color: #093461;
   background-size: cover;
   min-height: 820px;
+  border: 1px solid;
 }
 
 .signin-box {
@@ -194,9 +195,17 @@ a {
 }
 
 .signin-input {
+  font-size: 16px;
   height: 40px;
   width: 307px;
   margin-left: 92px;
+  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+}
+
+.btn-lg {
+  border: 1px solid;
 }
 
 .inner-addon {
@@ -218,7 +227,6 @@ a {
   padding-left:  30px; 
 }
 
-
 /*.show-partners {
   text-align: left;
 }*/
@@ -233,3 +241,36 @@ a {
   margin-left: 70px;
 }
 
+.personal-title {
+  font-weight: 400;
+}
+
+#all-info {
+  background-color: #093461;
+  min-height: 820px;
+}
+
+.signup-box {
+  margin-top: 100px;
+  border-radius: 7%;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid;
+}
+
+.signup-input {
+  font-size: 16px;
+  height: 40px;
+  width: 307px;
+  margin-left: 92px;
+  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+}
+
+.signup-label {
+  margin-right: -105px;
+  margin-left: 95px;
+  margin-top: 5px;
+}
