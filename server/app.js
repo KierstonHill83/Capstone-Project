@@ -27,6 +27,12 @@ var authRoutes = require('./routes/auth.js');
 var app = express();
 
 
+/** attach socket.io to the app */
+var io = require('socket.io')();
+app.io = io;
+require('./chatroom/chatRoom.js')(io);
+
+
 // *** static directory *** //
 app.set('views', path.join(__dirname, 'views'));
 
