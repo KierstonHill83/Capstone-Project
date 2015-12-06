@@ -81,17 +81,14 @@ $('#edit-submit').on('click', function(e) {
     }
   }).done(function(data, status) {
     if (status == 'success') {
-      $('.success-message').html('Edit was successful!').show();
+      $('.success-message').html('Update was successful!').show();
     } else {
-      $('.error-message').html('Edit failed.').show();
+      $('.error-message').html('Update was not successful.').show();
     }
     console.log(data);
     console.log(status);
   });
 });
-
-//RE-POPULATE THE FORM WITH DATA
-// RUN UPDATE ON SUBMIT
 
 
 ////////////////////

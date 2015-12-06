@@ -30,8 +30,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li id="nav-signup"><a href="#" class="nav-text">Sign Up</a></li>
             <li><a id="signin-page" href="#/signin" class="nav-text">Sign In</a></li>
-            <li id="nav-welcome"><a href="#" class="nav-text">Welcome, </a></li>
-            <li><a href="#" class="nav-text" id="welcome-name"></a></li>
+            <li id="nav-welcome" class="nav-personal"><a href="#" class="nav-text">Welcome, </a></li>
+            <li class="nav-personal"><a href="#" class="nav-text nav-personal" id="welcome-name"></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -377,10 +377,6 @@
                   <label for="firstName">Full Name</label>
                   <input type="text" class="form-control" id="edit-full" placeholder="Full Name">
                 </div>
-                <!-- <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" class="form-control" id="edit-last" placeholder="Last Name">
-                </div> -->
                 <div class="form-group">
                   <label for="username">Username</label>
                   <input type="text" class="form-control" id="edit-username" placeholder="Username">
@@ -409,11 +405,7 @@
                   <label for="password">Password</label>
                   <input type="password" class="form-control" id="edit-password" placeholder="Password">
                 </div>
-                <!-- <div class="form-group">
-                  <label for="password">Confirm Password</label>
-                  <input type="password" class="form-control" id="edit-password2" placeholder="Confirm Password">
-                </div> -->
-                <button type="submit" id="edit-submit" class="btn btn-default">Submit</button>
+                <button type="submit" id="edit-submit" class="btn btn-default">Update</button>
               </form>
             </div>
           </div>

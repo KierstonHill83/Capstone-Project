@@ -48,6 +48,16 @@ $('#signin-page').on('click', function() {
   $('.signin-page').show();
 });
 
+$('.nav-personal').on('click', function() {
+  $('.full-chat').hide();
+  $('.signin-page').hide();
+  $('#edit-info').hide();
+  $('.map').hide();
+  $('#all-info').hide();
+  $('.home-page').hide();
+  $('.personal-page').show();
+});
+
 // $('#nav-signin').on('click', function() {
 //   $('#nav-signup').hide();
 //   $('#signin-page').hide();
