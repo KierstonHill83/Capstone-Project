@@ -79,8 +79,14 @@ $('#edit-submit').on('click', function(e) {
       password: $('#edit-password').val().toLowerCase()
       // image: $('#edit-photo').val()
     }
-  }).done(function(data) {
+  }).done(function(data, status) {
+    if (status == 'success') {
+      $('.success-message').html('Edit was successful!').show();
+    } else {
+      $('.error-message').html('Edit failed.').show();
+    }
     console.log(data);
+    console.log(status);
   });
 });
 

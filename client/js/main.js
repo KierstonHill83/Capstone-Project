@@ -10,6 +10,8 @@ $(document).on('ready', function() {
   $('#edit-info').hide();
   $('#nav-welcome').hide();
   $('#welcome-name').hide();
+  $('.success-message').hide();
+  $('.error-message').hide();
   $('.map').hide();
 
 });
