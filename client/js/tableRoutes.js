@@ -95,16 +95,74 @@ $('#edit-submit').on('click', function(e) {
 // User Activity //
 ///////////////////
 
+// $('#user-activity').submit(function(e) {
+//   e.preventDefault();
+//   console.log($('#activity-option option:selected').text());
+//   $.post('/api/userActivities', {
+//     userActivity: $('#activity-option option:selected').text().toLowerCase(),
+//     userActivityId: $('#activity-option option:selected').val().toLowerCase()
+//   },
+//   function(data, status) {
+//     console.log('status ' + status);
+//   });
+// });
+
+
+// $('#user-activity').submit(function(e) {
+//   e.preventDefault();
+//   console.log($('#activity-option option:selected').text());
+//   $.post('/api/userActivities', {
+//     userActivity: $('#activity-option option:selected').text().toLowerCase(),
+//     userActivityId: $('#activity-option option:selected').val().toLowerCase()
+//   },
+//   function(data, status) {
+//     console.log('status ' + status);
+//   });
+//   if ($('#activity-option option:selected').text() === 'Running') {
+//     $('.properties1').show();
+//     $.post('/api/activityProperties', { properties: [{
+//       userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+//       propertyName: $('.activity-name').text().toLowerCase(),
+//       propertyValue: $('.activity-value').val().toLowerCase()
+//     },
+//     {
+//       userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+//       propertyName: $('.activity-name2').text().toLowerCase(),
+//       propertyValue: $('.activity-value2').val().toLowerCase()
+//     }]}, 
+
+//     function(data, status) {
+//       console.log(status);
+//     }
+//   }
+// });
+
 $('#user-activity').submit(function(e) {
   e.preventDefault();
-  console.log($('#activity-option option:selected').text());
   $.post('/api/userActivities', {
     userActivity: $('#activity-option option:selected').text().toLowerCase(),
     userActivityId: $('#activity-option option:selected').val().toLowerCase()
   },
   function(data, status) {
-    console.log('status ' + status);
+    console.log('status ', status);
   });
+  if ($('#activity-option option:selected').text() === 'Running') {
+    console.log('inside the if');
+    $('.properties1').show();
+    $.post('/api/activityProperties', { properties: [{
+      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      propertyName: $('.activity-name').text().toLowerCase(),
+      propertyValue: $('.activity-value').val().toLowerCase()
+    },
+    {
+      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      propertyName: $('.activity-name2').text().toLowerCase(),
+      propertyValue: $('.activity-value2').val().toLowerCase()
+    }]},
+    function(data, status) {
+      console.log('status ', status);
+    });
+  }
 });
 
 
@@ -112,24 +170,24 @@ $('#user-activity').submit(function(e) {
 // Activity Property //
 ///////////////////////
 
-$('#activity-property').submit(function(e) {
-  e.preventDefault();
-  $.post('/api/activityProperties', { properties: [{
-    userActivityId: $('#activity-option option:selected').val().toLowerCase(),
-    propertyName: $('.activity-name').text().toLowerCase(),
-    propertyValue: $('.activity-value').val().toLowerCase()
-  },
-  {
-    userActivityId: $('#activity-option option:selected').val().toLowerCase(),
-    propertyName: $('.activity-name2').text().toLowerCase(),
-    propertyValue: $('.activity-value2').val().toLowerCase()
-  }]},
-  function(data, status) {
-    console.log('status ' + status);
-  });
-  console.log($('.activity-name').val());
-  console.log($('.activity-value').val());
-});
+// $('#activity-property').submit(function(e) {
+//   e.preventDefault();
+//   $.post('/api/activityProperties', { properties: [{
+//     userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+//     propertyName: $('.activity-name').text().toLowerCase(),
+//     propertyValue: $('.activity-value').val().toLowerCase()
+//   },
+//   {
+//     userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+//     propertyName: $('.activity-name2').text().toLowerCase(),
+//     propertyValue: $('.activity-value2').val().toLowerCase()
+//   }]},
+//   function(data, status) {
+//     console.log('status ' + status);
+//   });
+//   console.log($('.activity-name').val());
+//   console.log($('.activity-value').val());
+// });
 
 
 ////////////////////////
