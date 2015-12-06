@@ -49,9 +49,38 @@ function signIn() {
 // Edit User Info //
 ////////////////////
 
-$('#edit-profile').on('click', function() {
+$('#edit-profile').on('click', function(e) {
+  e.preventDefault();
   $.get('/api/user/' +userId, function(data) {
+    $('#edit-full').val(data.name);
+    $('#edit-username').val(data.username);
+    $('#edit-email').val(data.email);
+    $('#edit-location').val(data.location);
+    $('#edit-gender').val(data.gender);
+    $('#edit-age').val(data.age);
+    $('#edit-photo').val(data.image);
+    $('#edit-password').val(data.password);
     console.log('data from edit ',data);
+  });
+});
+
+$('#edit-submit').on('click', function(e) {
+  e.preventDefault();
+  $.ajax ({
+    method: 'PUT',
+    url: '/api/user/' +userId,
+    data: {
+      name: $('#edit-full').val().toLowerCase(),
+      username: $('#edit-username').val().toLowerCase(),
+      email: $('#edit-email').val().toLowerCase(),
+      location: $('#edit-location').val().toLowerCase(),
+      gender: $('#edit-gender').val().toLowerCase(),
+      age: $('#edit-age').val().toLowerCase(),
+      password: $('#edit-password').val().toLowerCase()
+      // image: $('#edit-photo').val()
+    }
+  }).done(function(data) {
+    console.log(data);
   });
 });
 

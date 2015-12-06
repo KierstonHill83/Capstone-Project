@@ -82,7 +82,7 @@ describe('userActivity routes', function() {
       });
   });
 
-  it.only('should add a SINGLE userActivities', function(done) {
+  it('should add a SINGLE userActivities', function(done) {
     chai.request(server)
       .post('/api/userActivities')
       .send({
