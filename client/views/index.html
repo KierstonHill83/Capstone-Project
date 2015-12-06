@@ -339,7 +339,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li></li>
+          <br>
             <li id="overview" class="active"><a href="#" class="sidebar-text">Overview</a></li>
             <li id="edit-profile"><a href="#" class="sidebar-text">Edit Profile</a></li>
             <li id="activity-form"><a href="#" class="sidebar-text">Edit Activity</a></li>
@@ -646,24 +646,35 @@
 
 
       <!-- CHAT ROOM -->
-      <div class="container title-heading full-chat col-md-6 col-md-offset-3">
-        <h1 class="personal-titles personal-header">Chat Room</h1>
-        <br>
-        <div class="container full-chat">
-          <br>
-          <form id="chatForm">
-            <input type="text" name="msg" place="Input your message" id="t"/>
-            <button class="btn">Send Message</button>
-          </form>
-          <div class="room">
-            <ul id="message"></ul>
+      <div class="container title-heading full-chat">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h1 class="personal-titles personal-header">Chat Room</h1>
+            <div class="friend-info">
+              <div class="friend-img">
+              </div>
+              <p id="friend-username"></p>
+              <p id="friend-age"></p>
+              <p id="friend-gender"></p>
+              <p id="friend-location"></p>
+              <p id="friend-activity"></p>
+            </div>
           </div>
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </button>
+          <br>
+          <div class="col-md-6 col-md-offset-3">
+            <br>
+            <form id="chatForm">
+              <input type="text" name="msg" place="Input your message" id="t"/>
+              <button class="btn">Send Message</button>
+            </form>
+            <div class="room">
+              <ul id="message"></ul>
+            </div>
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
         </div>
-        <br>
-        <br>
       </div> <!-- close personal-page -->
 
 

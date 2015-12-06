@@ -139,11 +139,6 @@ $('.partner-form').submit(function(e) {
 // Helper Functions //
 //////////////////////
 
-function getFriendId(data) {
-
-}
-
-
 function showPartners1(data) {
   $('#p-id1').html(data[0].id).hide();
   $('#p-img1').html(data[0].image);
