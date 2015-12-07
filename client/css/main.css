@@ -6,6 +6,7 @@ body {
   font-weight: 300;
   font-size: 18px;
   background-color: #F7F1F2;
+  /*background-color: #FFE0B2;*/
 }
 
 a {
@@ -327,3 +328,7 @@ a {
 .activity-box {
   margin-left: 60px;
 }
+
+/*.show-partners {
+  text-align: center;
+}*/

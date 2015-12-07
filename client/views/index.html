@@ -463,13 +463,13 @@
                   <!-- Properties -->
                   <div class="properties" id="running-prop">
                     <div class="form-group">
-                      <label for="pace" class="activity-name1 col-md-1 control-label">Pace</label>
+                      <label for="pace" class="activity-name1 col-md-1 control-label">Pace:</label>
                       <div class="col-md-8">
                         <input type="text" class="form-control activity-value activity-box" id="pace" placeholder="Pace">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="distance" class="activity-name2 col-md-1 control-label">Distance</label>
+                      <label for="distance" class="activity-name2 col-md-1 control-label">Distance:</label>
                       <div class="col-md-8">
                         <input type="text" class="form-control activity-value2 activity-box" id="distance" placeholder="Distance">
                       </div>
@@ -481,12 +481,16 @@
                   <!-- Properties -->
                   <div class="properties" id="biking-prop">
                     <div class="form-group">
-                      <label for="pace" class="activity-name3">Pace</label>
-                      <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
+                      <label for="pace" class="activity-name3 col-md-1 control-label">Pace:</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control activity-value activity-box" id="pace" placeholder="Pace">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label for="distance" class="activity-name4">Distance</label>
-                      <input type="text" class="form-control activity-value2" id="distance" placeholder="Distance">
+                      <label for="distance" class="activity-name4 col-md-1 control-label">Distance:</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control activity-value2 activity-box" id="distance" placeholder="Distance">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -495,12 +499,16 @@
                   <!-- Properties -->
                   <div class="properties" id="swimming-prop">
                     <div class="form-group">
-                      <label for="pace" class="activity-name5">Pace</label>
-                      <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
+                      <label for="pace" class="activity-name5 col-md-1 control-label">Pace:</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control activity-value activity-box" id="pace" placeholder="Pace">
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label for="distance" class="activity-name6">Distance</label>
-                      <input type="text" class="form-control activity-value2" id="distance" placeholder="Distance">
+                      <label for="distance" class="activity-name6 col-md-1">Distance:</label>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control activity-value2 activity-box" id="distance" placeholder="Distance">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -508,95 +516,61 @@
                   <label><input id="golfing" type="radio" name="activity" value="4" data-value="Golfing">Golfing</label>
                   <!-- Properties -->
                   <div class="properties" id="golf-prop1">
-                    <p id="property-level">Level</p>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Beginner">Beginner</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Novice">Novice</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Advanced">Advanced</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Expert">Expert</label>
-                    </div>
+                    <label id="property-level">Level:</label>
+                    <br>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Beginner">Beginner</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Advanced">Advanced</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Expert">Expert</label>
                   </div>
+                  <br>
                   <div class="properties" id="golf-prop2">
-                    <p id="property-holes">I prefer to play...</p>
-                    <div class="radio">
-                      <label><input type="radio" name="holes" data-value="9">9 Holes</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="holes" data-value="18">18 Holes</label>
-                    </div>
+                    <label id="property-holes">I prefer to play...</label>
+                    <br>
+                    <label class="radio-inline"><input type="radio" name="holes" data-value="9">9 Holes</label>
+                    <label class="radio-inline"><input type="radio" name="holes" data-value="18">18 Holes</label>
                   </div>
                 </div>
                 <div class="radio">
                   <label><input id="skiing" type="radio" name="activity" value="5" data-value="Skiing">Skiing</label>
                   <!-- Properties -->
                   <div class="properties" id="skiing-prop1">
-                    <p id="property-level">Level</p>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Beginner">Beginner</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Novice">Novice</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
-                    </div>
+                    <label id="property-level">Level:</Label>
+                    <br>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Beginner">Beginner</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Advanced">Advanced</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Expert">Expert</label>
                   </div>
                   <div class="properties" id="skiing-prop2">
-                    <p id="property-runs">I prefer to ride on...</p>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Blue">Blue</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Green">Green</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Black">Black</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Double Black">Double Black</label>
-                    </div>
+                    <label id="property-runs">I prefer to ride on...</label>
+                    <br>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Blue">Blue</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Green">Green</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Black">Black</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Double Black">Double Black</label>
                   </div>
                 </div>
                 <div class="radio">
                   <label><input id="snowboarding" type="radio" name="activity" value="6" data-value="Snowboarding">Snowboarding</label>
                   <!-- Properties -->
                   <div class="properties" id="snowboarding-prop1">
-                    <p id="property-level">Level</p>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Beginner">Beginner</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Novice">Novice</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
-                    </div>
+                    <label id="property-level">Level:</label>
+                    <br>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Beginner">Beginner</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Advanced">Advanced</label>
+                    <label class="radio-inline"><input type="radio" name="level" data-value="Expert">Expert</label>
                   </div>
                   <div class="properties" id="snowboarding-prop2">
-                    <p id="property-runs">I prefer to ride on...</p>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Blue">Blue</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Green">Green</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Black">Black</label>
-                    </div>
-                    <div class="radio">
-                      <label><input type="radio" name="runs" data-value="Double Black">Double Black</label>
-                    </div>
+                    <label id="property-runs">I prefer to ride on...</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Blue">Blue</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Green">Green</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Black">Black</label>
+                    <label class="radio-inline"><input type="radio" name="runs" data-value="Double Black">Double Black</label>
                   </div>
                 </div>
+                <br>
                 <button type="submit" class="btn btn-default btn-lg">Submit</button>
               </form>
             </div>
