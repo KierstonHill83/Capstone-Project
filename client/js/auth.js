@@ -45,7 +45,9 @@ $('#logout').on('click', function() {
   alert('Logout was successful');
   $('#all-info').hide();
   $('.personal-page').hide();
+  $('#nav-welcome').hide();
+  $('#welcome-name').hide();
   $('#nav-signup').show();
-  $('#signin-form').show();
+  $('#signin-page').show();
   $('.home-page').show();
 });

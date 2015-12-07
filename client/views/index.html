@@ -353,14 +353,18 @@
 
 
         <!-- Overview -->
-        <div class="overview">
-          <div class="col-md-6">
-            <h1 class="personal-header">Overview</h1>
-            <p>There will be text about what is happening here and how to work this page.</p>
+        <div class="container overview">
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+              <h1 class="personal-header">Overview</h1>
+              <p>There will be text about what is happening here and how to work this page.</p>
+            </div>
+            <div class="col-md-4">
+              <img class="design-img" src="../../img/runningLogo.png" alt="Running">
+            </div>
           </div>
-          <br>
-          <hr class="long-hr">
-          <br>
         </div> <!-- close overview -->
 
 
@@ -369,7 +373,7 @@
           <div class="row">
             <div class="col-md-1">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <!-- User Input -->
               <h1 class="signup personal-header">User Info</h1>
               <br>
@@ -430,132 +434,146 @@
                 <button type="submit" id="edit-submit" class="btn btn-default btn-lg">Update</button>
               </form>
             </div>
+            <div class="col-md-4">
+              <img class="design-img" src="../../img/bikingLogo.png" alt="Biking">
+            </div>
           </div>
         </div> <!-- close edit user info -->
 
         <!-- Activity Input -->
-        <div class="activity-form">
-          <div class="col-md-6">
-            <h1 class="signup personal-header">Activity Info</h1>
-            <form class="signup-form" id="user-activity">
-              <div class="radio">
-                <label><input id="running" type="radio" name="activity" value="1" data-value="Running">Running</label>
-              </div>
-              <div class="radio">
-                <label><input id="biking" type="radio" name="activity" value="2" data-value="Biking">Biking</label>
-              </div>
-              <div class="radio">
-                <label><input id="swimming" type="radio" name="activity" value="3" data-value="Swimming">Swimming</label>
-              </div>
-              <div class="radio">
-                <label><input id="golfing" type="radio" name="activity" value="4" data-value="Golfing">Golfing</label>
-              </div>
-              <div class="radio">
-                <label><input id="skiing" type="radio" name="activity" value="5" data-value="Skiing">Skiing</label>
-              </div>
-              <div class="radio">
-                <label><input id="snowboarding" type="radio" name="activity" value="6" data-value="Snowboarding">Snowboarding</label>
-              </div>
-              <!-- First set of properties -->
-              <div class="properties1">
-                <div class="form-group">
-                  <label for="pace" class="activity-name">Pace</label>
-                  <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
-                </div>
-                <div class="form-group">
-                  <label for="distance" class="activity-name2">Distance</label>
-                  <input type="text" class="form-control activity-value2" id="distance" placeholder="Distance">
-                </div>
-              </div>
-              <!-- Second set of properties -->
-              <div class="properties2">
-                <p id="property-level">Level</p>
+        <div class="container activity-form">
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+              <h1 class="signup personal-header">Activity Info</h1>
+              <form class="signup-form" id="user-activity">
                 <div class="radio">
-                  <label><input type="radio" name="level" data-value="Beginner">Beginner</label>
+                  <label><input id="running" type="radio" name="activity" value="1" data-value="Running">Running</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="level" data-value="Novice">Novice</label>
+                  <label><input id="biking" type="radio" name="activity" value="2" data-value="Biking">Biking</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
+                  <label><input id="swimming" type="radio" name="activity" value="3" data-value="Swimming">Swimming</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="level" data-value="Advanced">Advanced</label>
+                  <label><input id="golfing" type="radio" name="activity" value="4" data-value="Golfing">Golfing</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="level" data-value="Expert">Expert</label>
-                </div>
-              </div>
-              <!-- Third set of properties -->
-              <div class="properties3">
-                <p id="property-runs">I prefer to ride on...</p>
-                <div class="radio">
-                  <label><input type="radio" name="runs" data-value="Blue">Blue</label>
+                  <label><input id="skiing" type="radio" name="activity" value="5" data-value="Skiing">Skiing</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="runs" data-value="Green">Green</label>
+                  <label><input id="snowboarding" type="radio" name="activity" value="6" data-value="Snowboarding">Snowboarding</label>
                 </div>
-                <div class="radio">
-                  <label><input type="radio" name="runs" data-value="Black">Black</label>
+                <!-- First set of properties -->
+                <div class="properties1">
+                  <div class="form-group">
+                    <label for="pace" class="activity-name">Pace</label>
+                    <input type="text" class="form-control activity-value" id="pace" placeholder="Pace">
+                  </div>
+                  <div class="form-group">
+                    <label for="distance" class="activity-name2">Distance</label>
+                    <input type="text" class="form-control activity-value2" id="distance" placeholder="Distance">
+                  </div>
                 </div>
-                <div class="radio">
-                  <label><input type="radio" name="runs" data-value="Double Black">Double Black</label>
+                <!-- Second set of properties -->
+                <div class="properties2">
+                  <p id="property-level">Level</p>
+                  <div class="radio">
+                    <label><input type="radio" name="level" data-value="Beginner">Beginner</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="level" data-value="Novice">Novice</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="level" data-value="Intermediate">Intermediate</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="level" data-value="Advanced">Advanced</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="level" data-value="Expert">Expert</label>
+                  </div>
                 </div>
-              </div>
-              <!-- Fourth set of properties -->
-              <div class="properties4">
-                <p id="property-holes">I prefer to play...</p>
-                <div class="radio">
-                  <label><input type="radio" name="holes" data-value="9">9 Holes</label>
+                <!-- Third set of properties -->
+                <div class="properties3">
+                  <p id="property-runs">I prefer to ride on...</p>
+                  <div class="radio">
+                    <label><input type="radio" name="runs" data-value="Blue">Blue</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="runs" data-value="Green">Green</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="runs" data-value="Black">Black</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="runs" data-value="Double Black">Double Black</label>
+                  </div>
                 </div>
-                <div class="radio">
-                  <label><input type="radio" name="holes" data-value="18">18 Holes</label>
+                <!-- Fourth set of properties -->
+                <div class="properties4">
+                  <p id="property-holes">I prefer to play...</p>
+                  <div class="radio">
+                    <label><input type="radio" name="holes" data-value="9">9 Holes</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="holes" data-value="18">18 Holes</label>
+                  </div>
                 </div>
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+                <button type="submit" class="btn btn-default btn-lg">Submit</button>
+              </form>
+            </div>
+            <div class="col-md-4">
+              <img class="design-img" id="swimming-img" src="../../img/swimmingLogo2.png" alt="Swimming">
+            </div>
           </div>
         </div> <!-- close activity form -->
 
         <!-- Partner Info -->
-        <div class="partner-form">
-          <div class="col-md-6">
-            <h1 class="signup personal-header">What are you looking for in a Partner?</h1>
-            <form id="partner-form">
-              <select id="activity-option">
-                <option value="1">Running</option>
-                <option value="2">Biking</option>
-                <option value="3">Swimming</option>
-              </select>
-              <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" class="form-control" id="location-partner" placeholder="City, State">
-              </div>
-              <div class="form-group">
-                <label for="gender">Gender</label>
-                <input type="text" class="form-control" id="gender-partner" placeholder="Gender">
-              </div>
-              <p>Age</p>
-              <select id="age-option">
-                <option value="5">Within 5 years</option>
-                <option value="10">Within 10 years</option>
-                <option calue="20">More than 10 years</option>
-              </select>
-              <p class="property-name">Pace</p>
-              <select id="pace-option">
-                <option value="1">Within 1 minute</option>
-                <option value="2">Within 5 minutes</option>
-                <option calue="3">More than 5 minutes</option>
-              </select>
-              <div class="form-group">
-                <label for="distance">Distance</label>
-                <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
-              </div>
-              <button type="submit" class="btn btn-default" id="partner-submit">Submit</button>
-            </form>
-            <br>
-            <hr class="long-hr">
-            <br>
+        <div class="container partner-form">
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+              <h1 class="signup personal-header">Partner Info</h1>
+              <form id="partner-form">
+                <select id="activity-option">
+                  <option value="1">Running</option>
+                  <option value="2">Biking</option>
+                  <option value="3">Swimming</option>
+                </select>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input type="text" class="form-control" id="location-partner" placeholder="City, State">
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <input type="text" class="form-control" id="gender-partner" placeholder="Gender">
+                </div>
+                <p>Age</p>
+                <select id="age-option">
+                  <option value="5">Within 5 years</option>
+                  <option value="10">Within 10 years</option>
+                  <option calue="20">More than 10 years</option>
+                </select>
+                <p class="property-name">Pace</p>
+                <select id="pace-option">
+                  <option value="1">Within 1 minute</option>
+                  <option value="2">Within 5 minutes</option>
+                  <option calue="3">More than 5 minutes</option>
+                </select>
+                <div class="form-group">
+                  <label for="distance">Distance</label>
+                  <input type="text" class="form-control" id="distance-partner" placeholder="Distance">
+                </div>
+                <button type="submit" class="btn btn-default btn-lg" id="partner-submit">Submit</button>
+              </form>
+            </div>
+            <div class="col-md-4">
+              <img class="design-img" id="partner-logo" src="../../img/partnerLogo.png" alt="Partners">
+            </div>
           </div>
         </div> <!-- close partner form -->
 
@@ -563,9 +581,11 @@
         <!-- SHOW PARTNERS -->
         <div class="show-partners">
           <div class="row">
-            <div class="col-md-3 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3">
               <h1 class="personal-header">Recommended Partners</h1>
               <h2 id="partner-error"></h2>
+            </div>
+            <div class="col-md-3 col-md-offset-3">
               <div class="all-partners">
                 <!-- id -->
                 <div class="partner-id" id="p-id1">
@@ -616,8 +636,6 @@
         <div class="show-partners">
           <div class="row"> -->
             <div class="col-md-3">
-              <h1 class="personal-header">Recommended Partners</h1>
-              <!-- <h2 id="partner-error"></h2> -->
               <div class="all-partners">
                 <!-- id -->
                 <div class="partner-id" id="p-id2">
@@ -665,9 +683,7 @@
           <br>
         </div> -->
 
-        <div class="col-md-3">
-              <h1 class="personal-header">Recommended Partners</h1>
-              <!-- <h2 id="partner-error"></h2> -->
+            <div class="col-md-3">
               <div class="all-partners">
                 <!-- id -->
                 <div class="partner-id" id="p-id3">
@@ -719,8 +735,12 @@
       <!-- CHAT ROOM -->
       <div class="container title-heading full-chat">
         <div class="row">
+          <div class="col-md-1">
+          </div>
           <div class="col-md-6 col-md-offset-3">
             <h1 class="personal-titles personal-header">Chat Room</h1>
+          </div>
+          <div class="col-md-3">
             <div class="friend-info">
               <div class="friend-img">
               </div>
@@ -732,15 +752,15 @@
             </div>
           </div>
           <br>
-          <div class="col-md-6 col-md-offset-3">
+          <div class="col-md-3">
             <br>
+            <div class="room">
+              <ul id="message"></ul>
+            </div>
             <form id="chatForm">
               <input type="text" name="msg" place="Input your message" id="t"/>
               <button class="btn">Send Message</button>
             </form>
-            <div class="room">
-              <ul id="message"></ul>
-            </div>
             <button type="button" class="btn btn-default" aria-label="Left Align">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
