@@ -107,14 +107,13 @@ $('#user-activity').submit(function(e) {
     console.log('status ', status);
   });
   if ($('input[name=activity]:checked').attr('data-value') === 'Running') {
-    $('.properties1').show();
     $.post('/api/activityProperties', { properties: [{
-      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      userActivityId: $('input:checked').val().toLowerCase(),
       propertyName: $('.activity-name').text().toLowerCase(),
       propertyValue: $('.activity-value').val().toLowerCase()
     },
     {
-      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      userActivityId: $('input:checked').val().toLowerCase(),
       propertyName: $('.activity-name2').text().toLowerCase(),
       propertyValue: $('.activity-value2').val().toLowerCase()
     }]},
@@ -122,14 +121,13 @@ $('#user-activity').submit(function(e) {
       console.log('status ', status);
     });
   } else if ($('input[name=activity]:checked').attr('data-value') === 'Biking') {
-    $('.properties1').show();
     $.post('/api/activityProperties', { properties: [{
-      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      userActivityId: $('input:checked').val().toLowerCase(),
       propertyName: $('.activity-name').text().toLowerCase(),
       propertyValue: $('.activity-value').val().toLowerCase()
     },
     {
-      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      userActivityId: $('input:checked').val().toLowerCase(),
       propertyName: $('.activity-name2').text().toLowerCase(),
       propertyValue: $('.activity-value2').val().toLowerCase()
     }]},
@@ -137,16 +135,57 @@ $('#user-activity').submit(function(e) {
       console.log('status ', status);
     });
   } else if ($('input[name=activity]:checked').attr('data-value') === 'Swimming') {
-    $('.properties1').show();
     $.post('/api/activityProperties', { properties: [{
-      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      userActivityId: $('input:checked').val().toLowerCase(),
       propertyName: $('.activity-name').text().toLowerCase(),
       propertyValue: $('.activity-value').val().toLowerCase()
     },
     {
-      userActivityId: $('#activity-option option:selected').val().toLowerCase(),
+      userActivityId: $('input:checked').val().toLowerCase(),
       propertyName: $('.activity-name2').text().toLowerCase(),
       propertyValue: $('.activity-value2').val().toLowerCase()
+    }]},
+    function(data, status) {
+      console.log('status ', status);
+    });
+  } else if ($('input[name=activity]:checked').attr('data-value') === 'Golfing') {
+    $.post('/api/activityProperties', { properties: [{
+      userActivityId: $('input:checked').val().toLowerCase(),
+      propertyName: $('#property-level').text().toLowerCase(),
+      propertyValue: $('input[name=level]:checked').attr('data-value').toLowerCase()
+    },
+    {
+      userActivityId: $('input:checked').val().toLowerCase(),
+      propertyName: $('.activity-holes').text().toLowerCase(),
+      propertyValue: $('.activity-holes').val()
+    }]},
+    function(data, status) {
+      console.log('status ', status);
+    });
+  } else if ($('input[name=activity]:checked').attr('data-value') === 'Skiing') {
+    $.post('/api/activityProperties', { properties: [{
+      userActivityId: $('input:checked').val().toLowerCase(),
+      propertyName: $('#property-level').text().toLowerCase(),
+      propertyValue: $('input[name=level]:checked').attr('data-value').toLowerCase()
+    },
+    {
+      userActivityId: $('input:checked').val().toLowerCase(),
+      propertyName: $('#property-runs').text().toLowerCase(),
+      propertyValue: $('input[name=runs]:checked').attr('data-value').toLowerCase()
+    }]},
+    function(data, status) {
+      console.log('status ', status);
+    });
+  } else if ($('input[name=activity]:checked').attr('data-value') === 'Snowboarding') {
+    $.post('/api/activityProperties', { properties: [{
+      userActivityId: $('input:checked').val().toLowerCase(),
+      propertyName: $('#property-level').text().toLowerCase(),
+      propertyValue: $('input[name=level]:checked').attr('data-value').toLowerCase()
+    },
+    {
+      userActivityId: $('input:checked').val().toLowerCase(),
+      propertyName: $('#property-runs').text().toLowerCase(),
+      propertyValue: $('input[name=runs]:checked').attr('data-value').toLowerCase()
     }]},
     function(data, status) {
       console.log('status ', status);
@@ -237,4 +276,43 @@ function showPartners3(data) {
   $('#p-property-name6').html(data[2].prop[1].propertyName);
   $('#p-property-value6').html(data[2].prop[1].propertyValue);
 }
+
+
+$('input[type="radio"]#running').on('click', function() {
+  $('.properties2').hide();
+  $('.properties3').hide();
+  $('.properties4').hide();
+  $('.properties1').show();
+});
+$('input[type="radio"]#biking').on('click', function() {
+  $('.properties2').hide();
+  $('.properties3').hide();
+  $('.properties4').hide();
+  $('.properties1').show();
+});
+$('input[type="radio"]#swimming').on('click', function() {
+  $('.properties2').hide();
+  $('.properties3').hide();
+  $('.properties4').hide();
+  $('.properties1').show();
+});
+$('input[type="radio"]#golfing').on('click', function() {
+  $('.properties1').hide();
+  $('.properties3').hide();
+  $('.properties2').show();
+  $('.properties4').show();
+});
+$('input[type="radio"]#skiing').on('click', function() {
+  $('.properties1').hide();
+  $('.properties4').hide();
+  $('.properties2').show();
+  $('.properties3').show();
+});
+$('input[type="radio"]#snowboarding').on('click', function() {
+  $('.properties1').hide();
+  $('.properties4').hide();
+  $('.properties2').show();
+  $('.properties3').show();
+});
+
 

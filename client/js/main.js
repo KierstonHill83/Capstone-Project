@@ -12,6 +12,10 @@ $(document).on('ready', function() {
   $('#welcome-name').hide();
   $('.success-message').hide();
   $('.error-message').hide();
+  $('.properties1').hide();
+  $('.properties2').hide();
+  $('.properties3').hide();
+  $('.properties4').hide();
   $('.map').hide();
 
 });
