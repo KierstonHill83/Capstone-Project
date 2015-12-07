@@ -15,7 +15,8 @@ $('#user-signup').submit(function(e) {
     location: $('#location').val().toLowerCase(),
     gender: $('#gender').val().toLowerCase(),
     age: $('#age').val().toLowerCase(),
-    password: $('#password').val().toLowerCase()
+    password: $('#password').val().toLowerCase(),
+    image: $('#image').val()
   },
   function(data, status) {
     if (status === 'success') {
@@ -76,8 +77,8 @@ $('#edit-submit').on('click', function(e) {
       location: $('#edit-location').val().toLowerCase(),
       gender: $('#edit-gender').val().toLowerCase(),
       age: $('#edit-age').val().toLowerCase(),
-      password: $('#edit-password').val().toLowerCase()
-      // image: $('#edit-photo').val()
+      password: $('#edit-password').val().toLowerCase(),
+      image: $('#edit-photo').val()
     }
   }).done(function(data, status) {
     if (status == 'success') {
@@ -233,7 +234,7 @@ $('.partner-form').submit(function(e) {
 
 function showPartners1(data) {
   $('#p-id1').html(data[0].id).hide();
-  $('#p-img1').html(data[0].image);
+  $('#p-img1').attr('src', data[0].image);
   $('#p-name1').html(data[0].username);
   $('#p-age1').html(data[0].age);
   $('#p-gender1').html(data[0].gender);

@@ -64,7 +64,8 @@ router.put('/user/:id', function(req, res, next) {
         email: req.body.email,
         age: req.body.age,
         gender: req.body.gender,
-        location: req.body.location
+        location: req.body.location,
+        image: req.body.image
       }).then(function(userInfo) {
         res.send(userInfo);
       });
