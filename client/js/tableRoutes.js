@@ -279,40 +279,70 @@ function showPartners3(data) {
 
 
 $('input[type="radio"]#running').on('click', function() {
-  $('.properties2').hide();
-  $('.properties3').hide();
-  $('.properties4').hide();
-  $('.properties1').show();
+  $('#biking-prop').hide();
+  $('#swimming-prop').hide();
+  $('#golf-prop1').hide();
+  $('#golf-prop2').hide();
+  $('#skiing-prop1').hide();
+  $('#skiing-prop2').hide();
+  $('#snowboarding-prop1').hide();
+  $('#snowboarding-prop2').hide();
+  $('#running-prop').show();
 });
 $('input[type="radio"]#biking').on('click', function() {
-  $('.properties2').hide();
-  $('.properties3').hide();
-  $('.properties4').hide();
-  $('.properties1').show();
+  $('#running-prop').hide();
+  $('#swimming-prop').hide();
+  $('#golf-prop1').hide();
+  $('#golf-prop2').hide();
+  $('#skiing-prop1').hide();
+  $('#skiing-prop2').hide();
+  $('#snowboarding-prop1').hide();
+  $('#snowboarding-prop2').hide();
+  $('#biking-prop').show();
 });
 $('input[type="radio"]#swimming').on('click', function() {
-  $('.properties2').hide();
-  $('.properties3').hide();
-  $('.properties4').hide();
-  $('.properties1').show();
+  $('#running-prop').hide();
+  $('#biking-prop').hide();
+  $('#golf-prop1').hide();
+  $('#golf-prop2').hide();
+  $('#skiing-prop1').hide();
+  $('#skiing-prop2').hide();
+  $('#snowboarding-prop1').hide();
+  $('#snowboarding-prop2').hide();
+  $('#swimming-prop').show();
 });
 $('input[type="radio"]#golfing').on('click', function() {
-  $('.properties1').hide();
-  $('.properties3').hide();
-  $('.properties2').show();
-  $('.properties4').show();
+  $('#running-prop').hide();
+  $('#biking-prop').hide();
+  $('#swimming-prop').hide();
+  $('#skiing-prop1').hide();
+  $('#skiing-prop2').hide();
+  $('#snowboarding-prop1').hide();
+  $('#snowboarding-prop2').hide();
+  $('#golf-prop1').show();
+  $('#golf-prop2').show();
 });
 $('input[type="radio"]#skiing').on('click', function() {
-  $('.properties1').hide();
-  $('.properties4').hide();
-  $('.properties2').show();
-  $('.properties3').show();
+  $('#running-prop').hide();
+  $('#biking-prop').hide();
+  $('#swimming-prop').hide();
+  $('#golf-prop1').hide();
+  $('#golf-prop2').hide();
+  $('#snowboarding-prop1').hide();
+  $('#snowboarding-prop2').hide();
+  $('#skiing-prop1').show();
+  $('#skiing-prop2').show();
 });
 $('input[type="radio"]#snowboarding').on('click', function() {
-  $('.properties1').hide();
-  $('.properties4').hide();
-  $('.properties2').show();
-  $('.properties3').show();
+  $('#running-prop').hide();
+  $('#biking-prop').hide();
+  $('#swimming-prop').hide();
+  $('#golf-prop1').hide();
+  $('#golf-prop2').hide();
+  $('#skiing-prop1').hide();
+  $('#skiing-prop2').hide();
+  $('#snowboarding-prop1').show();
+  $('#snowboarding-prop2').show();
 });
 
 
