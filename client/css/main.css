@@ -75,6 +75,7 @@ a {
 }
 
 .info-img {
+  display: block;
   font-size: 60px;
   color: white;
   text-align: center;
