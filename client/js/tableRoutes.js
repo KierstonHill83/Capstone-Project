@@ -109,7 +109,7 @@ $('#user-activity').submit(function(e) {
   if ($('input[name=activity]:checked').attr('data-value') === 'Running') {
     $.post('/api/activityProperties', { properties: [{
       userActivityId: $('input:checked').val().toLowerCase(),
-      propertyName: $('.activity-name').text().toLowerCase(),
+      propertyName: $('.activity-name1').text().toLowerCase(),
       propertyValue: $('.activity-value').val().toLowerCase()
     },
     {
@@ -123,12 +123,12 @@ $('#user-activity').submit(function(e) {
   } else if ($('input[name=activity]:checked').attr('data-value') === 'Biking') {
     $.post('/api/activityProperties', { properties: [{
       userActivityId: $('input:checked').val().toLowerCase(),
-      propertyName: $('.activity-name').text().toLowerCase(),
+      propertyName: $('.activity-name3').text().toLowerCase(),
       propertyValue: $('.activity-value').val().toLowerCase()
     },
     {
       userActivityId: $('input:checked').val().toLowerCase(),
-      propertyName: $('.activity-name2').text().toLowerCase(),
+      propertyName: $('.activity-name4').text().toLowerCase(),
       propertyValue: $('.activity-value2').val().toLowerCase()
     }]},
     function(data, status) {
@@ -137,12 +137,12 @@ $('#user-activity').submit(function(e) {
   } else if ($('input[name=activity]:checked').attr('data-value') === 'Swimming') {
     $.post('/api/activityProperties', { properties: [{
       userActivityId: $('input:checked').val().toLowerCase(),
-      propertyName: $('.activity-name').text().toLowerCase(),
+      propertyName: $('.activity-name5').text().toLowerCase(),
       propertyValue: $('.activity-value').val().toLowerCase()
     },
     {
       userActivityId: $('input:checked').val().toLowerCase(),
-      propertyName: $('.activity-name2').text().toLowerCase(),
+      propertyName: $('.activity-name6').text().toLowerCase(),
       propertyValue: $('.activity-value2').val().toLowerCase()
     }]},
     function(data, status) {
