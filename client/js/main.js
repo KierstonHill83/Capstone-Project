@@ -59,13 +59,6 @@ $('.nav-personal').on('click', function() {
   $('.personal-page').show();
 });
 
-// $('#nav-signin').on('click', function() {
-//   $('#nav-signup').hide();
-//   $('#signin-page').hide();
-//   $('#nav-welcome').show();
-//   $('#welcome-name').html(username).show();
-// });
-
 $('#user-submit').on('click', function() {
   $('#nav-signup').hide();
   $('#signin-page').hide();

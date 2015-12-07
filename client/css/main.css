@@ -290,7 +290,7 @@ a {
 
 .room {
   background-color: white;
-  height: 650px;
+  height: 550px;
   width: 100%;
   min-width: 685px;
   position: absolute;
@@ -301,7 +301,7 @@ a {
   box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
 }
 
-#message {
+/*#message {
   z-index: 1;
 }
 
@@ -311,13 +311,13 @@ a {
 }
 
 #chatForm {
-  margin-top: 573px;
+  margin-top: 473px;
 }
 
 #t {
   height: 45px;
   width: 490px;
-}
+}*/
 
 #msg-btn {
 

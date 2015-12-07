@@ -9,39 +9,35 @@ $('.confirm-chat').on('click', function(e) {
   e.preventDefault();
   if (e.currentTarget.id === 'confirm1') {
     friendId = $('#p-id1').text();
-    fUsername= $('#p-name1').text();
+    // fUsername= $('#p-name1').text();
     $('.friend-img').attr('src', $('#p-img1').attr('src'));
     $('#friend-username').html($('#p-name1').html());
     $('#friend-age').html($('#p-age1').html());
     $('#friend-gender').html($('#p-gender1').html());
     $('#friend-location').html($('#p-location1').html());
     $('#friend-activity').html($('#p-activity1').html());
-    $('#friend-img').html($('#p-img1').html());
     console.log(friendId);
-    console.log(fUsername);
   }
   else if(e.currentTarget.id === 'confirm2') {
     friendId = $('#p-id2').text();
-    fUsername= $('#p-name2').text();
+    // fUsername= $('#p-name2').text();
     $('.friend-img').attr('src', $('#p-img2').attr('src'));
     $('#friend-username').html($('#p-name2').html());
     $('#friend-age').html($('#p-age2').html());
     $('#friend-gender').html($('#p-gender2').html());
     $('#friend-location').html($('#p-location2').html());
     $('#friend-activity').html($('#p-activity2').html());
-    $('#friend-img').html($('#p-img2').html());
     console.log(friendId);
   }
   else if(e.currentTarget.id === 'confirm3') {
     friendId = $('#p-id3').text();
-    fUsername= $('#p-name3').text();
+    // fUsername= $('#p-name3').text();
     $('.friend-img').attr('src', $('#p-img3').attr('src'));
     $('#friend-username').html($('#p-name3').html());
     $('#friend-age').html($('#p-age3').html());
     $('#friend-gender').html($('#p-gender3').html());
     $('#friend-location').html($('#p-location3').html());
     $('#friend-activity').html($('#p-activity3').html());
-    $('#friend-img').html($('#p-img3').html());
     console.log(friendId);
   }
   socket.emit('createRoom', userId, friendId, username);
@@ -76,8 +72,9 @@ socket.on('private', function(msg) {
 // Apped the message to the screen.
 socket.on('chat message', function(msg) {
   var date = new Date(msg.date);
-  $('#message').append($('<li>').text(date.toString() + '  ' + msg.name + ':  ' + msg.message));
+  $('#message').append($('<li>').text(date.toString() + '  ' + username + ':  ' + msg.message));
 });
+
 
 ///////////////////////
 // Helper Functions //

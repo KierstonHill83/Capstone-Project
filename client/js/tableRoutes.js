@@ -249,7 +249,7 @@ function showPartners1(data) {
 
 function showPartners2(data) {
   $('#p-id2').html(data[1].id).hide();
-  $('#p-img2').html(data[1].image);
+  $('#p-img2').attr('src', data[1].image);
   $('#p-name2').html(data[1].username);
   $('#p-age2').html(data[1].age);
   $('#p-gender2').html(data[1].gender);
@@ -264,7 +264,7 @@ function showPartners2(data) {
 
 function showPartners3(data) {
   $('#p-id3').html(data[2].id).hide();
-  $('#p-img3').html(data[2].image);
+  $('#p-img3').attr('src', data[2].image);
   $('#p-name3').html(data[2].username);
   $('#p-age3').html(data[2].age);
   $('#p-gender3').html(data[2].gender);

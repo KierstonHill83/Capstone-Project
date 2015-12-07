@@ -25,7 +25,6 @@ module.exports = function(io) {
       var userName = name;
       for (a in io.sockets.connected) {
         if (io.sockets.connected[a].name == invitee) {
-
           // In the second input, put the name of the person you want the link sent to. It will send as long as they are connected.
           io.sockets.connected[a].emit('privateChat', '<a onclick="socket.emit(\'joinRoom\', \''+userName+'\')">Join '+ initUser +'\'s private chat</a>' );
           break;
