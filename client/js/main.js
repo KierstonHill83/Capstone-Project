@@ -125,6 +125,7 @@ $('#chat-room').on('click', function() {
 });
 
 $('#trails').on('click', function() {
+  mapInit();
   $('.overview').hide();
   $('.activity-form').hide();
   $('.partner-form').hide();

@@ -9,6 +9,7 @@ $('.confirm-chat').on('click', function(e) {
   e.preventDefault();
   if (e.currentTarget.id === 'confirm1') {
     friendId = $('#p-id1').text();
+    fUsername= $('#p-name1').text();
     $('#friend-username').html($('#p-name1').html());
     $('#friend-age').html($('#p-age1').html());
     $('#friend-gender').html($('#p-gender1').html());
@@ -16,9 +17,11 @@ $('.confirm-chat').on('click', function(e) {
     $('#friend-activity').html($('#p-activity1').html());
     $('#friend-img').html($('#p-img1').html());
     console.log(friendId);
+    console.log(fUsername);
   }
   else if(e.currentTarget.id === 'confirm2') {
     friendId = $('#p-id2').text();
+    fUsername= $('#p-name2').text();
     $('#friend-username').html($('#p-name2').html());
     $('#friend-age').html($('#p-age2').html());
     $('#friend-gender').html($('#p-gender2').html());
@@ -29,6 +32,7 @@ $('.confirm-chat').on('click', function(e) {
   }
   else if(e.currentTarget.id === 'confirm3') {
     friendId = $('#p-id3').text();
+    fUsername= $('#p-name3').text();
     $('#friend-username').html($('#p-name3').html());
     $('#friend-age').html($('#p-age3').html());
     $('#friend-gender').html($('#p-gender3').html());
@@ -41,12 +45,13 @@ $('.confirm-chat').on('click', function(e) {
   console.log('userId ', userId);
   console.log('friendId ', friendId);
   
-  ///SEND ALERT THAT A CHAT REQUEST AS BEEN SENT
+  ///SEND ALERT THAT A CHAT REQUEST HAS BEEN SENT
 });
 
 // Grab the value of the message that is being sent.
 $('#chatForm').submit(function(e) {
   e.preventDefault();
+  // send the date and name
     socket.emit('chat message', $('#t').val());
     $('#t').val('');
     return false;
@@ -54,6 +59,7 @@ $('#chatForm').submit(function(e) {
 
 socket.on('privateChat', function(msg) {
     console.log('message', msg);
+    // msg.msg
     $('#message').append($('<li id="chat-link">').html(msg));
     openChat();
 });

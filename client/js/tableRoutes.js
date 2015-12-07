@@ -216,8 +216,6 @@ $('.partner-form').submit(function(e) {
     activityProperty: activityProperty
   },
   function(data, status) {
-    // GRABBING ONLY THE ID FROM THE FIRST PERSON...MAKE THIS DYNAMIC TO WHOEVER IS CHOSEN
-    // friendId = data[0].id;
     showPartners1(data);
     showPartners2(data);
     showPartners3(data);

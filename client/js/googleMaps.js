@@ -1,4 +1,6 @@
-$(document).on('ready', function() {
+// $(document).on('ready', function() {
+function mapInit() {
+
 
   //////////////////
   // Google Maps //
@@ -51,4 +53,5 @@ $(document).on('ready', function() {
     });
   });
   
-});
+  // });
+  }

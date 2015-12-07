@@ -61,9 +61,7 @@ module.exports = function(io) {
     });
     // Send the messages between the 2 users.
     socket.on('chat message', function(msg) {
-      //// CHANGE COLOR OF TEXT IN HERE??
       io.sockets.in(socket.room).emit('chat message', msg);
-      // check if 1 socket it room, save to database
       //submit chat message to database, this will save who is writing message
       models.userChatRooms.find({
         where: {
