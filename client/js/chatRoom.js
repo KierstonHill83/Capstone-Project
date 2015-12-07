@@ -10,6 +10,7 @@ $('.confirm-chat').on('click', function(e) {
   if (e.currentTarget.id === 'confirm1') {
     friendId = $('#p-id1').text();
     fUsername= $('#p-name1').text();
+    $('.friend-img').attr('src', $('#p-img1').attr('src'));
     $('#friend-username').html($('#p-name1').html());
     $('#friend-age').html($('#p-age1').html());
     $('#friend-gender').html($('#p-gender1').html());
@@ -22,6 +23,7 @@ $('.confirm-chat').on('click', function(e) {
   else if(e.currentTarget.id === 'confirm2') {
     friendId = $('#p-id2').text();
     fUsername= $('#p-name2').text();
+    $('.friend-img').attr('src', $('#p-img2').attr('src'));
     $('#friend-username').html($('#p-name2').html());
     $('#friend-age').html($('#p-age2').html());
     $('#friend-gender').html($('#p-gender2').html());
@@ -33,6 +35,7 @@ $('.confirm-chat').on('click', function(e) {
   else if(e.currentTarget.id === 'confirm3') {
     friendId = $('#p-id3').text();
     fUsername= $('#p-name3').text();
+    $('.friend-img').attr('src', $('#p-img3').attr('src'));
     $('#friend-username').html($('#p-name3').html());
     $('#friend-age').html($('#p-age3').html());
     $('#friend-gender').html($('#p-gender3').html());
@@ -51,19 +54,16 @@ $('.confirm-chat').on('click', function(e) {
 // Grab the value of the message that is being sent.
 $('#chatForm').submit(function(e) {
   e.preventDefault();
-  // send the date and name
     socket.emit('chat message', {
       message: $('#t').val(), 
       date: Date.now(), 
       name: username
     });
-    console.log('date',Date.now());
     $('#t').val('');
     return false;
 });
 
 socket.on('privateChat', function(msg) {
-    console.log('message', msg);
     $('#message').append($('<li id="chat-link">').html(msg));
     openChat();
 });
@@ -75,9 +75,8 @@ socket.on('private', function(msg) {
 
 // Apped the message to the screen.
 socket.on('chat message', function(msg) {
-  console.log('msg', msg);
-  console.log('name', msg.name);
-  $('#message').append($('<li>').text(msg.date + '  ' + msg.name + ':  ' + msg.message));
+  var date = new Date(msg.date);
+  $('#message').append($('<li>').text(date.toString() + '  ' + msg.name + ':  ' + msg.message));
 });
 
 ///////////////////////

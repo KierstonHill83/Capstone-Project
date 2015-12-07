@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false
     },
     image: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
     }
   }, {
     classMethods: {
