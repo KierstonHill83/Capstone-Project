@@ -17,7 +17,7 @@ a {
   background-color: white;
   padding-left: 15px;
   padding-right: 15px;
-  
+  border: 1px solid;
 }
 
 .nav-text {
@@ -314,4 +314,8 @@ a {
   font-size: 20px;
 }
 
-
+.main-logo {
+  height: 50px;
+  width: 185px;
+  margin-top: 0px;
+}
