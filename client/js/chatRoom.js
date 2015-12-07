@@ -52,14 +52,18 @@ $('.confirm-chat').on('click', function(e) {
 $('#chatForm').submit(function(e) {
   e.preventDefault();
   // send the date and name
-    socket.emit('chat message', $('#t').val());
+    socket.emit('chat message', {
+      message: $('#t').val(), 
+      date: Date.now(), 
+      name: username
+    });
+    console.log('date',Date.now());
     $('#t').val('');
     return false;
 });
 
 socket.on('privateChat', function(msg) {
     console.log('message', msg);
-    // msg.msg
     $('#message').append($('<li id="chat-link">').html(msg));
     openChat();
 });
@@ -71,7 +75,9 @@ socket.on('private', function(msg) {
 
 // Apped the message to the screen.
 socket.on('chat message', function(msg) {
-  $('#message').append($('<li>').text(msg));
+  console.log('msg', msg);
+  console.log('name', msg.name);
+  $('#message').append($('<li>').text(msg.date + '  ' + msg.name + ':  ' + msg.message));
 });
 
 ///////////////////////

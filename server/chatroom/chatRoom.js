@@ -61,6 +61,7 @@ module.exports = function(io) {
     });
     // Send the messages between the 2 users.
     socket.on('chat message', function(msg) {
+      console.log('msg',msg);
       io.sockets.in(socket.room).emit('chat message', msg);
       //submit chat message to database, this will save who is writing message
       models.userChatRooms.find({
