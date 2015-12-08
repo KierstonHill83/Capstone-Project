@@ -381,6 +381,11 @@ a {
   content: '\003A';
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 /*DO I NEED THESE??*/
 /*input {
   max-width: 307px;
