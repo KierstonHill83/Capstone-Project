@@ -287,9 +287,9 @@ a {
   font-size: 16px;
   height: 40px;
   width: 307px;
-  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
 }
 
 .select-partner {
@@ -305,12 +305,12 @@ a {
   margin-top: 105px;
   min-height: 575px;
   height: 100%;
-  width: 100%;
+  width: 85%;
   z-index: -1;
   border-radius: 2%;
-  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
 }
 
 #message {
@@ -319,6 +319,21 @@ a {
 
 #chatForm {
   position: relative;
+}
+
+#t {
+  width: 69%;
+  height: 40px;
+  -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.75);
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,0.75);
+}
+
+.user1-msg, .user2-msg {
+  border-radius: 10%;
+  padding: 20px;
+  font-size: 23px;
+  max-width: 40%;
 }
 
 .design-img {
@@ -380,10 +395,6 @@ a {
 .col-centered{
     float: none;
     margin: 0 auto;
-}
-.user1-msg, .user2-msg {
-  border-radius: 10%;
-  padding: 20px;
 }
 
 /*.friend1 {
