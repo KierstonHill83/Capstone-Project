@@ -40,28 +40,28 @@
 
 
 <!-- SIGN IN PAGE -->
-    <div class="signin-page">
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-          <div class="signin-box">
-            <h1 class="personal-title">Sign In</h1>
-            <hr>
-            <br>
-            <form id="signin-form" class="col-sm-9 col-centered">
-              <div class="form-group inner-addon left-addon">
-                <!-- <label for="email">Email</label> -->
+    <div class="container signin-page">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="signin-box">
+          <h1 class="personal-title">Sign In</h1>
+          <hr>
+          <form id="signin-form">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3 inner-addon left-addon">
                 <span class="glyphicon glyphicon-envelope"></span>
                 <input type="email" class="form-control signin-input" id="email-signin" placeholder="  Email">
               </div>
-              <div class="form-group inner-addon left-addon">
-                <!-- <label for="password">Password</label> -->
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3 inner-addon left-addon">
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                 <input type="password" class="form-control signin-input" id="password-signin" placeholder="  Password">
               </div>
-              <br>
-              <button type="submit" class="btn btn-default btn-lg" id="nav-signin">Submit</button>
-            </form>
-          </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-default btn-lg" id="nav-signin">Submit</button>
+          </form>
         </div>
       </div>
     </div>
@@ -108,13 +108,6 @@
       
       <!-- CAROUSEL -->
       <div id="carousel-example-generic" class="carousel slide hidden-sm hidden-xs" data-ride="carousel">
-        <!-- Indicators -->
-        <!-- <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol> -->
        
         <h1 class="headers">Testimonials</h1>
         <br>
@@ -309,9 +302,7 @@
                   <input type="text" class="form-control signup-input" id="image" placeholder="Photo">
                 </div>
               </div>
-              <br>
               <hr>
-              <br>
               <div class="form-group">
                 <label for="username" class="col-sm-3 signup-label">Username</label>
                 <div class="col-sm-3">
@@ -339,7 +330,7 @@
     <div class="personal-page">
     <!-- Sidebar -->
       <div class="row">
-        <div class="col-sm-3 col-sm-2 sidebar">
+        <div class="col-sm-2 sidebar">
           <ul class="nav nav-sidebar">
           <br>
             <li id="overview" class="active"><a href="#" class="sidebar-text">Overview</a></li>
@@ -355,28 +346,29 @@
 
 
         <!-- Overview -->
-        <div class="container overview">
-          <div class="row">
-            <div class="col-sm-10">
-              <h1 class="personal-header">Overview</h1>
-              <p>There will be text about what is happening here and how to work this page.</p>
-            </div>
-            <!-- <div class="col-sm-10"> -->
-              <!-- <div class="personal-info">
-                <img class="personal-img" src="">
-                <h3 id="personal-username"></h3>
-                <h3 id="personal-age"></h3>
-                <h3 id="personal-gender"></h3>
-                <h3 id="personal-location"></h3>
-                <h3 id="personal-activity"></h3>
+        <div class="col-sm-10">
+          <div class="overview">
+            <div class="row">
+              <div class="col-sm-9">
+                <h1 class="personal-header">Overview</h1>
+                <p>There will be text about what is happening here and how to work this page.</p>
               </div>
-            </div> -->
-            <div class="col-sm-2">
-              <img class="design-img" src="../../img/runningMan1.png" alt="Running">
+              <!-- <div class="col-sm-10"> -->
+                <!-- <div class="personal-info">
+                  <img class="personal-img" src="">
+                  <h3 id="personal-username"></h3>
+                  <h3 id="personal-age"></h3>
+                  <h3 id="personal-gender"></h3>
+                  <h3 id="personal-location"></h3>
+                  <h3 id="personal-activity"></h3>
+                </div>
+              </div> -->
+              <div class="col-sm-3">
+                <img class="design-img" src="../../img/runningMan1.png" alt="Running">
+              </div>
             </div>
-          </div>
-        </div> <!-- close overview -->
-
+          </div> <!-- close overview -->
+        </div>
 
         <!-- Edit User Info -->
         <div class="container" id="edit-info">
@@ -823,6 +815,26 @@
           <br>
           <br>
         </div> <!-- close show partners -->
+
+
+        <!-- Modal to confirm chat room -->
+        <div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="chatModalLabel">Chat Room Invite Sent</h4>
+              </div>
+              <div class="modal-body">
+                <p>You have invited someone to a private chat room. Please click on the chat tab on the sidebar to start your conversation.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default return-home" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary return-home">Confirm</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
 
 
         <!-- Modal to confirm logout -->
