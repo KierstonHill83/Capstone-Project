@@ -635,6 +635,7 @@
             <div class="col-md-6 col-md-offset-3">
               <h1 class="personal-header">Recommended Partners</h1>
               <h2 id="partner-error"></h2>
+              <br>
             </div>
             <div class="col-md-3 col-md-offset-3">
               <div class="all-partners">
@@ -658,33 +659,34 @@
                 <!-- activity -->
                 <h2 class="partner-activity" id="p-activity1">
                 </h2>
+                <br>
                 <!-- property name -->
-                <h2 class="partner-property" id="p-property-name1">
+                <h2 class="partner-property prop-name" id="p-property-name1">
                 </h2>
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value1">
                 </h2>
+                <h2 class="partner-property">miles</h2>
+                <br>
+                <br>
                 <!-- property name -->
-                <h2 class="partner-property" id="p-property-name2">
+                <h2 class="partner-property prop-name" id="p-property-name2">
                 </h2>
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value2">
                 </h2>
+                <h2 class="partner-property">minute</h2>
+                <br>
+                <br>
                 <button type="button" class="btn btn-default confirm-chat" id="confirm1" aria-label="Left Align">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
                 <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-remove deny-chat" aria-hidden="true"></span>
                 </button>
               </div>
             </div>
-          <!-- </div>
-          <br>
-          <br>
-        </div>
 
-        <div class="show-partners">
-          <div class="row"> -->
             <div class="col-md-3">
               <div class="all-partners">
                 <!-- id -->
@@ -707,30 +709,33 @@
                 <!-- activity -->
                 <h2 class="partner-activity" id="p-activity2">
                 </h2>
+                <br>
                 <!-- property name -->
-                <h2 class="partner-property" id="p-property-name3">
+                <h2 class="partner-property prop-name" id="p-property-name3">
                 </h2>
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value3">
                 </h2>
+                <h2 class="partner-property">miles</h2>
+                <br>
+                <br>
                 <!-- property name -->
-                <h2 class="partner-property" id="p-property-name4">
+                <h2 class="partner-property prop-name" id="p-property-name4">
                 </h2>
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value4">
                 </h2>
+                <h2 class="partner-property">minute</h2>
+                <br>
+                <br>
                 <button type="button" class="btn btn-default confirm-chat" id="confirm2" aria-label="Left Align">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
                 <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-remove deny-chat" aria-hidden="true"></span>
                 </button>
               </div>
             </div>
-          <!-- </div>
-          <br>
-          <br>
-        </div> -->
 
             <div class="col-md-3">
               <div class="all-partners">
@@ -754,22 +759,29 @@
                 <!-- activity -->
                 <h2 class="partner-activity" id="p-activity3">
                 </h2>
+                <br>
                 <!-- property name -->
-                <h2 class="partner-property" id="p-property-name5">
+                <h2 class="partner-property prop-name" id="p-property-name5">
                 </h2>
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value5">
                 </h2>
+                <h2 class="partner-property">miles</h2>
+                <br>
+                <br>
                 <!-- property name -->
-                <h2 class="partner-property" id="p-property-name6">
+                <h2 class="partner-property prop-name" id="p-property-name6">
                 </h2>
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value6">
                 </h2>
+                <h2 class="partner-property">minute</h2>
+                <br>
+                <br>
                 <button type="button" class="btn btn-default confirm-chat" id="confirm3" aria-label="Left Align">
                   <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default" aria-label="Left Align">
+                <button type="button" class="btn btn-default deny-chat" aria-label="Left Align">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
               </div>
@@ -777,43 +789,63 @@
           </div>
           <br>
           <br>
-        </div>
+        </div> <!-- close show partners -->
 
 
-      <!-- CHAT ROOM -->
-      <div class="container title-heading full-chat">
-        <div class="row">
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-4">
-            <h1 class="personal-titles personal-header">Chat Room</h1>
-          <!-- </div>
-          <div class="col-md-3"> -->
-            <div class="friend-info">
-              <img class="friend-img" src="">
-              <p id="friend-username"></p>
-              <p id="friend-age"></p>
-              <p id="friend-gender"></p>
-              <p id="friend-location"></p>
-              <p id="friend-activity"></p>
+        <!-- Modal to confirm chat room -->
+        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Chat Room</h4>
+              </div>
+              <div class="modal-body">
+                <p>If confirmed, an invite will be sent to start a new chat room.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary start-chat">Confirm</button>
+              </div>
             </div>
           </div>
-          <br>
-          <div class="col-md-4">
+        </div> -->
+
+
+        <!-- CHAT ROOM -->
+        <div class="container title-heading full-chat">
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+              <h1 class="personal-titles personal-header">Chat Room</h1>
+            <!-- </div>
+            <div class="col-md-3"> -->
+              <div class="friend-info">
+                <img class="friend-img" src="">
+                <p id="friend-username"></p>
+                <p id="friend-age"></p>
+                <p id="friend-gender"></p>
+                <p id="friend-location"></p>
+                <p id="friend-activity"></p>
+              </div>
+            </div>
             <br>
-            <div class="room">
-              <ul id="message"></ul>
+            <div class="col-md-4">
+              <br>
+              <div class="room">
+                <ul id="message"></ul>
+              </div>
+              <button type="button" class="btn btn-danger" id="chat-btn" aria-label="Left Align">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </button>
+              <form id="chatForm">
+                <input type="text" name="msg" place="Input your message" id="t"/>
+                <button class="btn" id="msg-btn">Send Message</button>
+              </form>
             </div>
-            <button type="button" class="btn btn-danger" id="chat-btn" aria-label="Left Align">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-            </button>
-            <form id="chatForm">
-              <input type="text" name="msg" place="Input your message" id="t"/>
-              <button class="btn" id="msg-btn">Send Message</button>
-            </form>
           </div>
-        </div>
-      </div> <!-- close personal-page -->
+        </div> 
 
 
         <!-- GOOGLE MAPS -->
@@ -837,7 +869,7 @@
             </div>
           </div>
         </div>
-      </div> <!-- close row -->
+      </div> <!-- close personal-page -->
 <!-- END PERSONAL PAGE -->
 
 
