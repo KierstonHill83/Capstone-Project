@@ -5,7 +5,7 @@
 var socket = io();
 
 
-$('.confirm-chat').on('click', function(e) {
+$('.start-chat').on('click', function(e) {
   e.preventDefault();
   if (e.currentTarget.id === 'confirm1') {
     friendId = $('#p-id1').text();
@@ -72,7 +72,7 @@ socket.on('private', function(msg) {
 // Apped the message to the screen.
 socket.on('chat message', function(msg) {
   var date = new Date(msg.date);
-  $('#message').append($('<li>').text(date.toString() + '  ' + msg.name + ':  ' + msg.message));
+  $('#message').append($('<li>').text(date.toString() + '  ' + msg.name.toProperCase() + ':  ' + msg.message));
 });
 
 
