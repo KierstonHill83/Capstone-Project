@@ -163,9 +163,10 @@ a {
 
 .nav-sidebar {
   background-color: #093461;
-  min-height: 800px;
+  height: 100%;
   position: fixed;
-  min-width: 240px;
+  min-width: 260px;
+  font-size: 20px;
 }
 
 .sidebar-text {
@@ -328,7 +329,7 @@ a {
   height: 440px;
   width: 275px;
   margin-top: 85px;
-  margin-left: 125px;
+  /*margin-left: 125px;*/
 }
 
 .radio {
