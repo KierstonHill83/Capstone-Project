@@ -5,11 +5,11 @@
 var socket = io();
 
 
-$('.start-chat').on('click', function(e) {
+$('.confirm-chat').on('click', function(e) {
   e.preventDefault();
   if (e.currentTarget.id === 'confirm1') {
     friendId = $('#p-id1').text();
-    // fUsername= $('#p-name1').text();
+    fUsername= $('#p-name1').text();
     $('.friend-img').attr('src', $('#p-img1').attr('src'));
     $('#friend-username').html($('#p-name1').html());
     $('#friend-age').html($('#p-age1').html());
@@ -20,7 +20,7 @@ $('.start-chat').on('click', function(e) {
   }
   else if(e.currentTarget.id === 'confirm2') {
     friendId = $('#p-id2').text();
-    // fUsername= $('#p-name2').text();
+    fUsername= $('#p-name2').text();
     $('.friend-img').attr('src', $('#p-img2').attr('src'));
     $('#friend-username').html($('#p-name2').html());
     $('#friend-age').html($('#p-age2').html());
@@ -31,7 +31,7 @@ $('.start-chat').on('click', function(e) {
   }
   else if(e.currentTarget.id === 'confirm3') {
     friendId = $('#p-id3').text();
-    // fUsername= $('#p-name3').text();
+    fUsername= $('#p-name3').text();
     $('.friend-img').attr('src', $('#p-img3').attr('src'));
     $('#friend-username').html($('#p-name3').html());
     $('#friend-age').html($('#p-age3').html());
@@ -60,7 +60,7 @@ $('#chatForm').submit(function(e) {
 });
 
 socket.on('privateChat', function(msg) {
-    $('#message').append($('<li id="chat-link">').html(msg));
+    $('#message').append($('<p id="chat-link"></p>').html(msg));
     openChat();
 });
 
@@ -71,8 +71,12 @@ socket.on('private', function(msg) {
 
 // Apped the message to the screen.
 socket.on('chat message', function(msg) {
-  var date = new Date(msg.date);
-  $('#message').append($('<li>').text(date.toString() + '  ' + msg.name.toProperCase() + ':  ' + msg.message));
+  // var date = new Date(msg.date).toLocaleString();
+  if (msg.name === username) {
+    $('#message').append($('<p class="user1 text-right">').html('<span class="user1-msg bg-success">' + msg.name.toProperCase() + ':   ' + msg.message + '</span></p>'));
+  } else {
+    $('#message').append($('<p class="friend1 text-left">').html('<span class="user2-msg bg-info">' + msg.name.toProperCase() + ':   ' + msg.message + '</span></p>'));
+  }
 });
 
 

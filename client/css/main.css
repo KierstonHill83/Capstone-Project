@@ -227,7 +227,7 @@ a {
   padding-left:  30px; 
 }
 
-.partner-img {
+.partner-img, .friend-img {
   width: 250px;
   height: 210px;
   border: 1px solid;
@@ -296,14 +296,13 @@ a {
   margin-left: -8px;
 }
 
-.friend-img {
-  width: 250px;
-  height: 210px;
-  border: 1px solid;
+.friend-info {
+  text-align: center;
 }
 
 .room {
   background-color: white;
+  margin-top: 105px;
   min-height: 575px;
   height: 100%;
   width: 100%;
@@ -382,6 +381,15 @@ a {
     float: none;
     margin: 0 auto;
 }
+.user1-msg, .user2-msg {
+  border-radius: 10%;
+  padding: 20px;
+}
+
+/*.friend1 {
+  display: block;
+  float: right;
+}*/
 
 /*DO I NEED THESE??*/
 /*input {
