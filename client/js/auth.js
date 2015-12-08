@@ -15,7 +15,7 @@ $('#signin-form').submit(function(e) {
       $('#nav-signup').hide();
       $('#signin-page').hide();
       $('#nav-welcome').show();
-      $('#welcome-name').html(username).show();
+      $('#welcome-name').html(username.toProperCase()).show();
     } else {
       userId = null;
       console.log('error', data.data);

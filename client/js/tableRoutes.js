@@ -235,14 +235,14 @@ $('.partner-form').submit(function(e) {
 function showPartners1(data) {
   $('#p-id1').html(data[0].id).hide();
   $('#p-img1').attr('src', data[0].image);
-  $('#p-name1').html(data[0].username);
+  $('#p-name1').html(data[0].username.toProperCase());
   $('#p-age1').html(data[0].age);
-  $('#p-gender1').html(data[0].gender);
-  $('#p-location1').html(data[0].location);
-  $('#p-activity1').html(data[0].userActivity);
-  $('#p-property-name1').html(data[0].prop[0].propertyName);
+  $('#p-gender1').html(data[0].gender.toProperCase());
+  $('#p-location1').html(data[0].location.toProperCase());
+  $('#p-activity1').html(data[0].userActivity.toProperCase());
+  $('#p-property-name1').html(data[0].prop[0].propertyName.toProperCase());
   $('#p-property-value1').html(data[0].prop[0].propertyValue);
-  $('#p-property-name2').html(data[0].prop[1].propertyName);
+  $('#p-property-name2').html(data[0].prop[1].propertyName.toProperCase());
   $('#p-property-value2').html(data[0].prop[1].propertyValue);
 }
 
@@ -250,14 +250,14 @@ function showPartners1(data) {
 function showPartners2(data) {
   $('#p-id2').html(data[1].id).hide();
   $('#p-img2').attr('src', data[1].image);
-  $('#p-name2').html(data[1].username);
+  $('#p-name2').html(data[1].username.toProperCase());
   $('#p-age2').html(data[1].age);
-  $('#p-gender2').html(data[1].gender);
-  $('#p-location2').html(data[1].location);
-  $('#p-activity2').html(data[1].userActivity);
-  $('#p-property-name3').html(data[1].prop[0].propertyName);
+  $('#p-gender2').html(data[1].gender.toProperCase());
+  $('#p-location2').html(data[1].location.toProperCase());
+  $('#p-activity2').html(data[1].userActivity.toProperCase());
+  $('#p-property-name3').html(data[1].prop[0].propertyName.toProperCase());
   $('#p-property-value3').html(data[1].prop[0].propertyValue);
-  $('#p-property-name4').html(data[1].prop[1].propertyName);
+  $('#p-property-name4').html(data[1].prop[1].propertyName.toProperCase());
   $('#p-property-value4').html(data[1].prop[1].propertyValue);
 }
 
@@ -265,14 +265,14 @@ function showPartners2(data) {
 function showPartners3(data) {
   $('#p-id3').html(data[2].id).hide();
   $('#p-img3').attr('src', data[2].image);
-  $('#p-name3').html(data[2].username);
+  $('#p-name3').html(data[2].username.toProperCase());
   $('#p-age3').html(data[2].age);
-  $('#p-gender3').html(data[2].gender);
-  $('#p-location3').html(data[2].location);
-  $('#p-activity3').html(data[2].userActivity);
-  $('#p-property-name5').html(data[2].prop[0].propertyName);
+  $('#p-gender3').html(data[2].gender.toProperCase());
+  $('#p-location3').html(data[2].location.toProperCase());
+  $('#p-activity3').html(data[2].userActivity.toProperCase());
+  $('#p-property-name5').html(data[2].prop[0].propertyName.toProperCase());
   $('#p-property-value5').html(data[2].prop[0].propertyValue);
-  $('#p-property-name6').html(data[2].prop[1].propertyName);
+  $('#p-property-name6').html(data[2].prop[1].propertyName.toProperCase());
   $('#p-property-value6').html(data[2].prop[1].propertyValue);
 }
 
@@ -344,4 +344,10 @@ $('input[type="radio"]#snowboarding').on('click', function() {
   $('#snowboarding-prop2').show();
 });
 
-
+String.prototype.toProperCase = function() {
+  return this.toLowerCase().replace( /\b((m)(a?c))?(\w)/g, function($1, $2, $3, $4, $5) { 
+    if($2) {
+      return $3.toUpperCase()+$4+$5.toUpperCase();
+    } return $1.toUpperCase(); 
+  });
+};

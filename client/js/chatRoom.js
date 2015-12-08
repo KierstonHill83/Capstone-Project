@@ -72,7 +72,7 @@ socket.on('private', function(msg) {
 // Apped the message to the screen.
 socket.on('chat message', function(msg) {
   var date = new Date(msg.date);
-  $('#message').append($('<li>').text(date.toString() + '  ' + username + ':  ' + msg.message));
+  $('#message').append($('<li>').text(date.toString() + '  ' + msg.name + ':  ' + msg.message));
 });
 
 
