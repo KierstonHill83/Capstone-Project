@@ -178,8 +178,10 @@ a {
   text-align: center;
   background-color: #093461;
   background-size: cover;
-  min-height: 820px;
   border: 1px solid;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .signin-box {
@@ -244,7 +246,9 @@ a {
 
 #all-info {
   background-color: #093461;
-  min-height: 820px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .signup-box {
