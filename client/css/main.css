@@ -233,6 +233,10 @@ a {
 }
 
 .personal-header {
+  font-size: 55px;
+}
+
+.personal-header {
   font-size: 45px;
 }
 
@@ -291,16 +295,16 @@ a {
   margin-left: -8px;
 }
 
-.friend-info {
+/*.friend-info {
   text-align: center;
-}
+}*/
 
 .room {
   background-color: white;
   margin-top: 105px;
   min-height: 575px;
   height: 100%;
-  width: 85%;
+  width: 55%;
   z-index: -1;
   border-radius: 2%;
   -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
@@ -321,7 +325,7 @@ a {
 }
 
 #t {
-  width: 69%;
+  width: 46%;
   height: 40px;
   -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.75);
@@ -337,8 +341,8 @@ a {
 
 .design-img {
   /*height: 440px;
-  width: 275px;
-  margin-top: 85px;*/
+  width: 275px;*/
+  margin-top: 85px;
   height: auto;
   width: 13vw;
 }
