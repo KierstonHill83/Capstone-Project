@@ -46,6 +46,23 @@ function signIn() {
 }
 
 
+///////////////////
+// Show Profile //
+//////////////////
+
+// $('#overview').on('click', function(e) {
+//   e.preventDefault();
+//   $.get('/api/user/' +userId, function(data) {
+//     $('#personal-username').val(data.username.toProperCase());
+//     $('#personal-location').val(data.location.toProperCase());
+//     $('#personal-gender').val(data.gender.toProperCase());
+//     $('#personal-age').val(data.age);
+//     $('#personal-img').val(data.image);
+//   });
+// });
+
+
+
 /////////////////////
 // Edit User Info //
 ////////////////////

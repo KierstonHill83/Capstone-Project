@@ -128,9 +128,3 @@ $('#trails').on('click', function() {
   $('.map').show();
 });
 
-
-
-
-
-
-

@@ -121,7 +121,7 @@ a {
   border-radius: 10%;
   height: 50px;
   width: 50px;
-  margin-left: 20px;
+  margin-left: 6%;
   margin-top: 40px;
 }
 
@@ -131,7 +131,7 @@ a {
 }
 
 .social-buttons {
-  margin-left: 160px;
+  margin-left: 29%;
   margin-bottom: 20px;
 }
 
@@ -152,10 +152,6 @@ a {
 #place-input {
   width: 70%;
 }
-
-/*.map {
-  padding-top: 50px;
-}*/
 
 .panel {
   border: none;
@@ -192,16 +188,17 @@ a {
   padding: 10px;
   margin-top: 50px;
   min-height: 445px;
+  width: 75%;
 }
 
 .signin-input {
   font-size: 16px;
   height: 40px;
   width: 307px;
-  margin-left: 92px;
-  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  margin-left: 5%;
+  -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
 }
 
 .btn-lg {
@@ -216,7 +213,7 @@ a {
   position: absolute;
   padding: 10px;
   pointer-events: none;
-  margin-left: 92px;
+  margin-left: 5%;
 }
 
 .left-addon .glyphicon { 
@@ -224,10 +221,10 @@ a {
 }
 
 .left-addon input { 
-  padding-left:  30px; 
+  padding-left:  11%; 
 }
 
-.partner-img, .friend-img {
+.partner-img, .friend-img, .personal-info {
   width: 250px;
   height: 210px;
   border: 1px solid;
@@ -261,15 +258,15 @@ a {
   font-size: 16px;
   height: 40px;
   width: 307px;
-  margin-left: 92px;
-  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  margin-left: 67%;
+  -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
 }
 
 .signup-label {
-  margin-right: -105px;
-  margin-left: 95px;
+  margin-right: -16%;
+  margin-left: 12%;
   margin-top: 5px;
 }
 
@@ -278,7 +275,7 @@ a {
 }
 
 .edit-label {
-  margin-right: -75px;
+  margin-right: -7%;
   margin-top: 5px;
   font-size: 20px;
 }
@@ -321,6 +318,10 @@ a {
   position: relative;
 }
 
+.chat-box {
+  text-align: center;
+}
+
 #t {
   width: 69%;
   height: 40px;
@@ -332,7 +333,7 @@ a {
 .user1-msg, .user2-msg {
   border-radius: 10%;
   padding: 20px;
-  font-size: 23px;
+  font-size: 20px;
   max-width: 40%;
 }
 
@@ -347,13 +348,13 @@ a {
 }
 
 .radio-inline {
-  margin-left: 85px;
+  margin-left: 8%;
 }
 
 .main-logo {
   height: 50px;
   width: 185px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .properties {
@@ -361,19 +362,19 @@ a {
 }
 
 .activity-box {
-  margin-left: 60px;
+  margin-left: 5%;
   font-size: 18px;
   max-width: 307px;
   max-height: 40px;
-  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
+  box-shadow: 0 1px 1px 2px rgba(0,0,0,0.75);
 }
 
 .all-partners {
   display: block;
   text-align: center;
-  margin-left: -170px;
+  margin-left: -35%;
 }
 
 .partner-property {
@@ -396,19 +397,5 @@ a {
     float: none;
     margin: 0 auto;
 }
-
-/*.friend1 {
-  display: block;
-  float: right;
-}*/
-
-/*DO I NEED THESE??*/
-/*input {
-  max-width: 307px;
-  max-height: 40px;
-  -webkit-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 1px 2px rgba(0,0,0,0.75);
-}*/
 
    
