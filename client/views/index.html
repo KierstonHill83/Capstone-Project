@@ -352,7 +352,7 @@
             <li id="chat-room"><a href="#" class="sidebar-text">Chat Room</a></li>
             <li id="trails"><a href="#" class="sidebar-text">Find a Trail</a></li>
             <li><a href="#" class="sidebar-text">Help</a></li>
-            <li id="logout"><a href="#" class="sidebar-text">Logout</a></li>
+            <li id="logout"><a href="#" class="sidebar-text" data-toggle="modal" data-target="#myModal">Logout</a></li>
           </ul>
         </div>
 
@@ -794,24 +794,24 @@
         </div> <!-- close show partners -->
 
 
-        <!-- Modal to confirm chat room -->
-        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- Modal to confirm logout -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Chat Room</h4>
+                <h4 class="modal-title" id="myModalLabel">Logout</h4>
               </div>
               <div class="modal-body">
-                <p>If confirmed, an invite will be sent to start a new chat room.</p>
+                <p>Logout was successful!</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary start-chat">Confirm</button>
+                <button type="button" class="btn btn-default return-home" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary return-home">Confirm</button> -->
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
 
 
         <!-- CHAT ROOM -->

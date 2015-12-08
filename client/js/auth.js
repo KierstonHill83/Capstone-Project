@@ -42,7 +42,9 @@ $('#logout').on('click', function() {
   }, function(data, status) {
     console.log(status);
   });
-  alert('Logout was successful');
+});
+
+$('.return-home').on('click', function() {
   $('#all-info').hide();
   $('.personal-page').hide();
   $('#nav-welcome').hide();

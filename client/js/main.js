@@ -129,6 +129,16 @@ $('#trails').on('click', function() {
 });
 
 
+$('.return-home').on('click', function() {
+  $('#all-info').hide();
+  $('.personal-page').hide();
+  $('#nav-welcome').hide();
+  $('#welcome-name').hide();
+  $('#nav-signup').show();
+  $('#signin-page').show();
+  $('.home-page').show();
+});
+
 
 
 
