@@ -357,14 +357,11 @@
         <!-- Overview -->
         <div class="container overview">
           <div class="row">
-            <!-- <div class="col-md-1">
-            </div> -->
             <div class="col-md-10">
               <h1 class="personal-header">Overview</h1>
               <p>There will be text about what is happening here and how to work this page.</p>
             </div>
             <div class="col-md-2">
-              <!-- <img class="design-img" src="../../img/runningLogo.png" alt="Running"> -->
               <img class="design-img" src="../../img/runningMan1.png" alt="Running">
             </div>
           </div>
@@ -595,6 +592,7 @@
                 <label class="col-md-3 edit-label">Activity</label>
                 <div class="col-md-3">
                   <select id="activity-option" class="select-partner">
+                    <option value="0">Please Select</option>
                     <option value="1">Running</option>
                     <option value="2">Biking</option>
                     <option value="3">Swimming</option>
@@ -656,14 +654,14 @@
 
 
         <!-- SHOW PARTNERS -->
-        <div class="show-partners">
+        <div class="container show-partners">
           <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-12">
               <h1 class="personal-header">Recommended Partners</h1>
               <h2 id="partner-error"></h2>
               <br>
-            </div>
-            <div class="col-md-3 col-md-offset-3">
+            
+            <div class="col-md-4">
               <div class="all-partners">
                 <!-- id -->
                 <div class="partner-id" id="p-id1">
@@ -701,7 +699,7 @@
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value2">
                 </h2>
-                <h2 class="partner-property">minute</h2>
+                <h2 class="partner-property">minutes</h2>
                 <br>
                 <br>
                 <button type="button" class="btn btn-default confirm-chat" id="confirm1" aria-label="Left Align">
@@ -713,7 +711,7 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="all-partners">
                 <!-- id -->
                 <div class="partner-id" id="p-id2">
@@ -751,7 +749,7 @@
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value4">
                 </h2>
-                <h2 class="partner-property">minute</h2>
+                <h2 class="partner-property">minutes</h2>
                 <br>
                 <br>
                 <button type="button" class="btn btn-default confirm-chat" id="confirm2" aria-label="Left Align">
@@ -763,7 +761,7 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="all-partners">
                 <!-- id -->
                 <div class="partner-id" id="p-id3">
@@ -801,7 +799,7 @@
                 <!-- property value -->
                 <h2 class="partner-property" id="p-property-value6">
                 </h2>
-                <h2 class="partner-property">minute</h2>
+                <h2 class="partner-property">minutes</h2>
                 <br>
                 <br>
                 <button type="button" class="btn btn-default confirm-chat" id="confirm3" aria-label="Left Align">
@@ -811,6 +809,7 @@
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
               </div>
+            </div>
             </div>
           </div>
           <br>
@@ -841,12 +840,9 @@
         <!-- CHAT ROOM -->
         <div class="container title-heading full-chat">
           <div class="row">
-            <div class="col-md-1">
-            </div>
             <div class="col-md-4">
               <h1 class="personal-titles personal-header">Chat Room</h1>
-            <!-- </div>
-            <div class="col-md-3"> -->
+              <br>
               <div class="friend-info">
                 <img class="friend-img" src="">
                 <p id="friend-username"></p>
@@ -856,15 +852,10 @@
                 <p id="friend-activity"></p>
               </div>
             </div>
-            <br>
-            <div class="col-md-4">
-              <br>
+            <div class="col-md-8">
               <div class="room">
                 <ul id="message"></ul>
               </div>
-              <!-- <button type="button" class="btn btn-danger" id="chat-btn" aria-label="Left Align">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </button> -->
               <form id="chatForm">
                 <input type="text" name="msg" place="Input your message" id="t"/>
                 <button class="btn" id="msg-btn">Send Message</button>
