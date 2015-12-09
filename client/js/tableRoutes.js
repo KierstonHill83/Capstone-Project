@@ -245,6 +245,11 @@ $('.partner-form').submit(function(e) {
 });
 
 
+$('.partner-search').on('click', function() {
+  $('#partner-message').text('Form submission was successful.').show();
+});
+
+
 ///////////////////////
 // Helper Functions //
 //////////////////////

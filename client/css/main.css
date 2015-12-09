@@ -4,8 +4,8 @@ body {
   font-family: 'Oxygen', sans-serif;
   font-weight: 300;
   font-size: 18px;
-  background-color: #F7F1F2;
-  /*background-color: #FFE0B2;*/
+  background-color: #92B2C7;
+  /*background-color: #F7F1F2;*/
 }
 
 a {
@@ -146,7 +146,7 @@ a {
 }
 
 .panel {
-  background-color: #F7F1F2;
+  background-color: #92B2C7;
 }
 
 #place-input {
@@ -345,11 +345,8 @@ a {
   width: 275px;*/
   margin-top: 85px;
   height: auto;
-  width: 13vw;
+  width: 14vw;
 }
-/*.design-img {
- width: 100%;
-}*/
 
 .radio {
   font-size: 20px;

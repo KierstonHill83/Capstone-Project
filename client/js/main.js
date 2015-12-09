@@ -13,6 +13,7 @@ $(document).on('ready', function() {
   $('.success-message').hide();
   $('.error-message').hide();
   $('.properties').hide();
+  $('#partner-message').hide();
   $('.map').hide();
 
 });
