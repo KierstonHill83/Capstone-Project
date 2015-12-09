@@ -31,6 +31,7 @@ $('#user-signup').submit(function(e) {
       userId = null;
     }
   });
+  $('form input').val('');
   setTimeout(signIn, 2000);
   $('#all-info').hide();
   $('.personal-page').show();

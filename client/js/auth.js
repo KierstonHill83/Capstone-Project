@@ -27,8 +27,8 @@ $('#signin-form').submit(function(e) {
   $('#all-info').hide();
   $('.signin-page').hide();
   $('.personal-page').show();
-  $('#email-signin').val('');
-  $('#password-signin').val('');
+  $('#email-signin').html('');
+  $('#password-signin').html('');
 });
 
 
