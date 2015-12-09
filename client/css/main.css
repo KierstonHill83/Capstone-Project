@@ -166,6 +166,7 @@ footer {
 .sidebar-text {
   color: white;
   font-size: 21px;
+  margin-left: 5%;
 }
 
 .signin-page {
@@ -221,7 +222,7 @@ footer {
   padding-left:  15%; 
 }
 
-.partner-img, .friend-img, .personal-info {
+.partner-img, .friend-img {
   width: 265px;
   height: 235px;
   border: 1px solid;
