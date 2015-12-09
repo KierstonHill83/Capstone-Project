@@ -1,5 +1,3 @@
-/*original yellow: FFBF53*/
-
 body {
   font-family: 'Oxygen', sans-serif;
   font-weight: 300;
@@ -111,9 +109,9 @@ a {
   padding-bottom: 10px;
 }
 
-.footer {
+footer {
   background-color: #989898;
-  min-height: 150px;
+  max-height: 150px;
   margin: 0;
 }
 

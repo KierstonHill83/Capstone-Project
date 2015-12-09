@@ -80,6 +80,7 @@ $('#overview').on('click', function() {
   $('#edit-info').hide();
   $('.map').hide();
   $('.overview').show();
+  $('.heart').hide();
   $('#heart1').show();
 });
 
@@ -151,4 +152,5 @@ $('#help').on('click', function() {
   $('.heart').hide();
   $('#heart7').show();
 });
+
 
