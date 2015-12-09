@@ -15,6 +15,7 @@ $(document).on('ready', function() {
   $('.properties').hide();
   $('#partner-message').hide();
   $('.map').hide();
+  $('.heart').hide();
 
 });
 
@@ -79,6 +80,7 @@ $('#overview').on('click', function() {
   $('#edit-info').hide();
   $('.map').hide();
   $('.overview').show();
+  $('#heart1').show();
 });
 
 $('#edit-profile').on('click', function() {
@@ -87,6 +89,8 @@ $('#edit-profile').on('click', function() {
   $('.activity-form').hide();
   $('.full-chat').hide();
   $('.map').hide();
+  $('.heart').hide();
+  $('#heart2').show();
   $('#edit-info').show();
 });
 
@@ -96,6 +100,8 @@ $('#activity-form').on('click', function() {
   $('.full-chat').hide();
   $('#edit-info').hide();
   $('.map').hide();
+  $('.heart').hide();
+  $('#heart3').show();
   $('.activity-form').show();
 });
 
@@ -105,6 +111,8 @@ $('#partner-form').on('click', function() {
   $('.full-chat').hide();
   $('#edit-info').hide();
   $('.map').hide();
+  $('.heart').hide();
+  $('#heart4').show();
   $('.partner-form').show();
 });
 
@@ -115,6 +123,8 @@ $('#chat-room').on('click', function() {
   $('.show-partners').hide();
   $('#edit-info').hide();
   $('.map').hide();
+  $('.heart').hide();
+  $('#heart5').show();
   $('.full-chat').show();
 });
 
@@ -126,6 +136,19 @@ $('#trails').on('click', function() {
   $('.show-partners').hide();
   $('#edit-info').hide();
   $('.full-chat').hide();
+  $('.heart').hide();
+  $('#heart6').show();
   $('.map').show();
+});
+
+$('#help').on('click', function() {
+  $('.overview').hide();
+  $('.activity-form').hide();
+  $('.partner-form').hide();
+  $('.show-partners').hide();
+  $('#edit-info').hide();
+  $('.full-chat').hide();
+  $('.heart').hide();
+  $('#heart7').show();
 });
 

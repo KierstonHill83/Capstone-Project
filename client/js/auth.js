@@ -27,6 +27,7 @@ $('#signin-form').submit(function(e) {
   $('#all-info').hide();
   $('.signin-page').hide();
   $('.personal-page').show();
+  $('#heart1').show();
   $('#email-signin').html('');
   $('#password-signin').html('');
 });
