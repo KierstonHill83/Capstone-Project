@@ -386,6 +386,10 @@ footer {
   display: inline;
 }
 
+.partner-name, #friend-username {
+  font-weight: 700;
+}
+
 .confirm-chat {
   color: green;
 }
